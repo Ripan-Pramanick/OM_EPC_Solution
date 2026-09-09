@@ -10,23 +10,23 @@ import AboutCTA from '@/components/about/AboutCTA';
 import Stats from '@/components/home/Stats';
 
 export const metadata = {
-  title: 'About OM EPC Solution | IT Infrastructure & Technology Support',
-  description: 'Learn about OM EPC Solution, a professional IT infrastructure and technology support company providing computer, printer, UPS, CCTV, networking and AMC solutions.',
+    title: 'About OM EPC Solution | IT Infrastructure & Technology Support',
+    description: 'Learn about OM EPC Solution, a professional IT infrastructure and technology support company providing computer, printer, UPS, CCTV, networking and AMC solutions.',
 };
 
 export default function AboutPage() {
-  return (
-    <main className="min-h-screen bg-white text-[#111827]">
-    
-      <AboutHero />
-      <Foundation />
-      <Principles />
-      <WhyChooseUs />
-      <Milestones />
-      <Stats />
-      <TechnicalExpertise />
-      <AboutCTA />
-    
-    </main>
-  );
+    return (
+        <main className="min-h-screen bg-[#FAF9F6] text-[#111827]">
+
+            <AboutHero />
+            <Foundation />
+            <Principles />
+            <WhyChooseUs />
+            <Milestones />
+            <Stats />
+            <TechnicalExpertise />
+            <AboutCTA />
+
+        </main>
+    );
 }

@@ -22,12 +22,12 @@ export default function Products() {
   ];
 
   return (
-    <section id="products" className="py-24 bg-white overflow-hidden">
+    <section id="products" className="py-24 bg-[#FAF9F6] overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6">
-        
+
         {/* Top Header */}
         <div className="flex flex-col items-center text-center mb-16">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -35,8 +35,8 @@ export default function Products() {
           >
             <X size={12} className="text-muted" /> HARDWARE DISTRIBUTION
           </motion.div>
-          
-          <motion.h2 
+
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -50,7 +50,7 @@ export default function Products() {
 
         {/* Main Content Layout */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-12">
-          
+
           {/* Left: Image with subtle grid background */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -60,12 +60,12 @@ export default function Products() {
           >
             {/* Subtle Grid Pattern for background */}
             <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)]"></div>
-            
+
             <div className="relative w-full h-full">
-              <Image 
+              <Image
                 src="/01.png"
-                alt="Enterprise Hardware" 
-                fill 
+                alt="Enterprise Hardware"
+                fill
                 className="object-center hover:scale-102 transition-transform duration-700"
               />
             </div>
@@ -97,10 +97,10 @@ export default function Products() {
               <Button variant="dark">Get a Quote</Button>
 
               {/* Download Brochure Card */}
-              <div className="flex items-center gap-4 p-2 pr-6 rounded-[1.25rem] border border-gray-200 hover:shadow-md hover:border-gray-300 transition-all cursor-pointer bg-white group">
-                
-                
-               
+              <div className="flex items-center gap-4 p-2 pr-6 rounded-[1.25rem] border border-gray-200 hover:shadow-md hover:border-gray-300 transition-all cursor-pointer bg-[#FAF9F6] group">
+
+
+
 
               </div>
             </div>
@@ -108,8 +108,8 @@ export default function Products() {
 
         </div>
 
-       {/* Bottom Client / Brand Logos Carousel */}
-        <motion.div 
+        {/* Bottom Client / Brand Logos Carousel */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -118,17 +118,17 @@ export default function Products() {
           <p className="text-center text-lg font-bold text-[#111827] mb-12">
             Supporting hardware from every major industry leader.
           </p>
-          
+
           <div className="flex flex-wrap justify-center gap-6 md:gap-10">
             {brands.map((brand, index) => (
-              <div 
-                key={index} 
-                className="group w-32 h-32 md:w-40 md:h-40 rounded-full border border-gray-200 flex flex-col items-center justify-center bg-white hover:bg-[#F5F7FF] hover:border-indigo-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 cursor-pointer"
+              <div
+                key={index}
+                className="group w-32 h-32 md:w-40 md:h-40 rounded-full border border-gray-200 flex flex-col items-center justify-center bg-[#FAF9F6] hover:bg-[#F5F7FF] hover:border-indigo-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 cursor-pointer"
               >
-                <brand.icon 
-                  size={32} 
-                  strokeWidth={1.2} 
-                  className="mb-3 text-gray-400 group-hover:text-indigo-600 transition-colors duration-500" 
+                <brand.icon
+                  size={32}
+                  strokeWidth={1.2}
+                  className="mb-3 text-gray-400 group-hover:text-indigo-600 transition-colors duration-500"
                 />
                 <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-[#64748B] group-hover:text-indigo-700 uppercase transition-colors duration-500">
                   {brand.name}

@@ -19,10 +19,10 @@ export default function Services() {
     <section id="services" className="relative py-24 min-h-[850px] flex items-center overflow-hidden">
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 w-full h-full z-0">
-        <Image 
-          src={images.services.networking} 
-          alt="IT Infrastructure" 
-          fill 
+        <Image
+          src={images.services.networking}
+          alt="IT Infrastructure"
+          fill
           className="object-cover opacity-70 mix-blend-overlay"
           priority
         />
@@ -32,7 +32,7 @@ export default function Services() {
       <div className="max-w-[1400px] mx-auto px-6 relative z-10 w-full">
         {/* Header Section */}
         <div className="flex flex-col items-center text-center mb-16">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -40,8 +40,8 @@ export default function Services() {
           >
             <X size={12} /> Services
           </motion.div>
-          
-          <motion.h2 
+
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -50,8 +50,8 @@ export default function Services() {
           >
             Solutions Crafted for You
           </motion.h2>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -70,7 +70,7 @@ export default function Services() {
             const cardImage = service.image || serviceImages[index % 4];
 
             return (
-              <motion.div 
+              <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -83,10 +83,10 @@ export default function Services() {
                   This fills the top section behind the icon and outline text.
                 */}
                 <div className="absolute top-0 left-0 w-full h-[70%] z-0 overflow-hidden rounded-t-[2rem]">
-                  <Image 
-                    src={cardImage} 
-                    alt={service.title} 
-                    fill 
+                  <Image
+                    src={cardImage}
+                    alt={service.title}
+                    fill
                     className="object-cover opacity-30 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700 ease-out"
                   />
                   {/* Gradient to fade smoothly into the bottom section */}
@@ -95,11 +95,11 @@ export default function Services() {
 
                 {/* Top Section: Icon & Outline Text (z-10 keeps them above the image) */}
                 <div className="flex-1 flex flex-col justify-between z-10 relative">
-                  <div className="w-12 h-12 rounded-full bg-white text-navy flex items-center justify-center shadow-lg ml-2 mt-2">
+                  <div className="w-12 h-12 rounded-full bg-[#FAF9F6] text-navy flex items-center justify-center shadow-lg ml-2 mt-2">
                     <service.icon size={22} strokeWidth={2.5} />
                   </div>
-                  
-                  <h3 
+
+                  <h3
                     className="text-3xl md:text-4xl font-black tracking-widest text-transparent mb-6 ml-2 select-none"
                     style={{ WebkitTextStroke: '1px rgba(255, 255, 255, 0.6)' }}
                   >
@@ -108,10 +108,10 @@ export default function Services() {
                 </div>
 
                 {/* Bottom Section: Solid White Card */}
-                <div className="bg-white p-6 rounded-2xl rounded-br-[3.5rem] w-full relative z-20 shadow-xl group-hover:-translate-y-1 transition-transform duration-500">
+                <div className="bg-[#FAF9F6] p-6 rounded-2xl rounded-br-[3.5rem] w-full relative z-20 shadow-xl group-hover:-translate-y-1 transition-transform duration-500">
                   <h4 className="text-lg md:text-xl font-bold text-navy mb-3 line-clamp-1">{service.title}</h4>
                   <p className="text-muted text-sm mb-6 line-clamp-2 leading-relaxed">{service.description}</p>
-                  
+
                   <Link href="#contact" className="inline-flex items-center gap-2 text-sm font-bold text-navy hover:text-primary transition-colors">
                     <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" /> Read More
                   </Link>
@@ -122,7 +122,7 @@ export default function Services() {
         </div>
 
         {/* Bottom Slider Controls */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -132,12 +132,12 @@ export default function Services() {
           <button className="flex items-center gap-2 hover:text-primary transition-colors opacity-80 hover:opacity-100">
             <ArrowLeft size={16} /> Prev
           </button>
-          
+
           <div className="flex gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
-            <span className="w-1.5 h-1.5 rounded-full bg-white/30"></span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FAF9F6]"></span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FAF9F6]/30"></span>
           </div>
-          
+
           <button className="flex items-center gap-2 hover:text-primary transition-colors opacity-80 hover:opacity-100">
             Next <ArrowRight size={16} />
           </button>

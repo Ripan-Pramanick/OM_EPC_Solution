@@ -6,20 +6,20 @@ import ProductPerformance from '@/components/products/ProductPerformance';
 
 
 export const metadata = {
-  title: 'Products | OM EPC Solution — Computers, UPS, Printers, CCTV & Networking',
-  description: 'Explore computers, laptops, printers, UPS, CCTV, networking equipment and technology products supported by OM EPC Solution.',
+    title: 'Products | OM EPC Solution — Computers, UPS, Printers, CCTV & Networking',
+    description: 'Explore computers, laptops, printers, UPS, CCTV, networking equipment and technology products supported by OM EPC Solution.',
 };
 
 export default function ProductsPage() {
-  return (
-    <main className="min-h-screen bg-white text-[#111827]">
-     
-      <ProductHero />
-      <ProductCatalog />
-      <ProductDiscoveryCTA />
-      <ProductPerformance />
-      
-     
-    </main>
-  );
+    return (
+        <main className="min-h-screen bg-[#FAF9F6] text-[#111827]">
+
+            <ProductHero />
+            <ProductCatalog />
+            <ProductDiscoveryCTA />
+            <ProductPerformance />
+
+
+        </main>
+    );
 }

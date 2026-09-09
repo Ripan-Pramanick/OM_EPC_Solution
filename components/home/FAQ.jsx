@@ -8,7 +8,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="py-24 bg-soft">
+    <section className="py-24 bg-[#FAF9F6]">
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-navy mb-4">Frequently Asked Questions</h2>
@@ -17,8 +17,8 @@ export default function FAQ() {
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-              <button 
+            <div key={index} className="bg-[#FAF9F6] rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+              <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full flex items-center justify-between p-6 text-left"
               >

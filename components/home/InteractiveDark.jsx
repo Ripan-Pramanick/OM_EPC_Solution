@@ -23,9 +23,8 @@ export default function InteractiveDark() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                  activeTab === tab.id ? 'bg-primary text-white' : 'bg-white text-gray-800 hover:bg-blue-100 border border-blue-800'
-                }`}
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${activeTab === tab.id ? 'bg-primary text-white' : 'bg-[#FAF9F6] text-gray-800 hover:bg-blue-100 border border-blue-800'
+                  }`}
               >
                 {tab.label}
               </button>

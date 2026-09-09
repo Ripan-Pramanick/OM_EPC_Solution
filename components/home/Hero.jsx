@@ -13,7 +13,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="w-full pt-28 pb-10 px-4 md:px-8 bg-white">
+    <section className="w-full pt- pb-10 px-4 md:px-8 bg-[#FAF9F6">
      
       <div className="relative w-full max-w-[1600px] mx-auto h-[85vh] min-h-[650px] rounded-[3rem] overflow-hidden shadow-2xl flex items-start justify-end bg-navy border border-gray-100">
         
@@ -34,7 +34,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="bg-soft w-full md:w-[500px] lg:w-[450px] h-[calc(100%-10rem)] min-h-[550px] rounded-b-[3rem] px-8 md:px-12 flex flex-col justify-center relative z-10 md:mr-16 lg:mr-60 shadow-2xl border-b border-gray-200"
+          className="bg-[#FAF9F6] w-full md:w-[500px] lg:w-[450px] h-[calc(100%-10rem)] min-h-[550px] rounded-b-[3rem] px-8 md:px-12 flex flex-col justify-center relative z-10 md:mr-16 lg:mr-60 shadow-2xl border-b border-gray-200"
         >
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -78,7 +78,7 @@ export default function Hero() {
 
             {/* Pill Button */}
             <Link href="#contact">
-            <Button variant="primary">Explore Our Services</Button>
+            <Button>Explore Our Services</Button>
           </Link>
           </motion.div>
         </motion.div>

@@ -8,17 +8,17 @@ export function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
 
-export default function Button({ 
-  children, 
-  variant = "premium", 
-  className, 
+export default function Button({
+  children,
+  variant = "premium",
+  className,
   showArrow = true,
-  ...props 
+  ...props
 }) {
   // 1. Premium Variant (Special Pill Style)
   if (variant === "premium") {
     return (
-      <motion.button 
+      <motion.button
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         className={cn(
@@ -28,9 +28,9 @@ export default function Button({
         {...props}
       >
         {showArrow && (
-          <ArrowRight 
-            size={18} 
-            className="text-navy transition-colors duration-300 group-hover:text-white" 
+          <ArrowRight
+            size={18}
+            className="text-navy transition-colors duration-300 group-hover:text-white"
           />
         )}
         <span className="rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-white transition-colors duration-300 group-hover:bg-navy">
@@ -61,7 +61,7 @@ export default function Button({
       arrow: "group-hover:text-white",
     },
     light: {
-      base: "bg-white text-navy shadow-sm border border-gray-200",
+      base: "bg-[#FAF9F6] text-navy shadow-sm border border-gray-200",
       sweep: "bg-primary",
       text: "group-hover:text-white",
       arrow: "text-navy group-hover:text-white",
@@ -71,24 +71,24 @@ export default function Button({
   const currentStyle = styles[variant] || styles.primary;
 
   return (
-    <motion.button 
-      whileHover={{ scale: 1.02 }} 
+    <motion.button
+      whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={cn(
         "group relative inline-flex h-11 items-center justify-center overflow-hidden rounded-md px-6 py-2 text-sm font-medium transition-all duration-300 ease-in-out hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50",
         currentStyle.base,
         className
-      )} 
+      )}
       {...props}
     >
       {/* Left to Right sliding background */}
-      <span 
+      <span
         className={cn(
           "absolute left-0 top-0 h-full w-0 transition-all duration-300 ease-in-out group-hover:w-full",
           currentStyle.sweep
-        )} 
+        )}
       />
-      
+
       {/* Text & Icon Layer */}
       <span className={cn(
         "relative z-10 flex items-center gap-2 transition-colors duration-300 ease-in-out",
@@ -96,13 +96,13 @@ export default function Button({
       )}>
         {children}
         {showArrow && (
-          <ArrowRight 
-            size={18} 
+          <ArrowRight
+            size={18}
             strokeWidth={2.5}
             className={cn(
               "transition-transform duration-300 ease-in-out group-hover:translate-x-1 text-black",
               currentStyle.arrow
-            )} 
+            )}
           />
         )}
       </span>

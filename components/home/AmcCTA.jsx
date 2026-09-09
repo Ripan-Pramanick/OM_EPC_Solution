@@ -7,7 +7,7 @@ export default function AmcCTA() {
   return (
     <section className="py-20 bg-primary relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
-      
+
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10 text-white">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -15,7 +15,7 @@ export default function AmcCTA() {
           viewport={{ once: true }}
           className="flex flex-col items-center"
         >
-          <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6 backdrop-blur-sm">
+          <div className="w-16 h-16 bg-[#FAF9F6]/20 rounded-full flex items-center justify-center mb-6 backdrop-blur-sm">
             <ShieldCheck size={32} />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Comprehensive IT AMC Support</h2>
@@ -23,8 +23,8 @@ export default function AmcCTA() {
             Protect your investments with our Annual Maintenance Contracts. We offer priority support, routine health checks, and rapid hardware replacements to guarantee zero downtime.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button className="bg-white text-primary hover:bg-gray-50 shadow-lg">View AMC Packages</Button>
-            <Button className="bg-transparent border border-white text-white hover:bg-white/10">Request Audit</Button>
+            <Button className="bg-[#FAF9F6] text-primary hover:bg-gray-50 shadow-lg">View AMC Packages</Button>
+            <Button className="bg-transparent border border-white text-white hover:bg-[#FAF9F6]/10">Request Audit</Button>
           </div>
         </motion.div>
       </div>

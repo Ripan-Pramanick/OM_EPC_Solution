@@ -9,30 +9,30 @@ export default function WhyChooseUs() {
   return (
     // Updated background color to #F5F7FF to match the reference image
     <section className="relative py-24 bg-[#F5F7FF] overflow-hidden">
-      
+
       {/* Subtle Grid Background Pattern replacing the old wireframe */}
       <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#4338CA_1px,transparent_1px),linear-gradient(to_bottom,#4338CA_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
 
       {/* Added relative z-10 to keep content above the grid pattern */}
       <div className="max-w-[1400px] mx-auto px-6 grid lg:grid-cols-[1fr_450px] xl:grid-cols-[1fr_500px] gap-12 lg:gap-16 items-center relative z-10">
-        
+
         {/* Left Column: Content */}
         <div className="relative z-10">
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2 border border-gray-200 bg-white rounded-full px-4 py-1.5 text-xs font-bold text-navy tracking-widest uppercase mb-8 shadow-sm">
+            <div className="inline-flex items-center gap-2 border border-gray-200 bg-[#FAF9F6] rounded-full px-4 py-1.5 text-xs font-bold text-navy tracking-widest uppercase mb-8 shadow-sm">
               <X size={12} className="text-muted" /> WHY CHOOSE US
             </div>
-            
+
             <h2 className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-navy leading-[1.1] mb-6 tracking-tight">
               Discover the Difference We Can Make
             </h2>
-            
+
             <p className="text-muted text-base md:text-lg mb-12 max-w-2xl leading-relaxed">
               Simple and easy to distinguish in a free hour, when our power of choice is untrammelled. We deliver uncompromising IT quality, ensuring your digital and physical infrastructure is resilient and scalable.
             </p>
@@ -40,9 +40,9 @@ export default function WhyChooseUs() {
 
           {/* Middle: 2 Feature Blocks (Half-circle icon design) */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            
+
             {/* Feature 1 */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -66,7 +66,7 @@ export default function WhyChooseUs() {
             </motion.div>
 
             {/* Feature 2 */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -90,7 +90,7 @@ export default function WhyChooseUs() {
           </div>
 
           {/* Bottom: Dark 3-Column Card */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -106,7 +106,7 @@ export default function WhyChooseUs() {
                 Skilled IT professionals configuring resilient and secure enterprise networks.
               </p>
             </div>
-            
+
             {/* Reason 02 */}
             <div>
               <Server className="text-white/80 mb-5" size={28} strokeWidth={1.5} />
@@ -131,17 +131,17 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Right Column: Tall Image */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.8 }}
           className="relative w-full h-[500px] lg:h-full min-h-[700px] rounded-[2rem] overflow-hidden shadow-xl"
         >
-          <Image 
-            src={images.services.cctv} 
-            alt="OM EPC Infrastructure Setup" 
-            fill 
+          <Image
+            src={images.services.cctv}
+            alt="OM EPC Infrastructure Setup"
+            fill
             className="object-cover hover:scale-105 transition-transform duration-1000"
           />
           {/* Subtle overlay for better blending */}

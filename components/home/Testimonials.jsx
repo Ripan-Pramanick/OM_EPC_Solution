@@ -5,7 +5,7 @@ import { Quote } from 'lucide-react';
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-white border-y border-gray-100">
+    <section className="py-24 bg-[#FAF9F6] border-y border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-3">Client Trust</h2>
@@ -14,7 +14,7 @@ export default function Testimonials() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <motion.div 
+            <motion.div
               key={testimonial.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
