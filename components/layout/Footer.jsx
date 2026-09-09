@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
           <div className="md:col-span-12 lg:col-span-5">
             <Link href="/" className="text-2xl font-bold text-white tracking-tight mb-8 block">
-              <Image src="/light_Logo.webp" alt="OM EPC Solution" width={150} height={50} className="w-auto h-auto" />
+              <Image src="/light_logo.webp" alt="OM EPC Solution" width={150} height={50} className="w-auto h-auto" />
             </Link>
             <p className="text-indigo-200 max-w-sm mb-10 leading-relaxed text-sm md:text-base">
               Your trusted partner for comprehensive IT infrastructure, networking, power backup, and security solutions.
