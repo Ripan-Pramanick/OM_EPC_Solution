@@ -142,10 +142,10 @@ export default function ProductCatalog() {
     );
 
     return (
-        <section className="bg-[#FAF9F6] py-12">
+        <section className="bg-emerald-100 py-12">
 
             {/* Category Horizontal Scroll */}
-            <div className="border-b border-gray-100 mb-12 sticky top-[72px] bg-[#FAF9F6]/90 backdrop-blur-md z-40">
+            <div className="border-b border-gray-100 mb-12 sticky top-[72px] bg-emerald-100/90 backdrop-blur-md z-40">
                 <div className="max-w-[1400px] mx-auto px-6">
                     <div className="flex gap-4 overflow-x-auto no-scrollbar py-4">
                         {productCategories.map((cat) => {
@@ -182,7 +182,7 @@ export default function ProductCatalog() {
                         >
                             <motion.div
                                 initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} transition={{ type: 'tween', duration: 0.3 }}
-                                className="absolute right-0 top-0 bottom-0 w-[300px] bg-[#FAF9F6] shadow-2xl p-6 overflow-y-auto"
+                                className="absolute right-0 top-0 bottom-0 w-[300px] bg-emerald-100 shadow-2xl p-6 overflow-y-auto"
                             >
                                 <div className="flex justify-end mb-6">
                                     <button onClick={() => setIsMobileFilterOpen(false)} className="p-2 bg-gray-100 rounded-full text-gray-500 hover:text-gray-900"><X size={20} /></button>
@@ -213,7 +213,7 @@ export default function ProductCatalog() {
                                 <select
                                     value={sortOrder}
                                     onChange={(e) => setSortOrder(e.target.value)}
-                                    className="appearance-none bg-[#FAF9F6] border border-gray-200 text-[#111827] text-sm font-semibold rounded-lg px-4 py-2 pr-10 focus:outline-none focus:border-indigo-500 cursor-pointer"
+                                    className="appearance-none bg-emerald-100 border border-gray-200 text-[#111827] text-sm font-semibold rounded-lg px-4 py-2 pr-10 focus:outline-none focus:border-indigo-500 cursor-pointer"
                                 >
                                     <option value="latest">Sort by: Latest</option>
                                     <option value="price-low">Price: Low to High</option>
@@ -237,7 +237,7 @@ export default function ProductCatalog() {
                                         exit={{ opacity: 0, scale: 0.9 }}
                                         transition={{ duration: 0.3 }}
                                         key={product.id}
-                                        className="group bg-[#FAF9F6] rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-indigo-300 hover:-translate-y-1 transition-all duration-300 flex flex-col"
+                                        className="group bg-emerald-100 rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-indigo-300 hover:-translate-y-1 transition-all duration-300 flex flex-col"
                                     >
                                         <div className="relative w-full aspect-[4/3] bg-[#F8FAFC] p-6 overflow-hidden">
                                             {product.badge && (

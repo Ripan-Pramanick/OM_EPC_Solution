@@ -36,7 +36,7 @@ export default function ProductDiscoveryCTA() {
                     transition={{ duration: 0.6 }}
                     className="flex justify-center mb-8"
                 >
-                    <div className="w-16 h-16 bg-[#FAF9F6]/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20">
+                    <div className="w-16 h-16 bg-emerald-100/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20">
                         <Package size={28} />
                     </div>
                 </motion.div>

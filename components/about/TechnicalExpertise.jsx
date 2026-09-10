@@ -19,7 +19,7 @@ const XIcon = ({ size = 16, className }) => (
 
 export default function TechnicalExpertise() {
     return (
-        <section className="py-24 md:py-32 bg-[#FAF9F6] overflow-hidden">
+        <section className="py-24 md:py-32 bg-emerald-100 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Header Section matching the reference layout */}
@@ -70,7 +70,7 @@ export default function TechnicalExpertise() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
-                            className="group relative w-full h-[400px] md:h-[450px] rounded-t-[1.5rem] bg-[#FAF9F6] overflow-hidden shadow-[0_5px_15px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col cursor-pointer"
+                            className="group relative w-full h-[400px] md:h-[450px] rounded-t-[1.5rem] bg-emerald-100 overflow-hidden shadow-[0_5px_15px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col cursor-pointer"
                         >
                             {/* Top Image Background */}
                             <div className="absolute inset-0 w-full h-full pb-[48px]">
@@ -105,7 +105,7 @@ export default function TechnicalExpertise() {
                             </div>
 
                             {/* Bottom White Footer Bar */}
-                            <div className="relative h-[48px] w-full bg-[#FAF9F6] flex items-center justify-between px-5 z-20 shrink-0">
+                            <div className="relative h-[48px] w-full bg-emerald-100 flex items-center justify-between px-5 z-20 shrink-0">
                                 <div className="absolute top-0 left-4 right-4 h-[1px] bg-gray-100"></div>
                                 <div className="flex items-center gap-2 text-[12px] font-medium text-gray-500">
                                     <Mail size={14} className="text-gray-400" />

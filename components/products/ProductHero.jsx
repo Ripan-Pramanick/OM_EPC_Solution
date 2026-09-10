@@ -73,11 +73,11 @@ export default function ProductHero() {
                         <div className="absolute inset-0 bg-indigo-900/10 mix-blend-overlay" />
                     </div>
 
-                    <div className="absolute left-0 bottom-[10%] w-3/5 h-3/5 rounded-[2rem] bg-[#FAF9F6] overflow-hidden shadow-2xl z-20 border-4 border-white animate-[floating_8s_ease-in-out_infinite_reverse]">
+                    <div className="absolute left-0 bottom-[10%] w-3/5 h-3/5 rounded-[2rem] bg-emerald-100 overflow-hidden shadow-2xl z-20 border-4 border-white animate-[floating_8s_ease-in-out_infinite_reverse]">
                         <Image src={productPageImages.hero.secondary} alt="Business IT" fill className="object-cover" />
                     </div>
 
-                    <div className="absolute top-[20%] -left-8 bg-[#FAF9F6]/95 backdrop-blur-md p-5 rounded-2xl shadow-xl z-30 flex items-center gap-4 border border-indigo-50">
+                    <div className="absolute top-[20%] -left-8 bg-emerald-100/95 backdrop-blur-md p-5 rounded-2xl shadow-xl z-30 flex items-center gap-4 border border-indigo-50">
                         <div className="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-700 shrink-0">
                             <ShieldCheck size={24} />
                         </div>

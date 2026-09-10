@@ -7,7 +7,7 @@ import Button from '@/components/ui/Button';
 
 export default function Foundation() {
     return (
-        <section className="py-24 md:py-32 bg-[#FAF9F6] overflow-hidden">
+        <section className="py-24 md:py-32 bg-emerald-100 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
                 <div className="relative h-[600px] w-full">
@@ -36,7 +36,7 @@ export default function Foundation() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-                        className="absolute top-[10%] -right-4 md:-right-8 bg-[#FAF9F6] p-6 rounded-2xl shadow-xl border border-indigo-50 flex items-center gap-4 z-10"
+                        className="absolute top-[10%] -right-4 md:-right-8 bg-emerald-100 p-6 rounded-2xl shadow-xl border border-indigo-50 flex items-center gap-4 z-10"
                     >
                         <div className="text-4xl font-black text-indigo-700">10+</div>
                         <div className="text-sm font-bold text-[#111827] leading-tight">Years of<br />Technical<br />Experience</div>

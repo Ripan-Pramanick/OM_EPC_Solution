@@ -22,7 +22,7 @@ export default function Products() {
   ];
 
   return (
-    <section id="products" className="py-24 bg-[#FAF9F6] overflow-hidden">
+    <section id="products" className="py-24 bg-emerald-100 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6">
 
         {/* Top Header */}
@@ -40,7 +40,7 @@ export default function Products() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-navy tracking-tight"
+            className="text-4xl md:text-5xl font-bold text-emerald-900 Tracking-tight"
           >
             Products We Support
           </motion.h2>
@@ -56,7 +56,7 @@ export default function Products() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative w-full h-[400px] md:h-[500px] rounded-3xl bg-soft flex items-center justify-center p-8 overflow-hidden"
+            className="relative w-full h-[400px] md:h-[500px] rounded-3xl bg-emerald-200 flex items-center justify-center p-8 overflow-hidden"
           >
             {/* Subtle Grid Pattern for background */}
             <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)]"></div>
@@ -97,7 +97,7 @@ export default function Products() {
               <Button variant="dark">Get a Quote</Button>
 
               {/* Download Brochure Card */}
-              <div className="flex items-center gap-4 p-2 pr-6 rounded-[1.25rem] border border-gray-200 hover:shadow-md hover:border-gray-300 transition-all cursor-pointer bg-[#FAF9F6] group">
+              <div className="flex items-center gap-4 p-2 pr-6 rounded-[1.25rem] border border-gray-200 hover:shadow-md hover:border-gray-300 transition-all cursor-pointer bg-emerald-100 group">
 
 
 
@@ -109,34 +109,33 @@ export default function Products() {
         </div>
 
         {/* Bottom Client / Brand Logos Carousel */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-24 pt-16 border-t border-gray-100"
-        >
-          <p className="text-center text-lg font-bold text-[#111827] mb-12">
-            Supporting hardware from every major industry leader.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
-            {brands.map((brand, index) => (
-              <div
-                key={index}
-                className="group w-32 h-32 md:w-40 md:h-40 rounded-full border border-gray-200 flex flex-col items-center justify-center bg-[#FAF9F6] hover:bg-[#F5F7FF] hover:border-indigo-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 cursor-pointer"
-              >
-                <brand.icon
-                  size={32}
-                  strokeWidth={1.2}
-                  className="mb-3 text-gray-400 group-hover:text-indigo-600 transition-colors duration-500"
-                />
-                <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-[#64748B] group-hover:text-indigo-700 uppercase transition-colors duration-500">
-                  {brand.name}
-                </span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+       <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+ 
+  className="mt-24 bg-emerald-200 rounded-[2rem] py-16 px-6 md:px-12 flex items-center justify-center shadow-xl"
+>
+  <div className="flex flex-wrap justify-center gap-6 md:gap-12 lg:gap-16">
+    {brands.map((brand, index) => (
+      <div
+        key={index}
+       
+        className="group w-32 h-32 md:w-36 md:h-36 rounded-full flex flex-col items-center justify-center bg-emerald-100 hover:bg-emerald-300 hover:shadow-[0_10px_30px_rgba(167,243,208,0.2)] hover:-translate-y-2 transition-all duration-500 cursor-pointer"
+      >
+        <brand.icon
+          size={32}
+          strokeWidth={1.5}
+        
+          className="mb-3 text-emerald-950 transition-transform duration-500 group-hover:scale-110"
+        />
+        <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-emerald-950 uppercase transition-colors duration-500">
+          {brand.name}
+        </span>
+      </div>
+    ))}
+  </div>
+</motion.div>
       </div>
     </section>
   );

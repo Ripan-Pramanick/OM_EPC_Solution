@@ -21,60 +21,85 @@ const Linkedin = ({ size = 20, className }) => (
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 bg-[#FAF9F6]">
+    <section id="contact" className="py-24 bg-emerald-100">
       <div className="max-w-[1400px] mx-auto px-6">
 
-        {/* Inner Light Container */}
-        <div className="relative bg-[#F5F7FF] text-black rounded-[2.5rem] p-8 md:p-12 lg:p-16 overflow-hidden shadow-2xl">
+        {/* Inner Light Container - Converted to Emerald */}
+        <div className="relative bg-emerald-50 text-emerald-950 rounded-[2.5rem] p-8 md:p-12 lg:p-16 overflow-hidden shadow-2xl border border-emerald-200">
 
-          <div className="absolute top-0 right-[20%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 pointer-events-none z-0"></div>
+          {/* Background Flare */}
+          <div className="absolute top-0 right-[20%] w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-3xl -translate-y-1/2 pointer-events-none z-0"></div>
 
           <div className="relative z-10">
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12 text-black"
+              className="mb-12"
             >
-              <div className="inline-flex items-center gap-2 border border-gray-700/20 rounded-full px-4 py-1.5 text-xs font-bold text-gray-700 tracking-widest uppercase mb-6 backdrop-blur-sm">
-                <X size={12} /> GET IN TOUCH
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 border border-emerald-200 bg-emerald-100 rounded-full px-4 py-1.5 text-xs font-bold text-emerald-900 tracking-widest uppercase mb-6 shadow-sm">
+                <X size={12} className="text-emerald-700" /> GET IN TOUCH
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+              
+              <h2 className="text-4xl md:text-5xl font-bold text-emerald-950 mb-4 tracking-tight">
                 Start Your Conversation
               </h2>
-              {/* Changed text color from text-gray-300 to text-gray-600 */}
-              <p className="text-gray-600 text-base md:text-lg max-w-xl">
+              
+              <p className="text-emerald-900/70 text-base md:text-lg max-w-xl">
                 Reach us anytime, let's architect your resilient IT infrastructure together.
               </p>
             </motion.div>
 
             <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-start">
 
+              {/* Form Section */}
               <motion.form
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="bg-[#FAF9F6] rounded-[2rem] p-8 shadow-xl"
+                className="bg-emerald-100/50 border border-emerald-200 rounded-[2rem] p-8 shadow-sm"
                 onSubmit={(e) => e.preventDefault()}
               >
                 <div className="grid md:grid-cols-2 gap-5 mb-5">
-                  <input type="text" placeholder="Name" className="w-full px-5 py-4 bg-transparent border border-gray-200 rounded-xl text-sm font-medium focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" />
-                  <input type="email" placeholder="Email" className="w-full px-5 py-4 bg-transparent border border-gray-200 rounded-xl text-sm font-medium focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" />
+                  <input 
+                    type="text" 
+                    placeholder="Name" 
+                    className="w-full px-5 py-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" 
+                  />
+                  <input 
+                    type="email" 
+                    placeholder="Email" 
+                    className="w-full px-5 py-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" 
+                  />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-5 mb-5">
-                  <input type="text" placeholder="Phone" className="w-full px-5 py-4 bg-transparent border border-gray-200 rounded-xl text-sm font-medium focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" />
-                  <input type="text" placeholder="Subject" className="w-full px-5 py-4 bg-transparent border border-gray-200 rounded-xl text-sm font-medium focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" />
+                  <input 
+                    type="text" 
+                    placeholder="Phone" 
+                    className="w-full px-5 py-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" 
+                  />
+                  <input 
+                    type="text" 
+                    placeholder="Subject" 
+                    className="w-full px-5 py-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" 
+                  />
                 </div>
 
                 <div className="mb-8">
-                  <textarea rows={4} placeholder="Your message" className="w-full px-5 py-4 bg-transparent border border-gray-200 rounded-xl text-sm font-medium focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"></textarea>
+                  <textarea 
+                    rows={4} 
+                    placeholder="Your message" 
+                    className="w-full px-5 py-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors resize-none"
+                  ></textarea>
                 </div>
 
                 <Button variant="premium" className="w-auto">Submit</Button>
               </motion.form>
 
+              {/* Contact Info Section */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -83,45 +108,46 @@ export default function Contact() {
                 className="flex flex-col gap-10 pt-4"
               >
                 <div className="flex gap-4">
-                  <div className="mt-1 text-primary"><MapPin size={24} /></div>
+                  <div className="mt-1 text-emerald-700"><MapPin size={24} /></div>
                   <div>
-                    {/* Changed text-gray-400 to text-gray-500, text-white to text-navy */}
-                    <p className="text-sm text-gray-500 mb-1">Just Visit Us:</p>
-                    <p className="text-base font-bold text-navy">Sector V, Salt Lake,<br />Kolkata, WB 700091</p>
+                    <p className="text-sm text-emerald-900/60 font-medium mb-1">Just Visit Us:</p>
+                    <p className="text-base font-bold text-emerald-950">Sector V, Salt Lake,<br />Kolkata, WB 700091</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="mt-1 text-primary"><Phone size={24} /></div>
+                  <div className="mt-1 text-emerald-700"><Phone size={24} /></div>
                   <div>
-                    <p className="text-sm text-gray-500 mb-1">Need help? Call Us:</p>
-                    <p className="text-base font-bold text-navy">+91 98765 43210</p>
+                    <p className="text-sm text-emerald-900/60 font-medium mb-1">Need help? Call Us:</p>
+                    <p className="text-base font-bold text-emerald-950">+91 98765 43210</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="mt-1 text-primary"><Mail size={24} /></div>
+                  <div className="mt-1 text-emerald-700"><Mail size={24} /></div>
                   <div>
-                    <p className="text-sm text-gray-500 mb-1">Just Mail Us:</p>
-                    <p className="text-base font-bold text-navy">support@omepcsolution.com</p>
+                    <p className="text-sm text-emerald-900/60 font-medium mb-1">Just Mail Us:</p>
+                    <p className="text-base font-bold text-emerald-950">support@omepcsolution.com</p>
                   </div>
                 </div>
 
-                {/* Changed hover:text-white to hover:text-primary for better contrast on hover */}
+                {/* Social Icons */}
                 <div className="flex items-center gap-6 mt-4">
-                  <a href="#" className="text-gray-400 hover:text-primary transition-colors"><Twitter size={20} /></a>
-                  <a href="#" className="text-gray-400 hover:text-primary transition-colors"><Facebook size={20} /></a>
-                  <a href="#" className="text-gray-400 hover:text-primary transition-colors"><Instagram size={20} /></a>
-                  <a href="#" className="text-gray-400 hover:text-primary transition-colors"><Linkedin size={20} /></a>
+                  <a href="#" className="text-emerald-800/40 hover:text-emerald-700 transition-colors"><Twitter size={20} /></a>
+                  <a href="#" className="text-emerald-800/40 hover:text-emerald-700 transition-colors"><Facebook size={20} /></a>
+                  <a href="#" className="text-emerald-800/40 hover:text-emerald-700 transition-colors"><Instagram size={20} /></a>
+                  <a href="#" className="text-emerald-800/40 hover:text-emerald-700 transition-colors"><Linkedin size={20} /></a>
                 </div>
               </motion.div>
 
             </div>
           </div>
 
-          <div className="hidden lg:block absolute -bottom-10 -right-10 w-96 h-96 opacity-30 pointer-events-none z-0">
+          {/* Decorative Image */}
+          <div className="hidden lg:block absolute -bottom-10 -right-10 w-96 h-96 opacity-10 pointer-events-none z-0">
             <Image src={images.services.networking} alt="Decoration" fill className="object-cover rounded-full mix-blend-overlay" />
           </div>
+          
         </div>
       </div>
     </section>

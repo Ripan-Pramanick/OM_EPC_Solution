@@ -7,7 +7,7 @@ import { servicePageImages } from '@/data/images';
 export default function ServicesHero() {
     return (
         // Added pt-28/36 for navbar clearance and px-4/6 for the floating margin
-        <section className="pt-28 md:pt-36 pb-12 px-4 md:px-6 bg-[#FAF9F6]">
+        <section className="pt-28 md:pt-36 pb-12 px-4 md:px-6 bg-emerald-100">
 
             {/* Floating Card Container */}
             <div className="relative max-w-[1400px] mx-auto h-[60vh] md:h-[75vh] min-h-[400px] rounded-[2rem] md:rounded-[3rem] overflow-hidden flex items-center justify-center shadow-2xl">

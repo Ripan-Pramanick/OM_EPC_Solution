@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function AboutHero() {
     return (
-        <section className="pt-28 md:pt-36 pb-12 px-4 md:px-6 bg-[#FAF9F6]">
+        <section className="pt-28 md:pt-36 pb-12 px-4 md:px-6 bg-emerald-100">
 
             <div className="relative max-w-[1400px] mx-auto h-[60vh] md:h-[75vh] min-h-[400px] rounded-[2rem] md:rounded-[3rem] overflow-hidden flex items-center justify-center shadow-2xl">
 

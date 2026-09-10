@@ -49,7 +49,7 @@ export default function ContactCTA() {
                     <Button variant="light" className="w-full sm:w-auto text-indigo-700 group px-8">
                         Get a Free Quote
                     </Button>
-                    <Button variant="outline" className="w-full sm:w-auto text-white border-white hover:bg-[#FAF9F6]/10 px-8">
+                    <Button variant="outline" className="w-full sm:w-auto text-white border-white hover:bg-emerald-100/10 px-8">
                         WhatsApp Us
                     </Button>
                 </motion.div>

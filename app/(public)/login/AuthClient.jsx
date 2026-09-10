@@ -136,10 +136,10 @@ export default function AuthClient() {
             )}
 
             {/* Main Card Container */}
-            <div className="relative w-full max-w-[1000px] h-[850px] md:h-[650px] bg-[#FAF9F6] border border-gray-100 rounded-[2rem] md:rounded-[3rem] shadow-[0_30px_60px_-15px_rgba(67,56,202,0.15)] overflow-hidden flex z-10">
+            <div className="relative w-full max-w-[1000px] h-[850px] md:h-[650px] bg-emerald-100 border border-gray-100 rounded-[2rem] md:rounded-[3rem] shadow-[0_30px_60px_-15px_rgba(67,56,202,0.15)] overflow-hidden flex z-10">
 
                 {/* LEFT PANEL: Register & OTP */}
-                <div className={`absolute top-0 left-0 w-full md:w-1/2 h-full p-8 md:p-14 flex flex-col justify-center bg-[#FAF9F6] transition-all duration-700 ease-in-out z-20 ${isLogin ? 'opacity-0 pointer-events-none -translate-x-full md:translate-x-0' : 'opacity-100 pointer-events-auto translate-x-0 md:translate-x-[100%]'}`}>
+                <div className={`absolute top-0 left-0 w-full md:w-1/2 h-full p-8 md:p-14 flex flex-col justify-center bg-emerald-100 transition-all duration-700 ease-in-out z-20 ${isLogin ? 'opacity-0 pointer-events-none -translate-x-full md:translate-x-0' : 'opacity-100 pointer-events-auto translate-x-0 md:translate-x-[100%]'}`}>
 
                     {isOtpStep ? (
                         <>
@@ -155,8 +155,8 @@ export default function AuthClient() {
 
                             <form onSubmit={handleVerifyOtp} className="space-y-6">
                                 <div className="relative">
-                                    <span className="absolute -top-2.5 left-4 bg-[#FAF9F6] px-2 text-[11px] font-bold text-indigo-700 uppercase tracking-wider z-10">8-Digit OTP</span>
-                                    <div className="flex items-center border border-gray-200 hover:border-indigo-300 focus-within:border-indigo-600 rounded-xl px-4 py-3.5 bg-[#FAF9F6] transition-all">
+                                    <span className="absolute -top-2.5 left-4 bg-emerald-100 px-2 text-[11px] font-bold text-indigo-700 uppercase tracking-wider z-10">8-Digit OTP</span>
+                                    <div className="flex items-center border border-gray-200 hover:border-indigo-300 focus-within:border-indigo-600 rounded-xl px-4 py-3.5 bg-emerald-100 transition-all">
                                         <Lock className="text-gray-400 mr-3 shrink-0" size={18} />
                                         <input
                                             type="text"
@@ -201,31 +201,31 @@ export default function AuthClient() {
                             <form action={handleRegister} className="space-y-5">
                                 <div className="flex gap-4">
                                     <div className="relative w-1/2">
-                                        <span className="absolute -top-2.5 left-4 bg-[#FAF9F6] px-2 text-[10px] font-bold text-indigo-700 uppercase tracking-wider z-10">First Name</span>
-                                        <div className="flex items-center border border-gray-200 hover:border-indigo-300 focus-within:border-indigo-600 rounded-xl px-4 py-3.5 bg-[#FAF9F6] transition-all shadow-sm">
+                                        <span className="absolute -top-2.5 left-4 bg-emerald-100 px-2 text-[10px] font-bold text-indigo-700 uppercase tracking-wider z-10">First Name</span>
+                                        <div className="flex items-center border border-gray-200 hover:border-indigo-300 focus-within:border-indigo-600 rounded-xl px-4 py-3.5 bg-emerald-100 transition-all shadow-sm">
                                             <User className="text-gray-400 mr-3 shrink-0" size={18} />
                                             <input name="firstName" type="text" required className="w-full bg-transparent outline-none text-[14px] text-[#111827] font-medium placeholder:text-gray-400" />
                                         </div>
                                     </div>
                                     <div className="relative w-1/2">
-                                        <span className="absolute -top-2.5 left-4 bg-[#FAF9F6] px-2 text-[10px] font-bold text-indigo-700 uppercase tracking-wider z-10">Last Name</span>
-                                        <div className="flex items-center border border-gray-200 hover:border-indigo-300 focus-within:border-indigo-600 rounded-xl px-4 py-3.5 bg-[#FAF9F6] transition-all shadow-sm">
+                                        <span className="absolute -top-2.5 left-4 bg-emerald-100 px-2 text-[10px] font-bold text-indigo-700 uppercase tracking-wider z-10">Last Name</span>
+                                        <div className="flex items-center border border-gray-200 hover:border-indigo-300 focus-within:border-indigo-600 rounded-xl px-4 py-3.5 bg-emerald-100 transition-all shadow-sm">
                                             <input name="lastName" type="text" required className="w-full bg-transparent outline-none text-[14px] text-[#111827] font-medium placeholder:text-gray-400" />
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="relative">
-                                    <span className="absolute -top-2.5 left-4 bg-[#FAF9F6] px-2 text-[10px] font-bold text-indigo-700 uppercase tracking-wider z-10">Email Address</span>
-                                    <div className="flex items-center border border-gray-200 hover:border-indigo-300 focus-within:border-indigo-600 rounded-xl px-4 py-3.5 bg-[#FAF9F6] transition-all shadow-sm">
+                                    <span className="absolute -top-2.5 left-4 bg-emerald-100 px-2 text-[10px] font-bold text-indigo-700 uppercase tracking-wider z-10">Email Address</span>
+                                    <div className="flex items-center border border-gray-200 hover:border-indigo-300 focus-within:border-indigo-600 rounded-xl px-4 py-3.5 bg-emerald-100 transition-all shadow-sm">
                                         <Mail className="text-gray-400 mr-3 shrink-0" size={18} />
                                         <input name="email" type="email" required className="w-full bg-transparent outline-none text-[14px] text-[#111827] font-medium placeholder:text-gray-400" />
                                     </div>
                                 </div>
 
                                 <div className="relative">
-                                    <span className="absolute -top-2.5 left-4 bg-[#FAF9F6] px-2 text-[10px] font-bold text-indigo-700 uppercase tracking-wider z-10">Password</span>
-                                    <div className="flex items-center border border-gray-200 hover:border-indigo-300 focus-within:border-indigo-600 rounded-xl px-4 py-3.5 bg-[#FAF9F6] transition-all shadow-sm">
+                                    <span className="absolute -top-2.5 left-4 bg-emerald-100 px-2 text-[10px] font-bold text-indigo-700 uppercase tracking-wider z-10">Password</span>
+                                    <div className="flex items-center border border-gray-200 hover:border-indigo-300 focus-within:border-indigo-600 rounded-xl px-4 py-3.5 bg-emerald-100 transition-all shadow-sm">
                                         <Lock className="text-gray-400 mr-3 shrink-0" size={18} />
                                         <input name="password" type={showRegisterPassword ? "text" : "password"} minLength="6" required className="w-full bg-transparent outline-none text-[14px] text-[#111827] font-medium placeholder:text-gray-400" />
                                         <button type="button" onClick={() => setShowRegisterPassword(!showRegisterPassword)} className="text-gray-400 hover:text-indigo-700 transition-colors cursor-pointer">
@@ -264,7 +264,7 @@ export default function AuthClient() {
                 </div>
 
                 {/* LEFT PANEL (VISUALLY): Login */}
-                <div className={`absolute top-0 left-0 w-full md:w-1/2 h-full p-8 md:p-14 flex flex-col justify-center bg-[#FAF9F6] transition-all duration-700 ease-in-out z-20 ${isLogin
+                <div className={`absolute top-0 left-0 w-full md:w-1/2 h-full p-8 md:p-14 flex flex-col justify-center bg-emerald-100 transition-all duration-700 ease-in-out z-20 ${isLogin
                     ? 'opacity-100 pointer-events-auto translate-x-0'
                     : 'opacity-0 pointer-events-none translate-x-[100%]'
                     }`}>
@@ -278,8 +278,8 @@ export default function AuthClient() {
 
                     <form action={handleLogin} className="space-y-6">
                         <div className="relative">
-                            <span className="absolute -top-2.5 left-4 bg-[#FAF9F6] px-2 text-[10px] font-bold text-indigo-700 uppercase tracking-wider z-10">Email Address</span>
-                            <div className="flex items-center border border-gray-200 hover:border-indigo-300 focus-within:border-indigo-600 rounded-xl px-4 py-3.5 bg-[#FAF9F6] transition-all shadow-sm">
+                            <span className="absolute -top-2.5 left-4 bg-emerald-100 px-2 text-[10px] font-bold text-indigo-700 uppercase tracking-wider z-10">Email Address</span>
+                            <div className="flex items-center border border-gray-200 hover:border-indigo-300 focus-within:border-indigo-600 rounded-xl px-4 py-3.5 bg-emerald-100 transition-all shadow-sm">
                                 <Mail className="text-gray-400 mr-3 shrink-0" size={18} />
                                 <input
                                     name="email"
@@ -291,8 +291,8 @@ export default function AuthClient() {
                         </div>
 
                         <div className="relative">
-                            <span className="absolute -top-2.5 left-4 bg-[#FAF9F6] px-2 text-[10px] font-bold text-indigo-700 uppercase tracking-wider z-10">Password</span>
-                            <div className="flex items-center border border-gray-200 hover:border-indigo-300 focus-within:border-indigo-600 rounded-xl px-4 py-3.5 bg-[#FAF9F6] transition-all shadow-sm">
+                            <span className="absolute -top-2.5 left-4 bg-emerald-100 px-2 text-[10px] font-bold text-indigo-700 uppercase tracking-wider z-10">Password</span>
+                            <div className="flex items-center border border-gray-200 hover:border-indigo-300 focus-within:border-indigo-600 rounded-xl px-4 py-3.5 bg-emerald-100 transition-all shadow-sm">
                                 <Lock className="text-gray-400 mr-3 shrink-0" size={18} />
                                 <input
                                     name="password"
@@ -357,7 +357,7 @@ export default function AuthClient() {
 
                         {/* View for Registration overlay */}
                         <div className={`absolute inset-0 flex flex-col items-center justify-center text-center p-12 text-white transition-opacity duration-500 ${isLogin ? 'opacity-100 delay-300' : 'opacity-0 pointer-events-none'}`}>
-                            <div className="w-16 h-16 bg-[#FAF9F6]/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 border border-white/20 shadow-lg">
+                            <div className="w-16 h-16 bg-emerald-100/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 border border-white/20 shadow-lg">
                                 <User size={28} className="text-white" />
                             </div>
                             <h2 className="text-3xl font-bold mb-4 tracking-tight">New to OM EPC?</h2>
@@ -366,7 +366,7 @@ export default function AuthClient() {
                             </p>
                             <button
                                 onClick={() => { setIsLogin(false); setIsOtpStep(false); }}
-                                className="border-2 border-white/50 hover:border-white rounded-xl px-12 py-3.5 font-bold text-[13px] hover:bg-[#FAF9F6] hover:text-indigo-700 transition-all uppercase tracking-widest shadow-lg cursor-pointer"
+                                className="border-2 border-white/50 hover:border-white rounded-xl px-12 py-3.5 font-bold text-[13px] hover:bg-emerald-100 hover:text-indigo-700 transition-all uppercase tracking-widest shadow-lg cursor-pointer"
                             >
                                 Create Account
                             </button>
@@ -374,7 +374,7 @@ export default function AuthClient() {
 
                         {/* View for Login overlay */}
                         <div className={`absolute inset-0 flex flex-col items-center justify-center text-center p-12 text-white transition-opacity duration-500 ${!isLogin ? 'opacity-100 delay-300' : 'opacity-0 pointer-events-none'}`}>
-                            <div className="w-16 h-16 bg-[#FAF9F6]/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 border border-white/20 shadow-lg">
+                            <div className="w-16 h-16 bg-emerald-100/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 border border-white/20 shadow-lg">
                                 <Lock size={28} className="text-white" />
                             </div>
                             <h2 className="text-3xl font-bold mb-4 tracking-tight">One of Us?</h2>
@@ -383,7 +383,7 @@ export default function AuthClient() {
                             </p>
                             <button
                                 onClick={() => { setIsLogin(true); setIsOtpStep(false); }}
-                                className="border-2 border-white/50 hover:border-white rounded-xl px-12 py-3.5 font-bold text-[13px] hover:bg-[#FAF9F6] hover:text-indigo-700 transition-all uppercase tracking-widest shadow-lg cursor-pointer"
+                                className="border-2 border-white/50 hover:border-white rounded-xl px-12 py-3.5 font-bold text-[13px] hover:bg-emerald-100 hover:text-indigo-700 transition-all uppercase tracking-widest shadow-lg cursor-pointer"
                             >
                                 Sign In
                             </button>

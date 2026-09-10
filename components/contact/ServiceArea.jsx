@@ -20,7 +20,7 @@ export default function ServiceArea() {
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 text-[10px] font-bold text-indigo-700 tracking-widest uppercase mb-6 px-4 py-1.5 border border-indigo-100 rounded-full bg-[#FAF9F6] shadow-sm"
+                        className="inline-flex items-center gap-2 text-[10px] font-bold text-indigo-700 tracking-widest uppercase mb-6 px-4 py-1.5 border border-indigo-100 rounded-full bg-emerald-100 shadow-sm"
                     >
                         <X size={12} className="text-indigo-400" /> OUR SERVICE AREA
                     </motion.div>
@@ -51,12 +51,12 @@ export default function ServiceArea() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group bg-[#FAF9F6] rounded-[2rem] border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-indigo-200 transition-all duration-300 flex flex-col md:flex-row"
+                            className="group bg-emerald-100 rounded-[2rem] border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-indigo-200 transition-all duration-300 flex flex-col md:flex-row"
                         >
                             {/* Left Image */}
                             <div className="relative w-full md:w-[350px] h-[250px] md:h-auto bg-gray-100 overflow-hidden shrink-0">
                                 <Image src={contactPageImages.office} alt={loc.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-                                <div className="absolute top-4 left-4 bg-[#FAF9F6]/90 backdrop-blur-sm w-12 h-12 rounded-xl flex items-center justify-center font-bold text-indigo-700 shadow-sm">
+                                <div className="absolute top-4 left-4 bg-emerald-100/90 backdrop-blur-sm w-12 h-12 rounded-xl flex items-center justify-center font-bold text-indigo-700 shadow-sm">
                                     HQ
                                 </div>
                             </div>

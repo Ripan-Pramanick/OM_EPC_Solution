@@ -59,7 +59,7 @@ export default function ServicesCTA() {
                     className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14"
                 >
                     <Button variant="light" className="w-full sm:w-auto text-indigo-700">Get a Free Quote</Button>
-                    <Button variant="outline" className="w-full sm:w-auto text-white border-white hover:bg-[#FAF9F6]/10">Contact Us</Button>
+                    <Button variant="outline" className="w-full sm:w-auto text-white border-white hover:bg-emerald-100/10">Contact Us</Button>
                 </motion.div>
 
                 <motion.div
@@ -73,7 +73,7 @@ export default function ServicesCTA() {
                         <a
                             key={index}
                             href={item.href}
-                            className="flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#FAF9F6]/10 hover:bg-[#FAF9F6]/20 border border-white/20 backdrop-blur-md text-white text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-sm"
+                            className="flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-emerald-100/10 hover:bg-emerald-100/20 border border-white/20 backdrop-blur-md text-white text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-sm"
                         >
                             <item.icon size={16} className="text-indigo-200" />
                             <span>{item.label}</span>

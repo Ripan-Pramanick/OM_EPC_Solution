@@ -15,7 +15,7 @@ export default function AmcCTA() {
           viewport={{ once: true }}
           className="flex flex-col items-center"
         >
-          <div className="w-16 h-16 bg-[#FAF9F6]/20 rounded-full flex items-center justify-center mb-6 backdrop-blur-sm">
+          <div className="w-16 h-16 bg-emerald-100/20 rounded-full flex items-center justify-center mb-6 backdrop-blur-sm">
             <ShieldCheck size={32} />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Comprehensive IT AMC Support</h2>
@@ -23,8 +23,8 @@ export default function AmcCTA() {
             Protect your investments with our Annual Maintenance Contracts. We offer priority support, routine health checks, and rapid hardware replacements to guarantee zero downtime.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button className="bg-[#FAF9F6] text-primary hover:bg-gray-50 shadow-lg">View AMC Packages</Button>
-            <Button className="bg-transparent border border-white text-white hover:bg-[#FAF9F6]/10">Request Audit</Button>
+            <Button className="bg-emerald-100 text-primary hover:bg-gray-50 shadow-lg">View AMC Packages</Button>
+            <Button className="bg-transparent border border-white text-white hover:bg-emerald-100/10">Request Audit</Button>
           </div>
         </motion.div>
       </div>

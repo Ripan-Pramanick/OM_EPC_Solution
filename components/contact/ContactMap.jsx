@@ -8,7 +8,7 @@ export default function ContactMap() {
 
     return (
         // Added vertical/horizontal padding and background to create the floating space
-        <section id="map" className="py-16 md:py-24 px-4 md:px-6 bg-[#FAF9F6]">
+        <section id="map" className="py-16 md:py-24 px-4 md:px-6 bg-emerald-100">
 
             {/* Floating Card Container */}
             <div className="relative max-w-[1400px] mx-auto h-[500px] md:h-[600px] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl bg-gray-100 border border-gray-100/50">
@@ -32,7 +32,7 @@ export default function ContactMap() {
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         whileInView={{ opacity: 1, scale: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="bg-[#FAF9F6]/95 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-2xl border border-gray-100 max-w-sm w-full pointer-events-auto"
+                        className="bg-emerald-100/95 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-2xl border border-gray-100 max-w-sm w-full pointer-events-auto"
                     >
                         <div className="flex justify-between items-start mb-4 border-b border-gray-100 pb-4">
                             <div>

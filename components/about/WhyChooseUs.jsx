@@ -33,7 +33,7 @@ const BlueprintIcon = ({ size = 48, className }) => (
 
 export default function WhyChooseUs() {
     return (
-        <section className="py-24 md:py-32 bg-[#FAF9F6] relative overflow-hidden">
+        <section className="py-24 md:py-32 bg-emerald-100 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 relative z-10">
 
                 {/* Header Section */}
@@ -111,7 +111,7 @@ export default function WhyChooseUs() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="flex justify-center"
                     >
-                        <div className="w-full max-w-[400px] h-[550px] rounded-b-full border border-[#111827] overflow-hidden flex flex-col bg-[#FAF9F6]">
+                        <div className="w-full max-w-[400px] h-[550px] rounded-b-full border border-[#111827] overflow-hidden flex flex-col bg-emerald-100">
 
                             {/* Top Text Half (Left Aligned as requested) */}
                             <div className="pt-10 pb-6 px-8 flex flex-col items-start text-left">

@@ -47,7 +47,7 @@ export default function ProductPerformance() {
                     <Image src={productPageImages.performance} alt="IT Infrastructure Performance" fill className="object-cover" />
                     <div className="absolute inset-0 bg-indigo-900/10 mix-blend-overlay" />
 
-                    <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 bg-[#FAF9F6]/95 backdrop-blur-md p-6 rounded-2xl shadow-xl flex items-center gap-4">
+                    <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 bg-emerald-100/95 backdrop-blur-md p-6 rounded-2xl shadow-xl flex items-center gap-4">
                         <div className="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-700 shrink-0">
                             <ShieldCheck size={24} />
                         </div>

@@ -62,7 +62,7 @@ export default function ServicesCrafted() {
                                 >
                                     <div className={`absolute left-[-2px] top-0 h-full w-[2px] transition-all duration-300 ${isActive ? 'bg-indigo-700' : 'bg-transparent group-hover:bg-indigo-300'}`} />
 
-                                    <div className={`absolute inset-0 rounded-r-2xl transition-all duration-300 ${isActive ? 'bg-[#FAF9F6] shadow-[4px_0_15px_rgba(0,0,0,0.03)]' : 'bg-transparent group-hover:bg-[#FAF9F6]/50'}`} />
+                                    <div className={`absolute inset-0 rounded-r-2xl transition-all duration-300 ${isActive ? 'bg-emerald-100 shadow-[4px_0_15px_rgba(0,0,0,0.03)]' : 'bg-transparent group-hover:bg-emerald-100/50'}`} />
 
                                     <div className="relative z-10 flex items-center gap-6">
                                         <span className={`text-sm font-bold tracking-widest transition-colors ${isActive ? 'text-indigo-700' : 'text-gray-400'}`}>
@@ -82,7 +82,7 @@ export default function ServicesCrafted() {
                     </div>
 
                     {/* RIGHT: Dynamic Image & Content Panel */}
-                    <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-xl bg-[#FAF9F6] border border-gray-100">
+                    <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-xl bg-emerald-100 border border-gray-100">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={activeIndex}
@@ -111,7 +111,7 @@ export default function ServicesCrafted() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.2 }}
-                                    className="absolute bottom-0 left-0 w-[95%] md:w-[90%] xl:w-[85%] bg-[#FAF9F6]/95 backdrop-blur-md rounded-none rounded-tr-[3rem] p-8 md:p-10 shadow-[10px_-10px_30px_rgba(0,0,0,0.05)] border-t border-r border-white"
+                                    className="absolute bottom-0 left-0 w-[95%] md:w-[90%] xl:w-[85%] bg-emerald-100/95 backdrop-blur-md rounded-none rounded-tr-[3rem] p-8 md:p-10 shadow-[10px_-10px_30px_rgba(0,0,0,0.05)] border-t border-r border-white"
                                 >
                                     <div className="flex items-center gap-4 mb-4">
                                         <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-700 border border-indigo-100 shrink-0">
@@ -154,7 +154,7 @@ export default function ServicesCrafted() {
                     {interactiveServices.map((service, index) => {
                         const isActive = activeIndex === index;
                         return (
-                            <div key={service.id} className="bg-[#FAF9F6] rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+                            <div key={service.id} className="bg-emerald-100 rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
                                 <button
                                     onClick={() => setActiveIndex(isActive ? null : index)}
                                     className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"

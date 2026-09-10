@@ -141,7 +141,7 @@ export default function Principles() {
           - Positioned exactly at right: 45% (which is the boundary of the image).
           - Translated 50% to the right to straddle the line perfectly.
         */}
-        <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 right-[45%] translate-x-1/2 z-30 w-[420px] h-[420px] xl:w-[480px] xl:h-[480px] bg-[#FAF9F6] rounded-full shadow-[0_30px_60px_rgba(0,0,0,0.3)] flex-col items-center justify-center p-12 text-center">
+        <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 right-[45%] translate-x-1/2 z-30 w-[420px] h-[420px] xl:w-[480px] xl:h-[480px] bg-emerald-100 rounded-full shadow-[0_30px_60px_rgba(0,0,0,0.3)] flex-col items-center justify-center p-12 text-center">
 
           <AnimatePresence mode="wait">
             <motion.div
@@ -178,7 +178,7 @@ export default function Principles() {
 
       {/* Mobile-only Circle & Image Display */}
       <div className="lg:hidden relative w-full mt-16 px-6 z-20">
-        <div className="relative w-full aspect-square max-w-[400px] mx-auto bg-[#FAF9F6] rounded-full shadow-2xl flex flex-col items-center justify-center p-8 text-center border-4 border-indigo-700">
+        <div className="relative w-full aspect-square max-w-[400px] mx-auto bg-emerald-100 rounded-full shadow-2xl flex flex-col items-center justify-center p-8 text-center border-4 border-indigo-700">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}

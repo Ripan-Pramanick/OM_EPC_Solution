@@ -1,72 +1,132 @@
 "use client";
 import { motion } from 'framer-motion';
-import { Cpu, ShieldCheck, Network } from 'lucide-react';
+import { Server, ShieldCheck, Network, Activity } from 'lucide-react';
 
-// Using internal data to match the new 3-column layout seamlessly.
-// You can move this to your @/data/siteData file if preferred.
-const featureStats = [
+const features = [
   {
+    id: "01",
     title: "Reliable Infrastructure",
-    desc: "Fresh, innovative systems that inspire unique workspaces with uninterrupted purpose.",
-    icon: Cpu
+    desc: "Scalable systems engineered for stability, performance, and long-term growth.",
+    icon: Server
   },
   {
+    id: "02",
     title: "Expert Technical Support",
-    desc: "Technology hardware combining comfort, luxury, and refined professional elegance.",
+    desc: "Professional support that keeps your technology reliable and running smoothly.",
     icon: ShieldCheck
   },
   {
+    id: "03",
     title: "Seamless Connectivity",
-    desc: "Strong, visionary networking structures that redefine modern office spaces.",
+    desc: "High-performance networking that keeps your people, devices, and systems connected.",
     icon: Network
   }
 ];
 
 export default function Stats() {
   return (
-    <section className="w-full bg-[#FAF9F6]">
-      <div className="grid grid-cols-1 md:grid-cols-3 max-w-[1600px] mx-auto">
-        {featureStats.map((stat, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: index * 0.15 }}
-            className="flex flex-col w-full group"
-          >
-            {/* Top Text Section (Light Background) */}
-            <div className="bg-[#FAF9F6] pt-24 pb-12 px-8 flex-1 flex flex-col items-center text-center">
-              <h3 className="text-[22px] font-bold text-[#111827] mb-5 tracking-tight group-hover:text-indigo-700 transition-colors duration-300">
-                {stat.title}
-              </h3>
-              <p className="text-[#64748B] text-[15px] leading-relaxed max-w-[320px]">
-                {stat.desc}
-              </p>
-            </div>
+    <section className="relative w-full py-20 lg:py-28 bg-[#F4F9F7] overflow-hidden">
+      
+      {/* Subtle Technical Grid Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#064e3b_1px,transparent_1px),linear-gradient(to_bottom,#064e3b_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-            {/* Middle Icon Section (Perfectly Split Background) */}
-            <div className="relative w-full h-[180px] flex items-center justify-center">
-              
-              {/* The Seamless Split Background */}
-              <div className="absolute top-0 left-0 w-full h-1/2 bg-[#FAF9F6]" />
-              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-[#F5F7FF]" />
+      {/* Gentle Mint Gradient Overlay for depth */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-emerald-200/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none z-0" />
 
-              {/* Decorative Geometric Elements */}
-              <div className="absolute w-[180px] h-[2px] bg-gray-200 rotate-[45deg] z-10 transition-transform duration-700 group-hover:rotate-[135deg]" />
-              <div className="absolute w-[140px] h-[140px] rounded-full border border-gray-200 z-10" />
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-center">
+          
+          {/* LEFT COLUMN: Content & Understated Visual */}
+          <div className="flex flex-col justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 border border-emerald-200/60 bg-white/60 backdrop-blur-sm rounded-full px-4 py-1.5 text-[10px] font-bold text-emerald-950 tracking-widest uppercase mb-6 shadow-sm w-fit"
+            >
+              WHY EPC
+            </motion.div>
+            
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-emerald-950 tracking-tight leading-[1.1] mb-6"
+            >
+              Infrastructure Built Around Your Business
+            </motion.h2>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-emerald-900/70 text-base md:text-lg leading-relaxed max-w-lg mb-10"
+            >
+              Reliable systems, expert support, and seamless connectivity designed to keep your business connected, protected, and ready to grow.
+            </motion.p>
 
-              {/* Main Icon Container */}
-              <div className="relative z-20 w-[84px] h-[84px] bg-indigo-100 rounded-full border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex items-center justify-center group-hover:border-indigo-100 group-hover:shadow-[0_10px_30px_rgba(67,56,202,0.1)] transition-all duration-500">
-                <stat.icon size={34} className="text-[#334155] group-hover:text-indigo-700 transition-colors duration-500" strokeWidth={1.2} />
+            {/* Subtle Supporting Visual Element (Understated Statistic) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="inline-flex items-center gap-5 p-4 pr-8 bg-white/70 backdrop-blur-md border border-emerald-100 rounded-2xl w-fit"
+            >
+              <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center shrink-0">
+                <Activity size={24} strokeWidth={1.5} />
               </div>
+              <div>
+                <h5 className="text-emerald-950 font-bold text-[22px] leading-none mb-1.5 tracking-tight">
+                  99.9% Uptime
+                </h5>
+                <p className="text-emerald-900/60 text-xs font-bold uppercase tracking-widest">
+                  Guaranteed Reliability
+                </p>
+              </div>
+            </motion.div>
+          </div>
 
-            </div>
+          {/* RIGHT COLUMN: Stacked Feature Items */}
+          <div className="flex flex-col border-t border-emerald-900/10">
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature.id}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                // Thin divider between items
+                className="group flex flex-row items-start gap-5 md:gap-8 py-8 md:py-10 border-b border-emerald-900/10 cursor-default"
+              >
+                {/* Large Subtle Number */}
+                <div className="w-14 md:w-20 shrink-0 pt-1">
+                  <span className="text-4xl md:text-5xl font-bold text-emerald-900/15 group-hover:text-emerald-700 transition-colors duration-500 font-mono">
+                    {feature.id}
+                  </span>
+                </div>
+                
+                {/* Text & Outline Icon */}
+                <div className="flex-1">
+                  <h4 className="flex items-center gap-3 text-xl md:text-[22px] font-bold text-emerald-950 mb-3 group-hover:text-emerald-800 transition-colors duration-300 tracking-tight">
+                    <feature.icon 
+                      size={24} 
+                      strokeWidth={1.5} 
+                      className="text-emerald-700 group-hover:scale-110 transition-transform duration-500 shrink-0" 
+                    />
+                    {feature.title}
+                  </h4>
+                  <p className="text-emerald-900/70 text-sm md:text-base leading-relaxed max-w-md">
+                    {feature.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
 
-            {/* Bottom Padding Area (White Background) */}
-            <div className="bg-[#FAF9F6] h-16 w-full" />
-          </motion.div>
-        ))}
+        </div>
       </div>
     </section>
   );

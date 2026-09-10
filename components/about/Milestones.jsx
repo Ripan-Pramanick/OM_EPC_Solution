@@ -20,7 +20,7 @@ export default function Milestones() {
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 text-[10px] font-bold text-[#111827] tracking-widest uppercase mb-6 px-4 py-1.5 border border-gray-200 rounded-full bg-[#FAF9F6] shadow-sm"
+                        className="inline-flex items-center gap-2 text-[10px] font-bold text-[#111827] tracking-widest uppercase mb-6 px-4 py-1.5 border border-gray-200 rounded-full bg-emerald-100 shadow-sm"
                     >
                         <X size={12} className="text-gray-400" /> OUR ACHIEVEMENTS
                     </motion.div>
@@ -65,7 +65,7 @@ export default function Milestones() {
                         whileInView={{ opacity: 1, scale: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.3 }}
-                        className="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-24 w-[140px] h-[140px] md:w-[240px] md:h-[240px] bg-[#FAF9F6] rounded-full flex flex-col items-center justify-center shadow-[0_10px_40px_rgba(0,0,0,0.1)] p-4 md:p-8 text-center"
+                        className="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-24 w-[140px] h-[140px] md:w-[240px] md:h-[240px] bg-emerald-100 rounded-full flex flex-col items-center justify-center shadow-[0_10px_40px_rgba(0,0,0,0.1)] p-4 md:p-8 text-center"
                     >
                         <Award size={28} className="text-[#111827] mb-2 md:mb-4" strokeWidth={1.5} />
                         <span className="text-[7px] md:text-[10px] font-bold text-gray-500 tracking-widest uppercase mb-1 md:mb-2">TECH AWARDS</span>
@@ -79,7 +79,7 @@ export default function Milestones() {
                         whileInView={{ opacity: 1, scale: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.5 }}
-                        className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-24 w-[140px] h-[140px] md:w-[240px] md:h-[240px] bg-[#FAF9F6] rounded-full flex flex-col items-center justify-center shadow-[0_10px_40px_rgba(0,0,0,0.1)] p-4 md:p-8 text-center"
+                        className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-24 w-[140px] h-[140px] md:w-[240px] md:h-[240px] bg-emerald-100 rounded-full flex flex-col items-center justify-center shadow-[0_10px_40px_rgba(0,0,0,0.1)] p-4 md:p-8 text-center"
                     >
                         <Award size={28} className="text-[#111827] mb-2 md:mb-4" strokeWidth={1.5} />
                         <span className="text-[7px] md:text-[10px] font-bold text-gray-500 tracking-widest uppercase mb-1 md:mb-2">TECH AWARDS</span>

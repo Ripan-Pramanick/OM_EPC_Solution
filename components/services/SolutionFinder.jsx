@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function SolutionFinder() {
     return (
-        <section className="py-24 md:py-32 bg-[#FAF9F6] relative overflow-hidden">
+        <section className="py-24 md:py-32 bg-emerald-100 relative overflow-hidden">
             {/* Subtle technical background grid */}
             <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#4338CA_1px,transparent_1px),linear-gradient(to_bottom,#4338CA_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
@@ -53,7 +53,7 @@ export default function SolutionFinder() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.15 }}
-                            className="group relative bg-[#FAF9F6] rounded-[2.5rem] p-8 md:p-10 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_50px_-15px_rgba(67,56,202,0.15)] hover:-translate-y-2 hover:border-indigo-100 transition-all duration-500 ease-out flex flex-col overflow-hidden z-10"
+                            className="group relative bg-emerald-100 rounded-[2.5rem] p-8 md:p-10 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_50px_-15px_rgba(67,56,202,0.15)] hover:-translate-y-2 hover:border-indigo-100 transition-all duration-500 ease-out flex flex-col overflow-hidden z-10"
                         >
 
                             {/* Premium Watermark Number in Background */}

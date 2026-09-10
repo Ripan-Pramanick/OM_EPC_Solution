@@ -63,7 +63,7 @@ export default function ContactConversation() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="bg-[#FAF9F6] rounded-[2rem] p-8 md:p-10 shadow-2xl relative overflow-hidden"
+                        className="bg-emerald-100 rounded-[2rem] p-8 md:p-10 shadow-2xl relative overflow-hidden"
                     >
                         {isSubmitted ? (
                             <div className="flex flex-col items-center justify-center text-center h-full min-h-[350px] py-12">
@@ -158,10 +158,10 @@ export default function ContactConversation() {
                         transition={{ delay: 0.5 }}
                         className="flex items-center gap-4 mb-16"
                     >
-                        <Link href={contactData.social.facebook} className="w-10 h-10 rounded-full border border-indigo-400/30 flex items-center justify-center text-white hover:bg-[#FAF9F6] hover:text-indigo-700 transition-colors"><X size={14} /></Link>
-                        <Link href={contactData.social.facebook} className="w-10 h-10 rounded-full border border-indigo-400/30 flex items-center justify-center text-white hover:bg-[#FAF9F6] hover:text-indigo-700 transition-colors"><FacebookIcon size={16} /></Link>
-                        <Link href={contactData.social.instagram} className="w-10 h-10 rounded-full border border-indigo-400/30 flex items-center justify-center text-white hover:bg-[#FAF9F6] hover:text-indigo-700 transition-colors"><InstagramIcon size={16} /></Link>
-                        <Link href={contactData.social.youtube} className="w-10 h-10 rounded-full border border-indigo-400/30 flex items-center justify-center text-white hover:bg-[#FAF9F6] hover:text-indigo-700 transition-colors"><YouTubeIcon size={16} /></Link>
+                        <Link href={contactData.social.facebook} className="w-10 h-10 rounded-full border border-indigo-400/30 flex items-center justify-center text-white hover:bg-emerald-100 hover:text-indigo-700 transition-colors"><X size={14} /></Link>
+                        <Link href={contactData.social.facebook} className="w-10 h-10 rounded-full border border-indigo-400/30 flex items-center justify-center text-white hover:bg-emerald-100 hover:text-indigo-700 transition-colors"><FacebookIcon size={16} /></Link>
+                        <Link href={contactData.social.instagram} className="w-10 h-10 rounded-full border border-indigo-400/30 flex items-center justify-center text-white hover:bg-emerald-100 hover:text-indigo-700 transition-colors"><InstagramIcon size={16} /></Link>
+                        <Link href={contactData.social.youtube} className="w-10 h-10 rounded-full border border-indigo-400/30 flex items-center justify-center text-white hover:bg-emerald-100 hover:text-indigo-700 transition-colors"><YouTubeIcon size={16} /></Link>
                     </motion.div>
 
                     {/* Decorative Floating Tech Visual replacing the lamp/plant */}
