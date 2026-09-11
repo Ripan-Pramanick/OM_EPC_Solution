@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import { images } from '@/data/images';
 import { X, ArrowRight, Download, Server, Monitor, Zap, Network } from 'lucide-react';
-import Button from '@/components/ui/Button';
+import Button from '@/components/ui/DarkBtn';
 
 export default function Products() {
   const hardwareList = [
@@ -22,7 +22,7 @@ export default function Products() {
   ];
 
   return (
-    <section id="products" className="py-24 bg-emerald-100 overflow-hidden">
+    <section id="products" className="py-24 bg-emerald-950 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6">
 
         {/* Top Header */}
@@ -31,16 +31,16 @@ export default function Products() {
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 border border-gray-200 rounded-full px-4 py-1.5 text-xs font-bold text-navy tracking-widest uppercase mb-6"
+            className="inline-flex items-center gap-2 border border-gray-200 rounded-full px-4 py-1.5 text-xs font-bold text-emerald-50 tracking-widest uppercase mb-6"
           >
-            <X size={12} className="text-muted" /> HARDWARE DISTRIBUTION
+            <X size={12} className="text-emerald-200" /> HARDWARE DISTRIBUTION
           </motion.div>
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-emerald-900 Tracking-tight"
+            className="text-4xl md:text-5xl font-bold text-emerald-50 Tracking-tight"
           >
             Products We Support
           </motion.h2>
@@ -56,7 +56,7 @@ export default function Products() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative w-full h-[400px] md:h-[500px] rounded-3xl bg-emerald-200 flex items-center justify-center p-8 overflow-hidden"
+            className="relative w-full h-[400px] md:h-[500px] rounded-3xl bg-emerald-100 flex items-center justify-center p-8 overflow-hidden"
           >
             {/* Subtle Grid Pattern for background */}
             <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)]"></div>
@@ -78,64 +78,58 @@ export default function Products() {
             viewport={{ once: true }}
             className="flex flex-col"
           >
-            <h3 className="text-3xl font-bold text-navy mb-4">Enterprise IT Equipment</h3>
-            <p className="text-muted text-base mb-8 leading-relaxed max-w-md">
+            <h3 className="text-3xl font-bold text-emareld-50 mb-4">Enterprise IT Equipment</h3>
+            <p className="text-emerald-100/70 text-base mb-8 leading-relaxed max-w-md">
               Functional and resilient hardware solutions that combine performance, scalability, and security for seamless business continuity.
             </p>
 
             {/* List Items */}
             <ul className="flex flex-col gap-3 mb-10">
               {hardwareList.map((item, index) => (
-                <li key={index} className="flex items-center gap-3 text-sm font-semibold text-navy">
-                  <ArrowRight size={16} className="text-muted" /> {item}
+                <li key={index} className="flex items-center gap-3 text-sm font-semibold text-emerald-100">
+                  <ArrowRight size={16} className="text-emerald-100" /> {item}
                 </li>
               ))}
             </ul>
 
             {/* Action Row */}
             <div className="flex flex-wrap items-center gap-6">
-              <Button variant="dark">Get a Quote</Button>
+              <Button>Get a Quote</Button>
 
-              {/* Download Brochure Card */}
-              <div className="flex items-center gap-4 p-2 pr-6 rounded-[1.25rem] border border-gray-200 hover:shadow-md hover:border-gray-300 transition-all cursor-pointer bg-emerald-100 group">
-
-
-
-
-              </div>
+             
             </div>
           </motion.div>
 
         </div>
 
         {/* Bottom Client / Brand Logos Carousel */}
-       <motion.div
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
- 
-  className="mt-24 bg-emerald-200 rounded-[2rem] py-16 px-6 md:px-12 flex items-center justify-center shadow-xl"
->
-  <div className="flex flex-wrap justify-center gap-6 md:gap-12 lg:gap-16">
-    {brands.map((brand, index) => (
-      <div
-        key={index}
-       
-        className="group w-32 h-32 md:w-36 md:h-36 rounded-full flex flex-col items-center justify-center bg-emerald-100 hover:bg-emerald-300 hover:shadow-[0_10px_30px_rgba(167,243,208,0.2)] hover:-translate-y-2 transition-all duration-500 cursor-pointer"
-      >
-        <brand.icon
-          size={32}
-          strokeWidth={1.5}
-        
-          className="mb-3 text-emerald-950 transition-transform duration-500 group-hover:scale-110"
-        />
-        <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-emerald-950 uppercase transition-colors duration-500">
-          {brand.name}
-        </span>
-      </div>
-    ))}
-  </div>
-</motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+
+          className="mt-24 bg-emerald-200 rounded-[2rem] py-16 px-6 md:px-12 flex items-center justify-center shadow-xl"
+        >
+          <div className="flex flex-wrap justify-center gap-6 md:gap-12 lg:gap-16">
+            {brands.map((brand, index) => (
+              <div
+                key={index}
+
+                className="group w-32 h-32 md:w-36 md:h-36 rounded-full flex flex-col items-center justify-center bg-emerald-100 hover:bg-emerald-300 hover:shadow-[0_10px_30px_rgba(167,243,208,0.2)] hover:-translate-y-2 transition-all duration-500 cursor-pointer"
+              >
+                <brand.icon
+                  size={32}
+                  strokeWidth={1.5}
+
+                  className="mb-3 text-emerald-950 transition-transform duration-500 group-hover:scale-110"
+                />
+                <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-emerald-950 uppercase transition-colors duration-500">
+                  {brand.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
