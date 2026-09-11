@@ -19,19 +19,19 @@ const XIcon = ({ size = 16, className }) => (
 
 export default function TechnicalExpertise() {
     return (
-        <section className="py-24 md:py-32 bg-emerald-100 overflow-hidden">
+        <section className="py-24 md:py-32 bg-emerald-50/40 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
 
-                {/* Header Section matching the reference layout */}
+                {/* Header Section */}
                 <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-12 md:mb-16">
                     <div className="max-w-2xl">
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="inline-flex items-center gap-2 text-[10px] font-bold text-indigo-700 tracking-widest uppercase mb-6 px-4 py-1.5 border border-gray-200 rounded-full"
+                            className="inline-flex items-center gap-2 text-[10px] font-bold text-emerald-800 tracking-widest uppercase mb-6 px-4 py-1.5 border border-emerald-200/80 rounded-full bg-emerald-100/30 backdrop-blur-sm shadow-sm"
                         >
-                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400"><path d="M18 6L6 18M6 6l12 12" /></svg>
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-600"><path d="M18 6L6 18M6 6l12 12" /></svg>
                             OUR EXPERTISE
                         </motion.div>
                         <motion.h2
@@ -39,7 +39,7 @@ export default function TechnicalExpertise() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="text-4xl md:text-5xl font-bold text-[#111827] tracking-tight"
+                            className="text-4xl md:text-5xl font-bold text-emerald-950 tracking-tight"
                         >
                             Our Technical Expertise
                         </motion.h2>
@@ -50,12 +50,12 @@ export default function TechnicalExpertise() {
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="hidden md:flex items-center gap-4 text-sm font-bold text-gray-400"
+                        className="hidden md:flex items-center gap-4 text-sm font-bold text-emerald-600/70"
                     >
-                        <button className="flex items-center gap-1 hover:text-indigo-700 transition-colors">
+                        <button className="flex items-center gap-1 hover:text-emerald-800 transition-colors">
                             <ArrowLeft size={16} /> Prev
                         </button>
-                        <button className="flex items-center gap-1 hover:text-indigo-700 transition-colors">
+                        <button className="flex items-center gap-1 hover:text-emerald-800 transition-colors">
                             Next <ArrowRight size={16} />
                         </button>
                     </motion.div>
@@ -70,7 +70,7 @@ export default function TechnicalExpertise() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
-                            className="group relative w-full h-[400px] md:h-[450px] rounded-t-[1.5rem] bg-emerald-100 overflow-hidden shadow-[0_5px_15px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col cursor-pointer"
+                            className="group relative w-full h-[400px] md:h-[450px] rounded-t-[1.5rem] bg-white overflow-hidden shadow-[0_5px_15px_rgba(4,120,87,0.04)] border border-emerald-100 flex flex-col cursor-pointer"
                         >
                             {/* Top Image Background */}
                             <div className="absolute inset-0 w-full h-full pb-[48px]">
@@ -85,33 +85,33 @@ export default function TechnicalExpertise() {
                             {/* Invisible spacer to push the curved block down */}
                             <div className="flex-1 pointer-events-none"></div>
 
+                            {/* Curved Animated Block */}
+                            <div className="relative w-full h-[200px] group-hover:h-[210px] bg-emerald-50/80 backdrop-blur-sm group-hover:bg-emerald-800 rounded-t-[140px] group-hover:rounded-t-none transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] flex flex-col items-center justify-center p-6 text-center z-10 overflow-hidden">
 
-                            <div className="relative w-full h-[150px] group-hover:h-[210px] bg-[#F4F6F5] group-hover:bg-indigo-700 rounded-t-[60%] group-hover:rounded-t-none transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] flex flex-col items-center justify-center p-6 text-center z-10 overflow-hidden">
-
-                                <h4 className="text-[17px] font-bold text-[#111827] group-hover:text-white transition-colors duration-300 z-20">
+                                <h4 className="text-[17px] font-bold text-emerald-950 group-hover:text-white transition-colors duration-300 z-20">
                                     {card.title}
                                 </h4>
 
-                                <p className="text-[12px] font-medium text-[#64748B] group-hover:text-indigo-200 transition-colors duration-300 mt-1 z-20">
+                                <p className="text-[12px] font-medium text-emerald-700 group-hover:text-emerald-200 transition-colors duration-300 mt-1 z-20">
                                     Core Solutions
                                 </p>
 
-                                {/* Social Icons matching the reference image */}
+                                {/* Social Icons */}
                                 <div className="absolute bottom-6 flex items-center justify-center gap-5 text-white opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out z-20 delay-75">
-                                    <FacebookIcon size={15} className="hover:text-indigo-300 transition-colors" />
-                                    <InstagramIcon size={15} className="hover:text-indigo-300 transition-colors" />
-                                    <XIcon size={14} className="hover:text-indigo-300 transition-colors" />
+                                    <FacebookIcon size={15} className="hover:text-emerald-300 transition-colors" />
+                                    <InstagramIcon size={15} className="hover:text-emerald-300 transition-colors" />
+                                    <XIcon size={14} className="hover:text-emerald-300 transition-colors" />
                                 </div>
                             </div>
 
                             {/* Bottom White Footer Bar */}
-                            <div className="relative h-[48px] w-full bg-emerald-100 flex items-center justify-between px-5 z-20 shrink-0">
-                                <div className="absolute top-0 left-4 right-4 h-[1px] bg-gray-100"></div>
-                                <div className="flex items-center gap-2 text-[12px] font-medium text-gray-500">
-                                    <Mail size={14} className="text-gray-400" />
+                            <div className="relative h-[48px] w-full bg-white flex items-center justify-between px-5 z-20 shrink-0">
+                                <div className="absolute top-0 left-4 right-4 h-[1px] bg-emerald-100"></div>
+                                <div className="flex items-center gap-2 text-[12px] font-medium text-emerald-700">
+                                    <Mail size={14} className="text-emerald-500" />
                                     support@omepc.com
                                 </div>
-                                <ArrowRight size={14} className="text-gray-400 group-hover:text-[#111827] transition-colors duration-300" />
+                                <ArrowRight size={14} className="text-emerald-400 group-hover:text-emerald-800 transition-colors duration-300" />
                             </div>
                         </motion.div>
                     ))}
@@ -125,8 +125,10 @@ export default function TechnicalExpertise() {
                     transition={{ delay: 0.4 }}
                     className="mt-12 md:mt-16 text-center flex justify-center"
                 >
-                    <Link href="#contact" className="inline-flex items-center gap-2 text-sm font-bold text-[#111827] hover:text-indigo-700 transition-colors">
-                        <Button variant="primary">Explore All Expertise</Button>
+                    <Link href="#contact" className="inline-flex items-center gap-2 text-sm font-bold text-emerald-950 hover:text-emerald-700 transition-colors">
+                        <Button>
+                            Explore All Expertise
+                        </Button>
                     </Link>
                 </motion.div>
 

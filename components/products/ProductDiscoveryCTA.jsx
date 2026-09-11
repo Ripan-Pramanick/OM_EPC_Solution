@@ -2,7 +2,7 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { productPageImages } from '@/data/images';
-import Button from '@/components/ui/Button';
+import Button from '@/components/ui/DarkBtn';
 import { ArrowRight, Package, CheckCircle2, DollarSign, HeadphonesIcon } from 'lucide-react';
 
 export default function ProductDiscoveryCTA() {
@@ -14,7 +14,7 @@ export default function ProductDiscoveryCTA() {
     ];
 
     return (
-        <section className="relative py-32 bg-indigo-700 overflow-hidden">
+        <section className="relative py-32 bg-emerald-800 overflow-hidden">
             <div className="absolute inset-0 z-0">
                 <motion.div
                     initial={{ scale: 1.1 }}
@@ -25,7 +25,7 @@ export default function ProductDiscoveryCTA() {
                 >
                     <Image src={productPageImages.discovery} alt="Technology Support" fill className="object-cover opacity-20 mix-blend-overlay" />
                 </motion.div>
-                {/* <div className="absolute inset-0 bg-indigo-800/80 mix-blend-multiply" /> */}
+                <div className="absolute inset-0 bg-emerald-900/80 mix-blend-multiply" />
             </div>
 
             <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
@@ -56,7 +56,7 @@ export default function ProductDiscoveryCTA() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-indigo-100 text-lg md:text-xl mb-12 leading-relaxed max-w-2xl mx-auto"
+                    className="text-emerald-100 text-lg md:text-xl mb-12 leading-relaxed max-w-2xl mx-auto"
                 >
                     Not sure which product is right for your business? Our team can help you choose the correct technology solution.
                 </motion.p>
@@ -68,7 +68,7 @@ export default function ProductDiscoveryCTA() {
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="mb-20"
                 >
-                    <Button variant="light" className="text-indigo-700 group px-8">
+                    <Button>
                         Contact Our Experts
                     </Button>
                 </motion.div>
@@ -83,9 +83,9 @@ export default function ProductDiscoveryCTA() {
                             transition={{ duration: 0.5, delay: 0.4 + (index * 0.1) }}
                             className="text-left"
                         >
-                            <point.icon size={24} className="text-indigo-300 mb-4" />
+                            <point.icon size={24} className="text-emerald-300 mb-4" />
                             <h4 className="text-base font-bold text-white mb-2">{point.title}</h4>
-                            <p className="text-indigo-200 text-sm">{point.desc}</p>
+                            <p className="text-emerald-200 text-sm">{point.desc}</p>
                         </motion.div>
                     ))}
                 </div>

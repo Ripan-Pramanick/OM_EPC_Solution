@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import Link from 'next/link';
+import WebThreads from '@/components/ui/WebThreads';
 
 export default function Hero() {
   const inlineImages = [
@@ -13,7 +14,32 @@ export default function Hero() {
   ];
 
   return (
-    <section className="w-full pb-10 px-4 md:px-8 bg-emerald-100">
+    <section className="w-full pt-22 pb-10 h-screen px-4 md:px-8 bg-emerald-950">
+      <div className="absolute inset-0 w-full h-full">
+            <WebThreads
+              color1="#00ff8b"
+              color2="#00ff10"
+              color3="#00ad26ff"
+              speed={0.2}
+              threadCount={6}
+              frequency={5}
+              spread={0.18}
+              taper={1}
+              position={0.5}
+              fanMode="center"
+              glow={0.02}
+              falloff={0.6}
+              thickness={1.1}
+              brightness={0.6}
+              opacity={1}
+              mirror={true}
+              shimmer={false}
+              grain={true}
+              grainIntensity={0.05}
+              mouseInteraction={true}
+              mouseStrength={0.3}
+            />
+            </div>
 
       <div className="relative w-full max-w-[1600px] mx-auto h-[85vh] min-h-[650px] rounded-[2.5rem] overflow-hidden shadow-2xl flex items-start justify-end bg-emerald-950">
 
@@ -29,12 +55,10 @@ export default function Hero() {
           <div className="absolute inset-0 bg-emerald-950/40 md:bg-transparent" />
         </div>
 
-        {/* The White Docked Card - Made compact (choto) like the image */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          // Height auto and max-width adjusted to make it slim
           className="bg-emerald-50 w-full max-w-[320px] md:max-w-[380px] lg:max-w-[420px] h-auto pt-10 pb-10 px-6 md:px-10 flex flex-col justify-center relative z-10 md:mr-20 lg:mr-48 shadow-2xl rounded-b-[2.5rem] border-b border-emerald-100"
         >
           <motion.div

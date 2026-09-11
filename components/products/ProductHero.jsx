@@ -4,27 +4,58 @@ import Image from 'next/image';
 import { productPageImages } from '@/data/images';
 import Button from '@/components/ui/Button';
 import { ShieldCheck, MonitorSmartphone, HeadphonesIcon, ArrowRight } from 'lucide-react';
+import WebThreads from '@/components/ui/WebThreads';
 
 export default function ProductHero() {
     return (
-        <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-[#EEF2FF]/60 to-white overflow-hidden">
-            <div className="max-w-[1400px] mx-auto px-6 grid xl:grid-cols-2 gap-12 lg:gap-16 items-center">
+        // Outer dark background container
+        <section className="w-full pt-22 pb-10 h-screen px-4 md:px-8 bg-emerald-950">
+            {/* Background WebThreads Animation */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <WebThreads
+          color1="#00ff8b"
+          color2="#00ff10"
+          color3="#00ad26ff"
+          speed={0.2}
+          threadCount={6}
+          frequency={5}
+          spread={0.18}
+          taper={1}
+          position={0.5}
+          fanMode="center"
+          glow={0.02}
+          falloff={0.6}
+          thickness={1.1}
+          brightness={0.6}
+          opacity={1}
+          mirror={true}
+          shimmer={false}
+          grain={true}
+          grainIntensity={0.05}
+          mouseInteraction={true}
+          mouseStrength={0.3}
+        />
+      </div>
+            
+            {/* Inner Floating Light Container matching the image layout */}
+            <div className="relative w-full max-w-[1600px] h-[85vh] mx-auto bg-emerald-100 rounded-[2.5rem] md:rounded-[3rem] px-8 py-12 md:px-12 lg:px-16 grid xl:grid-cols-2 gap-12 lg:gap-16 items-center shadow-2xl overflow-hidden">
 
-                <div className="max-w-2xl">
+                {/* LEFT CONTENT */}
+                <div className="max-w-2xl relative z-10 py-8">
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-5xl lg:text-[4rem] font-bold text-[#111827] leading-[1.1] mb-6 tracking-tight"
+                        className="text-4xl md:text-5xl lg:text-[4rem] font-bold text-emerald-950 leading-[1.1] mb-6 tracking-tight"
                     >
-                        Reliable Technology<br /> Products for <span className="text-indigo-700">Your Business</span>
+                        Reliable Technology<br /> Products for <span className="text-emerald-700">Your Business</span>
                     </motion.h1>
 
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-[#64748B] text-lg md:text-xl leading-relaxed mb-10"
+                        className="text-emerald-900/70 text-lg md:text-xl leading-relaxed mb-10"
                     >
                         Discover a wide range of high-quality computers, UPS, printers, CCTV, networking equipment and more — all in one place.
                     </motion.p>
@@ -35,11 +66,11 @@ export default function ProductHero() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="flex flex-col sm:flex-row items-center gap-4 mb-14"
                     >
-                        <Button variant="primary" className="w-full sm:w-auto shadow-lg hover:shadow-indigo-500/25">
-                            Browse Products
+                        <Button>
+                           Browse Products
                         </Button>
-                        <Button variant="outline" className="w-full sm:w-auto border-gray-300 text-[#111827] hover:bg-gray-50">
-                            Get a Quote
+                        <Button>
+                           Get a Quote
                         </Button>
                     </motion.div>
 
@@ -47,49 +78,53 @@ export default function ProductHero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="flex flex-wrap items-center gap-6 pt-8 border-t border-gray-200"
+                        className="flex flex-wrap items-center gap-6 pt-8 border-t border-emerald-200/60"
                     >
-                        <div className="flex items-center gap-2 text-sm font-semibold text-[#111827]">
-                            <ShieldCheck size={18} className="text-indigo-600" /> 100% Genuine Products
+                        <div className="flex items-center gap-2 text-sm font-semibold text-emerald-900/80">
+                            <ShieldCheck size={18} className="text-emerald-600" /> 100% Genuine Products
                         </div>
-                        <div className="flex items-center gap-2 text-sm font-semibold text-[#111827]">
-                            <MonitorSmartphone size={18} className="text-indigo-600" /> Multi-Brand Availability
+                        <div className="flex items-center gap-2 text-sm font-semibold text-emerald-900/80">
+                            <MonitorSmartphone size={18} className="text-emerald-600" /> Multi-Brand Availability
                         </div>
-                        <div className="flex items-center gap-2 text-sm font-semibold text-[#111827]">
-                            <HeadphonesIcon size={18} className="text-indigo-600" /> Expert Support & Guidance
+                        <div className="flex items-center gap-2 text-sm font-semibold text-emerald-900/80">
+                            <HeadphonesIcon size={18} className="text-emerald-600" /> Expert Support & Guidance
                         </div>
                     </motion.div>
                 </div>
 
+                {/* RIGHT CONTENT: Art-directed composition */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative h-[400px] md:h-[550px] w-full hidden md:block"
+                    className="relative h-[400px] md:h-[500px] w-full hidden xl:block"
                 >
-                    {/* Art-directed composition instead of simple grid */}
-                    <div className="absolute right-0 top-0 w-3/4 h-4/5 rounded-[2.5rem] bg-[#EEF2FF] overflow-hidden shadow-2xl z-10 animate-[floating_6s_ease-in-out_infinite]">
-                        <Image src={productPageImages.hero.main} alt="Technology Infrastructure" fill className="object-cover opacity-90" />
-                        <div className="absolute inset-0 bg-indigo-900/10 mix-blend-overlay" />
+                    {/* Main Back Image */}
+                    <div className="absolute right-0 top-4 w-3/4 h-[85%] rounded-[2rem] overflow-hidden shadow-2xl z-10 animate-[floating_6s_ease-in-out_infinite]">
+                        <Image src={productPageImages.hero.main} alt="Technology Infrastructure" fill className="object-cover" />
+                        <div className="absolute inset-0 bg-emerald-950/20 mix-blend-overlay" />
                     </div>
 
-                    <div className="absolute left-0 bottom-[10%] w-3/5 h-3/5 rounded-[2rem] bg-emerald-100 overflow-hidden shadow-2xl z-20 border-4 border-white animate-[floating_8s_ease-in-out_infinite_reverse]">
+                    {/* Front Overlapping Image */}
+                    <div className="absolute left-0 bottom-[5%] w-[65%] h-[60%] rounded-[1.5rem] bg-emerald-50 overflow-hidden shadow-2xl z-20 border-[6px] border-emerald-100 animate-[floating_8s_ease-in-out_infinite_reverse]">
                         <Image src={productPageImages.hero.secondary} alt="Business IT" fill className="object-cover" />
                     </div>
 
-                    <div className="absolute top-[20%] -left-8 bg-emerald-100/95 backdrop-blur-md p-5 rounded-2xl shadow-xl z-30 flex items-center gap-4 border border-indigo-50">
-                        <div className="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-700 shrink-0">
-                            <ShieldCheck size={24} />
+                    {/* Floating Info Card */}
+                    <div className="absolute top-[25%] -left-6 bg-white/95 backdrop-blur-md p-4 pr-6 rounded-2xl shadow-xl z-30 flex items-center gap-4 border border-emerald-50">
+                        <div className="w-10 h-10 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-600 shrink-0">
+                            <ShieldCheck size={20} />
                         </div>
                         <div>
-                            <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5">Quality Products</p>
-                            <p className="text-sm font-bold text-[#111827]">Stronger Business</p>
+                            <p className="text-[10px] font-bold text-emerald-600/60 uppercase tracking-wider mb-0.5">Quality Products</p>
+                            <p className="text-sm font-bold text-emerald-950">Stronger Business</p>
                         </div>
-                        <div className="w-8 h-8 rounded-full bg-indigo-700 text-white flex items-center justify-center ml-2 cursor-pointer hover:bg-indigo-800 transition-colors">
-                            <ArrowRight size={14} />
+                        <div className="w-7 h-7 rounded-full bg-emerald-700 text-white flex items-center justify-center ml-2 cursor-pointer hover:bg-emerald-800 transition-colors">
+                            <ArrowRight size={12} />
                         </div>
                     </div>
                 </motion.div>
+                
             </div>
         </section>
     );

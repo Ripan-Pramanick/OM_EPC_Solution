@@ -21,7 +21,7 @@ const Linkedin = ({ size = 20, className }) => (
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 bg-emerald-100">
+    <section id="contact" className="py-24 bg-emerald-950">
       <div className="max-w-[1400px] mx-auto px-6">
 
         {/* Inner Light Container - Converted to Emerald */}
@@ -59,7 +59,7 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="bg-emerald-100/50 border border-emerald-200 rounded-[2rem] p-8 shadow-sm"
+                className="bg-emerald-100/50 border border-emerald-900 rounded-[2rem] p-8 shadow-md"
                 onSubmit={(e) => e.preventDefault()}
               >
                 <div className="grid md:grid-cols-2 gap-5 mb-5">

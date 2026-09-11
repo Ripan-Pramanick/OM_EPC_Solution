@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import Button from '../ui/Button';
+import DarkBtn from '../ui/DarkBtn';
 import Image from 'next/image';
 
 export default function Navbar() {
@@ -11,7 +11,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   
   const pathname = usePathname();
-  const logo = "/logo.webp";
+  const logo = "/light_logo.webp";
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -30,13 +30,13 @@ export default function Navbar() {
 
   return (
     <header
-      className={`relative w-full z-50 transition-all duration-300 border-b ${
+      className={`absolute top-0 left-0 w-full z-50 transition-all duration-300 border-b ${
         isScrolled
-          ? 'bg-emerald-100 shadow-sm border-emerald-200 py-3'
-          : 'bg-emerald-100 border-transparent py-5'
+          ? 'bg-emerald-950/90 backdrop-blur-md shadow-lg border-emerald-900/50 py-3'
+          : 'bg-transparent border-transparent py-5'
       }`}
     >
-      <div className="max-w-[1600px] mx-auto px-2 md:px-10 flex items-center justify-between">
+      <div className="max-w-[1600px] mx-auto px-4 md:px-10 flex items-center justify-between">
 
         <div className="flex items-center gap-10">
           <Link href="/" className="flex items-center gap-2 tracking-tight">
@@ -52,10 +52,10 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.path}
-                className={`flex items-center gap-1.5 px-5 py-2.5 rounded-full text-[15px] font-bold transition-all duration-300 ${
+                className={`flex items-center gap-1.5 px-5 py-2.5 rounded-full text-[17px] font-bold transition-all duration-300 ${
                   isActive 
-                    ? 'bg-emerald-950 text-emerald-50 shadow-md' 
-                    : 'text-emerald-950 hover:bg-emerald-950/10' 
+                    ? 'bg-emerald-100/90 text-emerald-950 shadow-sm' 
+                    : 'text-emerald-50 hover:bg-emerald-800/40 hover:text-white' 
                 }`}
               >
                 {link.name}
@@ -66,12 +66,12 @@ export default function Navbar() {
 
         <div className="hidden lg:flex items-center gap-4">
           <Link href="/login">
-            <Button>Login</Button>
+            <DarkBtn>Login</DarkBtn>
           </Link>
         </div>
 
         <button 
-          className="lg:hidden text-emerald-950 hover:text-emerald-700 transition-colors" 
+          className="lg:hidden text-emerald-50 hover:text-white transition-colors" 
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X size={28} /> : <Menu size={28} />}
@@ -79,7 +79,7 @@ export default function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="absolute top-full left-0 right-0 bg-emerald-100 shadow-2xl border-t border-emerald-200 py-6 px-6 flex flex-col gap-4 lg:hidden z-50">
+        <div className="absolute top-full left-0 right-0 bg-emerald-950 shadow-2xl border-t border-emerald-900 py-6 px-6 flex flex-col gap-4 lg:hidden z-50">
           {navLinks.map((link) => {
             const isActive = pathname === link.path || pathname.startsWith(link.path + '/');
             
@@ -89,19 +89,19 @@ export default function Navbar() {
                 href={link.path}
                 className={`font-bold text-lg transition-all duration-300 flex justify-between items-center px-4 py-3 rounded-xl ${
                   isActive 
-                    ? 'bg-emerald-950 text-emerald-50 shadow-md' 
-                    : 'text-emerald-950 hover:bg-emerald-950/10'
+                    ? 'bg-emerald-800 text-white shadow-md' 
+                    : 'text-emerald-100 hover:bg-emerald-800/50 hover:text-white'
                 }`}
                 onClick={() => setMobileOpen(false)}
               >
                 {link.name}
-                <ChevronDown size={16} className={`transition-transform ${isActive ? 'text-emerald-50' : 'text-emerald-800/40'}`} />
+                <ChevronDown size={16} className={`transition-transform ${isActive ? 'text-white' : 'text-emerald-100/50'}`} />
               </Link>
             );
           })}
 
           <Link href="/login" onClick={() => setMobileOpen(false)} className="mt-4">
-            <Button className="w-full justify-center">Login</Button>
+            <DarkBtn className="w-full justify-center">Login</DarkBtn>
           </Link>
         </div>
       )}

@@ -16,7 +16,7 @@ export const metadata = {
 
 export default function AboutPage() {
     return (
-        <main className="min-h-screen bg-emerald-100 text-[#111827]">
+        <main className="flex flex-col w-full">
 
             <AboutHero />
             <Foundation />

@@ -2,7 +2,7 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { aboutImages } from '@/data/images';
-import Button from '@/components/ui/Button';
+import Button from '@/components/ui/DarkBtn';
 import { Phone, Mail } from 'lucide-react';
 
 const WhatsAppIcon = ({ size = 18, className }) => (
@@ -31,10 +31,10 @@ export default function AboutCTA() {
     ];
 
     return (
-        <section className="relative py-32 bg-gradient-to-r from-indigo-600 via-indigo-600 to-indigo-500 overflow-hidden">
+        <section className="relative py-32 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 overflow-hidden">
             <div className="absolute inset-0 z-0">
                 <Image src={aboutImages.cta} alt="Technical Support" fill className="object-cover opacity-15 mix-blend-overlay" />
-                <div className="absolute inset-0 bg-gradient-to-t from-indigo-800/90 to-indigo-700/60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/90 to-emerald-800/60" />
                 <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:40px_40px]" />
             </div>
 
@@ -45,11 +45,11 @@ export default function AboutCTA() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <div className="inline-flex items-center gap-2 text-xs font-bold text-indigo-200 tracking-widest uppercase mb-6">
-                        <span className="w-8 h-px bg-indigo-300"></span> LET'S WORK TOGETHER <span className="w-8 h-px bg-indigo-300"></span>
+                    <div className="inline-flex items-center gap-2 text-xs font-bold text-emerald-200 tracking-widest uppercase mb-6">
+                        <span className="w-8 h-px bg-emerald-400/50"></span> LET'S WORK TOGETHER <span className="w-8 h-px bg-emerald-400/50"></span>
                     </div>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">Need Reliable Technology Support?</h2>
-                    <p className="text-indigo-100 text-lg md:text-xl mb-12 leading-relaxed max-w-2xl mx-auto">
+                    <p className="text-emerald-50 text-lg md:text-xl mb-12 leading-relaxed max-w-2xl mx-auto">
                         Tell us what your business needs and our team will help you find the right solution.
                     </p>
                 </motion.div>
@@ -61,8 +61,8 @@ export default function AboutCTA() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14"
                 >
-                    <Button variant="light" className="w-full sm:w-auto text-indigo-700">Get a Free Quote</Button>
-                    <Button variant="outline" className="w-full sm:w-auto text-white border-white hover:bg-emerald-100/10">Contact Us</Button>
+                    <Button variant="light" className="w-full sm:w-auto text-emerald-800">Get a Free Quote</Button>
+                    <Button variant="outline" className="w-full sm:w-auto text-white border-white hover:bg-white/10">Contact Us</Button>
                 </motion.div>
 
                 {/* Updated Contact Icons Block */}
@@ -77,9 +77,9 @@ export default function AboutCTA() {
                         <a
                             key={index}
                             href={item.href}
-                            className="flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-emerald-100/10 hover:bg-emerald-100/20 border border-white/20 backdrop-blur-md text-white text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-sm"
+                            className="flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-white text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-sm"
                         >
-                            <item.icon size={16} className="text-indigo-200" />
+                            <item.icon size={16} className="text-emerald-200" />
                             <span>{item.label}</span>
                         </a>
                     ))}

@@ -33,7 +33,7 @@ const BlueprintIcon = ({ size = 48, className }) => (
 
 export default function WhyChooseUs() {
     return (
-        <section className="py-24 md:py-32 bg-emerald-100 relative overflow-hidden">
+        <section className="py-24 md:py-32 bg-[#F4F9F7] relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 relative z-10">
 
                 {/* Header Section */}
@@ -44,10 +44,10 @@ export default function WhyChooseUs() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <div className="inline-flex items-center gap-2 text-[10px] font-bold text-indigo-700 tracking-widest uppercase mb-6 px-3 py-1 border border-gray-200 rounded-full">
-                            <X size={12} className="text-gray-400" /> WHY CHOOSE US
+                        <div className="inline-flex items-center gap-2 text-[10px] font-bold text-emerald-800 tracking-widest uppercase mb-6 px-4 py-1.5 border border-emerald-200 bg-emerald-50/50 rounded-full shadow-sm">
+                            <X size={12} className="text-emerald-500" strokeWidth={2.5} /> WHY CHOOSE US
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-bold text-[#111827] tracking-tight leading-[1.1]">
+                        <h2 className="text-4xl md:text-5xl font-bold text-emerald-950 tracking-tight leading-[1.1]">
                             Discover the Difference<br />We Can Make
                         </h2>
                     </motion.div>
@@ -58,7 +58,7 @@ export default function WhyChooseUs() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <p className="text-[#64748B] text-base md:text-lg leading-relaxed max-w-md">
+                        <p className="text-emerald-900/70 text-base md:text-lg leading-relaxed max-w-md">
                             Simple and easy to distinguish. From the right IT product to dependable after-sales support, we focus on making technology easier and more reliable for your business.
                         </p>
                     </motion.div>
@@ -75,16 +75,16 @@ export default function WhyChooseUs() {
                         transition={{ duration: 0.8 }}
                         className="hidden lg:flex flex-col items-center relative h-[500px]"
                     >
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-[300px] bg-gray-800 z-0"></div>
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-[300px] bg-emerald-900/15 z-0"></div>
 
                         <div className="absolute top-[120px] left-1/2 -translate-x-1/2 z-10 flex items-center justify-center">
-                            <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center text-white z-20">
+                            <div className="w-16 h-16 bg-emerald-950 rounded-full flex items-center justify-center text-white z-20 shadow-lg">
                                 <Cpu size={28} strokeWidth={1.5} />
                             </div>
 
                             <svg viewBox="0 0 100 100" className="absolute w-[180px] h-[180px] animate-spin" style={{ animationDuration: '15s' }}>
                                 <path id="textPath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="transparent" />
-                                <text className="text-[9.5px] font-bold fill-gray-600 uppercase tracking-[0.2em]">
+                                <text className="text-[9.5px] font-bold fill-emerald-800/60 uppercase tracking-[0.2em]">
                                     <textPath href="#textPath" startOffset="0%">
                                         RELIABLE IT SOLUTIONS • TECHNICAL SUPPORT •
                                     </textPath>
@@ -93,15 +93,15 @@ export default function WhyChooseUs() {
                         </div>
 
                         <div className="absolute top-[280px] left-1/2 -translate-x-1/2 z-20">
-                            <div className="w-32 h-24 bg-gradient-to-b from-gray-200 via-gray-100 to-white rounded-t-full rounded-b-xl shadow-[0_15px_30px_-5px_rgba(0,0,0,0.1)] relative border border-gray-100 flex items-end justify-center pb-2">
-                                <div className="w-24 h-1.5 bg-indigo-400 rounded-full blur-[2px] opacity-70"></div>
+                            <div className="w-32 h-24 bg-gradient-to-b from-emerald-100 via-emerald-50 to-white rounded-t-full rounded-b-xl shadow-[0_15px_30px_-5px_rgba(4,60,38,0.08)] relative border border-emerald-100 flex items-end justify-center pb-2">
+                                <div className="w-24 h-1.5 bg-emerald-400 rounded-full blur-[2px] opacity-70"></div>
                             </div>
                         </div>
                     </motion.div>
 
                     {/* 
             ==================================================
-            Column 2: Center Pill Card (UPDATED EXACT MATCH)
+            Column 2: Center Pill Card
             ==================================================
           */}
                     <motion.div
@@ -111,20 +111,20 @@ export default function WhyChooseUs() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="flex justify-center"
                     >
-                        <div className="w-full max-w-[400px] h-[550px] rounded-b-full border border-[#111827] overflow-hidden flex flex-col bg-emerald-100">
+                        <div className="w-full max-w-[400px] h-[550px] rounded-b-full border border-emerald-900/10 overflow-hidden flex flex-col bg-white shadow-xl shadow-emerald-950/5">
 
                             {/* Top Text Half (Left Aligned as requested) */}
                             <div className="pt-10 pb-6 px-8 flex flex-col items-start text-left">
-                                <div className="text-gray-700 mb-6">
+                                <div className="text-emerald-800 mb-6">
                                     {/* Using the custom Blueprint icon */}
                                     <BlueprintIcon size={46} />
                                 </div>
-                                <h3 className="text-[2.5rem] font-light text-[#334155] mb-2 leading-none">10+</h3>
-                                <p className="text-[15px] font-bold text-[#111827]">Core IT Solutions</p>
+                                <h3 className="text-[2.5rem] font-light text-emerald-950 mb-2 leading-none tracking-tight">10+</h3>
+                                <p className="text-[15px] font-bold text-emerald-900/80 uppercase tracking-wide">Core IT Solutions</p>
                             </div>
 
                             {/* Bottom Image Half */}
-                            <div className="relative flex-1 w-full bg-gray-100">
+                            <div className="relative flex-1 w-full bg-emerald-50 border-t border-emerald-50">
                                 <Image
                                     src={aboutImages.whyChooseUs || aboutImages.hero}
                                     alt="Technology Experience"
@@ -146,14 +146,14 @@ export default function WhyChooseUs() {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    className="flex items-start gap-5"
+                                    className="flex items-start gap-5 group"
                                 >
-                                    <div className="shrink-0 w-12 h-12 rounded-full bg-[#F5F7FF] flex items-center justify-center text-gray-500 border border-gray-100">
+                                    <div className="shrink-0 w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-700 border border-emerald-100 group-hover:bg-emerald-100 group-hover:scale-110 transition-all duration-300">
                                         <benefit.icon size={20} strokeWidth={1.5} />
                                     </div>
                                     <div>
-                                        <h4 className="text-base font-bold text-[#111827] mb-1.5">{benefit.title}</h4>
-                                        <p className="text-[#64748B] text-sm leading-relaxed">{benefit.desc}</p>
+                                        <h4 className="text-base font-bold text-emerald-950 mb-1.5 tracking-tight group-hover:text-emerald-800 transition-colors">{benefit.title}</h4>
+                                        <p className="text-emerald-900/70 text-sm leading-relaxed">{benefit.desc}</p>
                                     </div>
                                 </motion.div>
                             ))}
@@ -164,15 +164,16 @@ export default function WhyChooseUs() {
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.6 }}
-                            className="mt-12 pt-8 border-t border-gray-100 flex items-center gap-6"
+                            className="mt-12 pt-8 border-t border-emerald-900/10 flex items-center gap-6"
                         >
-                            <svg width="80" height="40" viewBox="0 0 200 80" fill="none" stroke="#111827" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-80">
+                            {/* Signature in Emerald Dark */}
+                            <svg width="80" height="40" viewBox="0 0 200 80" fill="none" stroke="#022c22" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-80">
                                 <path d="M 20 60 C 40 20, 60 20, 80 50 C 90 70, 100 70, 110 40 C 130 10, 150 30, 170 50" />
                                 <path d="M 60 40 L 100 40" />
                             </svg>
                             <div>
-                                <h5 className="font-bold text-[#111827] text-sm mb-0.5">Srijan Das</h5>
-                                <p className="text-xs text-gray-400">Founder & Technical Lead</p>
+                                <h5 className="font-bold text-emerald-950 text-sm mb-0.5 tracking-tight">Srijan Das</h5>
+                                <p className="text-xs text-emerald-900/50 uppercase tracking-widest font-bold">Founder & Technical Lead</p>
                             </div>
                         </motion.div>
                     </div>

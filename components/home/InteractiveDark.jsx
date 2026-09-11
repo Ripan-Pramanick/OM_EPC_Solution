@@ -66,7 +66,7 @@ export default function InteractiveDark() {
               {/* Text Content over Image - CENTERED */}
               <div className="absolute top-[40%] left-0 w-full px-6 flex flex-col items-center text-center z-10">
                 <div className="max-w-2xl">
-                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-emerald-100">
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-emerald-50">
                     {tabs.find(t => t.id === activeTab)?.label}
                   </h3>
                   <p className="text-emerald-100/90 font-medium leading-relaxed text-sm md:text-base lg:text-lg">

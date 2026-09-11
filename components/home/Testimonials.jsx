@@ -30,7 +30,7 @@ export default function Testimonials() {
   return (
     // Section Background: emerald-50
     <section className="py-24 bg-emerald-50">
-      <div className="max-w-[1100px] mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6">
         
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">

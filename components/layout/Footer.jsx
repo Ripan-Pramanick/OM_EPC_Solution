@@ -10,8 +10,8 @@ export default function Footer() {
   if (pathname === '/login') return null;
 
   return (
-    <footer className="text-emerald-50 w-full bg-emerald-100 pt-12 px-4 md:px-6">
-      <div className="bg-emerald-950 rounded-t-[3rem] md:rounded-t-[120px] pt-16 md:pt-20 pb-8 mx-auto max-w-[1400px]">
+    <footer className="text-emerald-50 w-full bg-emerald-50 pt-12 px-4 md:px-6">
+      <div className="bg-emerald-950 rounded-t-[3rem] md:rounded-t-[120px] pt-16 md:pt-20 pb-8 mx-auto max-w-[1600px]">
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
           <div className="md:col-span-12 lg:col-span-5">
             <Link href="/" className="text-2xl font-bold text-emerald-50 tracking-tight mb-8 block">

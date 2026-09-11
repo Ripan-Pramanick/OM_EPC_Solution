@@ -12,13 +12,13 @@ export const metadata = {
 
 export default function ContactPage() {
     return (
-        <main className="min-h-screen bg-emerald-100 text-[#111827]">
+        <main className="min-h-screen">
 
             <ContactHero />
-            <ContactConversation />
             <ServiceArea />
-            <ContactCTA />
-            <ContactMap />
+            
+            <ContactConversation />
+            <ContactMap /><ContactCTA />
 
 
         </main>

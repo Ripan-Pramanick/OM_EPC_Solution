@@ -47,7 +47,7 @@ export default function Industries() {
       <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#064e3b_1px,transparent_1px),linear-gradient(to_bottom,#064e3b_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
 
       {/* Main Content Container - relative z-10 keeps it above the grid */}
-      <div className="relative z-10 max-w-[1000px] mx-auto px-6">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6">
 
         {/* Header Section */}
         <div className="flex flex-col items-center text-center mb-16">
