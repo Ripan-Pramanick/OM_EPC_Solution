@@ -2,6 +2,7 @@
 import { motion } from 'motion/react';
 import { X, ArrowRight, Building2, ShieldCheck, Network } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Button from '@/components/ui/Button';
 
 // Fallback images in case they are not in your images.js
@@ -101,8 +102,9 @@ export default function Industries() {
                   <p className="flex items-center gap-2 text-xs font-medium text-emerald-900/70 mb-6">
                     <ArrowRight size={14} className="text-emerald-950" /> {project.location}
                   </p>
-
+                  <Link href="/contact#contact-form">
                   <Button>Get a Quote</Button>
+                  </Link>
                 </div>
 
               </div>
@@ -123,16 +125,7 @@ export default function Industries() {
           ))}
         </div>
 
-        {/* Load More Button (Bottom Center) */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="mt-16 flex justify-center"
-        >
-          <Button>Load More</Button>
-        </motion.div>
+       
 
       </div>
     </section>

@@ -92,7 +92,7 @@ export default function FAQ() {
               if you still have any questions
             </p>
             <Link 
-              href="#contact" 
+              href="/contact" 
               className="inline-flex items-center gap-2 font-bold text-emerald-950 hover:text-emerald-700 transition-colors"
             >
               <ArrowRight size={18} strokeWidth={2.5} /> Let's Talk!

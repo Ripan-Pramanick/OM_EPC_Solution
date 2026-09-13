@@ -80,9 +80,8 @@ export default function ContactHero() {
             </p>
 
             {/* Pill Button */}
-            <Link href="#contact-form">
-              <Button>Send a Message</Button>
-            </Link>
+            <Button className="cursor-pointer" onClick={() => document.getElementById("contact-form").scrollIntoView({ behavior: "smooth" })}>Get in Touch</Button>
+
           </motion.div>
         </motion.div>
 

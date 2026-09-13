@@ -1,12 +1,88 @@
 "use client";
-import { motion } from 'motion/react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { services } from '@/data/siteData';
 import { ArrowRight, ArrowLeft, X } from 'lucide-react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { images } from '@/data/images';
 
+// Separate Card Component to handle individual expand/collapse state
+const ServiceCard = ({ service, index, cardImage, outlineText }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <motion.div
+      layout
+      initial={{ opacity: 0, y: 30, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: -30, scale: 0.95 }}
+      transition={{ delay: index * 0.1, duration: 0.5 }}
+      // h-fit and min-h added to allow smooth expansion without stretching other cards
+      className="group relative h-fit min-h-[420px] md:min-h-[460px] rounded-[2rem] border border-white/20 p-3 md:p-4 flex flex-col justify-between overflow-hidden bg-white/10 backdrop-blur-md hover:border-white/40 transition-colors duration-500 shadow-2xl"
+    >
+      {/* Inner Card Background Image */}
+      <div className="absolute top-0 left-0 w-full h-[65%] z-0 overflow-hidden rounded-t-[2rem]">
+        <Image
+          src={cardImage}
+          alt={service.title}
+          fill
+          className="object-cover opacity-40 mix-blend-overlay group-hover:opacity-60 group-hover:scale-110 transition-all duration-700 ease-out"
+        />
+        {/* Subtle fade out at the bottom of the image */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40" />
+      </div>
+
+      {/* Top Section: Mint Icon & Outline Text */}
+      <div className="flex-1 flex flex-col justify-start z-10 relative pt-2 pl-2 mb-8">
+        <div className="w-12 h-12 rounded-full bg-[#EAFBF1] text-[#043C26] flex items-center justify-center shadow-lg mb-8 mt-2">
+          <service.icon size={22} strokeWidth={2.5} />
+        </div>
+
+        <h3
+          className="text-3xl md:text-[2rem] font-bold tracking-[0.15em] text-transparent"
+          style={{ WebkitTextStroke: '1px rgba(255, 255, 255, 0.6)' }}
+        >
+          {outlineText}
+        </h3>
+      </div>
+
+      {/* Bottom Section: Solid Light Mint Card */}
+      <motion.div layout className="bg-[#DDFBEA] p-6 rounded-2xl rounded-br-[3rem] w-full relative z-20 shadow-xl group-hover:-translate-y-1 transition-transform duration-500 mt-auto">
+        <motion.h4 layout className="text-lg md:text-xl font-bold text-[#043C26] mb-2">
+          {service.title}
+        </motion.h4>
+        
+        <motion.p 
+          layout 
+          className={`text-[#043C26]/70 text-sm mb-6 leading-relaxed font-medium ${isExpanded ? '' : 'line-clamp-2'}`}
+        >
+          {service.description}
+        </motion.p>
+
+        <button 
+          onClick={() => setIsExpanded(!isExpanded)} 
+          className="inline-flex items-center gap-2 text-sm font-bold text-[#043C26] hover:opacity-70 transition-opacity outline-none"
+        >
+          <ArrowRight 
+            size={16} 
+            strokeWidth={2.5} 
+            className={`transition-transform duration-300 ${isExpanded ? 'rotate-90' : 'group-hover:translate-x-1'}`} 
+          /> 
+          {isExpanded ? 'Read Less' : 'Read More'}
+        </button>
+      </motion.div>
+    </motion.div>
+  );
+};
+
 export default function Services() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const ITEMS_PER_PAGE = 4; // ৪টি করে কার্ড প্রতি পেজে দেখাবে (Desktop-এর জন্য)
+  
+  // ক্যালকুলেশন
+  const totalPages = Math.ceil(services.length / ITEMS_PER_PAGE);
+  const currentServices = services.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
+
   // Mapping fallback images for each card based on the index
   const serviceImages = [
     images.hero?.main || images.services.networking,
@@ -24,11 +100,9 @@ export default function Services() {
           src={images.services.networking}
           alt="IT Infrastructure"
           fill
-        
           className="object-cover opacity-50"
           priority
         />
-        {/* Gradient-এর মাঝখানের অংশটি হালকা (40%) করা হয়েছে */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#070E17]/95 via-[#070E17]/40 to-[#070E17]/95" />
       </div>
 
@@ -66,87 +140,70 @@ export default function Services() {
           </motion.p>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {services.map((service, index) => {
-            const outlineText = service.title.split(' ')[0].toUpperCase();
-            const cardImage = service.image || serviceImages[index % 4];
+        {/* Cards Grid with AnimatePresence for smooth transitions */}
+        <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-start min-h-[460px]">
+          <AnimatePresence mode="popLayout">
+            {currentServices.map((service, index) => {
+              const outlineText = service.title.split(' ')[0].toUpperCase();
+              const cardImage = service.image || serviceImages[index % 4];
 
-            return (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                // Glassmorphism Container
-                className="group relative h-[420px] md:h-[460px] rounded-[2rem] border border-white/20 p-3 md:p-4 flex flex-col justify-between overflow-hidden bg-white/10 backdrop-blur-md hover:border-white/40 transition-colors duration-500 shadow-2xl"
-              >
-                {/* Inner Card Background Image */}
-                <div className="absolute top-0 left-0 w-full h-[65%] z-0 overflow-hidden rounded-t-[2rem]">
-                  <Image
-                    src={cardImage}
-                    alt={service.title}
-                    fill
-                    className="object-cover opacity-40 mix-blend-overlay group-hover:opacity-60 group-hover:scale-110 transition-all duration-700 ease-out"
-                  />
-                  {/* Subtle fade out at the bottom of the image */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40" />
-                </div>
-
-                {/* Top Section: Mint Icon & Outline Text */}
-                <div className="flex-1 flex flex-col justify-between z-10 relative pt-2 pl-2">
-                  <div className="w-12 h-12 rounded-full bg-[#EAFBF1] text-[#043C26] flex items-center justify-center shadow-lg">
-                    <service.icon size={22} strokeWidth={2.5} />
-                  </div>
-
-                  <h3
-                    className="text-3xl md:text-[2rem] font-bold tracking-[0.15em] text-transparent mb-4"
-                    style={{ WebkitTextStroke: '1px rgba(255, 255, 255, 0.6)' }}
-                  >
-                    {outlineText}
-                  </h3>
-                </div>
-
-                {/* Bottom Section: Solid Light Mint Card */}
-                <div className="bg-[#DDFBEA] p-6 rounded-2xl rounded-br-[3rem] w-full relative z-20 shadow-xl group-hover:-translate-y-1 transition-transform duration-500">
-                  <h4 className="text-lg md:text-xl font-bold text-[#043C26] mb-2 line-clamp-1">
-                    {service.title}
-                  </h4>
-                  <p className="text-[#043C26]/70 text-sm mb-6 line-clamp-2 leading-relaxed font-medium">
-                    {service.description}
-                  </p>
-
-                  <Link href="#contact" className="inline-flex items-center gap-2 text-sm font-bold text-[#043C26] hover:opacity-70 transition-opacity">
-                    <ArrowRight size={16} strokeWidth={2.5} className="transition-transform group-hover:translate-x-1" /> Read More
-                  </Link>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Bottom Slider Controls */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-          className="flex items-center justify-center gap-8 mt-16 text-white text-sm font-bold"
-        >
-          <button className="flex items-center gap-2 hover:text-[#9CF3C6] transition-colors opacity-70 hover:opacity-100">
-            <ArrowLeft size={16} strokeWidth={2.5} /> Prev
-          </button>
-
-          <div className="flex gap-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#9CF3C6]"></span>
-            <span className="w-1.5 h-1.5 rounded-full bg-white/30"></span>
-          </div>
-
-          <button className="flex items-center gap-2 hover:text-[#9CF3C6] transition-colors opacity-70 hover:opacity-100">
-            Next <ArrowRight size={16} strokeWidth={2.5} />
-          </button>
+              return (
+                <ServiceCard 
+                  key={service.id} 
+                  service={service} 
+                  index={index} 
+                  cardImage={cardImage} 
+                  outlineText={outlineText} 
+                />
+              );
+            })}
+          </AnimatePresence>
         </motion.div>
+
+        {/* Bottom Slider Controls (Dynamic) */}
+        {totalPages > 1 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+            className="flex items-center justify-center gap-8 mt-16 text-white text-sm font-bold"
+          >
+            {/* Previous Button */}
+            <button 
+              onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+              disabled={currentPage === 1}
+              className="flex items-center gap-2 hover:text-[#9CF3C6] transition-colors opacity-70 hover:opacity-100 disabled:opacity-30 disabled:hover:text-white cursor-pointer disabled:cursor-not-allowed"
+            >
+              <ArrowLeft size={16} strokeWidth={2.5} /> Prev
+            </button>
+
+            {/* Dynamic Dots Indicator */}
+            <div className="flex gap-3">
+              {[...Array(totalPages)].map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentPage(i + 1)}
+                  aria-label={`Go to page ${i + 1}`}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    currentPage === i + 1 
+                      ? 'w-6 bg-[#9CF3C6]' // Active dot is pill-shaped and mint color
+                      : 'w-2 bg-white/30 hover:bg-white/60'
+                  }`}
+                />
+              ))}
+            </div>
+
+            {/* Next Button */}
+            <button 
+              onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+              disabled={currentPage === totalPages}
+              className="flex items-center gap-2 hover:text-[#9CF3C6] transition-colors opacity-70 hover:opacity-100 disabled:opacity-30 disabled:hover:text-white cursor-pointer disabled:cursor-not-allowed"
+            >
+              Next <ArrowRight size={16} strokeWidth={2.5} />
+            </button>
+          </motion.div>
+        )}
         
       </div>
     </section>

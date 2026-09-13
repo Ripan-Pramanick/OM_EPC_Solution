@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'motion/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { productPageImages } from '@/data/images';
 import Button from '@/components/ui/DarkBtn';
 import { ArrowRight, Package, CheckCircle2, DollarSign, HeadphonesIcon } from 'lucide-react';
@@ -68,9 +69,11 @@ export default function ProductDiscoveryCTA() {
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="mb-20"
                 >
-                    <Button>
-                        Contact Our Experts
-                    </Button>
+                    <Link href="/contact/#contact-form">
+                        <Button>
+                            Contact Our Experts
+                        </Button>
+                    </Link>
                 </motion.div>
 
                 <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/20 pt-12">

@@ -125,7 +125,7 @@ export default function TechnicalExpertise() {
                     transition={{ delay: 0.4 }}
                     className="mt-12 md:mt-16 text-center flex justify-center"
                 >
-                    <Link href="#contact" className="inline-flex items-center gap-2 text-sm font-bold text-emerald-950 hover:text-emerald-700 transition-colors">
+                    <Link href="/services" className="inline-flex items-center gap-2 text-sm font-bold text-emerald-950 hover:text-emerald-700 transition-colors">
                         <Button>
                             Explore All Expertise
                         </Button>

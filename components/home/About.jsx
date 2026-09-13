@@ -136,7 +136,7 @@ export default function About() {
             </p>
             
             {/* CTA */}
-            <Link href="#contact" className="inline-flex items-center gap-2 font-bold text-emerald-950 hover:text-emerald-700 transition-colors group text-lg pb-1 border-b-2 border-emerald-900 w-fit">
+            <Link href="/about" className="inline-flex items-center gap-2 font-bold text-emerald-950 hover:text-emerald-700 transition-colors group text-lg pb-1 border-b-2 border-emerald-900 w-fit">
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               More About Us
             </Link>

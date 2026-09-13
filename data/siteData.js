@@ -56,23 +56,77 @@ export const projects = [
 ];
 
 export const testimonials = [
-  {
+ {
     id: 1,
-    quote: "Their AMC service has completely eliminated our hardware downtime. The technical team is incredibly responsive and proactive.",
-    author: "Rahul Sharma",
-    role: "Operations Director"
+    author: "Rajesh Sharma",
+    role: "IT Head, TechMahindra",
+    rating: "5.0",
+    title: "Exceptional IT Infrastructure!",
+    text: "OM EPC Solution completely revamped our data center. Their expertise in server management and networking is unmatched. Highly reliable partner!",
+    image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=150&h=150"
   },
   {
     id: 2,
-    quote: "From the initial UPS sizing to the final deployment, OM EPC handled our entire power backup migration flawlessly.",
     author: "Priya Desai",
-    role: "Facility Manager"
+    role: "Operations Manager, TCS",
+    rating: "4.9",
+    title: "Flawless CCTV Installation",
+    text: "Security was our top priority. The team installed a comprehensive CCTV network across our campus with zero downtime. Very professional approach.",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150&h=150"
   },
   {
     id: 3,
-    quote: "The structured cabling and network upgrade provided a massive boost to our internal operations. Highly recommended.",
     author: "Amit Patel",
-    role: "IT Head"
+    role: "Founder, StartupHub India",
+    rating: "4.8",
+    title: "Great Support & Service",
+    text: "We procured all our office laptops and workstations from them. Their after-sales support and warranty management are truly hassle-free.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150"
+  },
+  {
+    id: 4,
+    author: "Sneha Reddy",
+    role: "Admin Head, Apollo Hospitals",
+    rating: "5.0",
+    title: "Robust Power Solutions",
+    text: "Our facility needs uninterrupted power. OM EPC provided industrial-grade UPS setups that have been working perfectly. Excellent technical team!",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=150&h=150"
+  },
+  {
+    id: 5,
+    author: "Vikram Singh",
+    role: "Director, BuildTech Constructions",
+    rating: "4.7",
+    title: "Seamless Networking",
+    text: "Setting up the network architecture for our new corporate office was a huge task. They made it look easy and delivered right on schedule.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150"
+  },
+  {
+    id: 6,
+    author: "Ananya Iyer",
+    role: "CTO, FinServe Pvt Ltd",
+    rating: "4.9",
+    title: "Highly Trustworthy",
+    text: "Finding a vendor who understands enterprise-grade hardware is tough. OM EPC Solution exceeded our expectations with their server solutions.",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150&h=150"
+  },
+  {
+    id: 7,
+    author: "Rohan Gupta",
+    role: "Facility Manager, WeWork",
+    rating: "4.8",
+    title: "End-to-End Perfection",
+    text: "From routing cables to setting up biometric access and Wi-Fi access points, the execution was remarkably clean and efficient. Great job!",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150"
+  },
+  {
+    id: 8,
+    author: "Neha Kapoor",
+    role: "Procurement Lead, Flipkart",
+    rating: "5.0",
+    title: "Best IT Partner!",
+    text: "We've been partnering with them for all our hardware needs for over two years now. Always on time, always transparent with pricing.",
+    image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80&w=150&h=150"
   }
 ];
 

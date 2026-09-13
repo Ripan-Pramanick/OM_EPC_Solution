@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'motion/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { productPageImages } from '@/data/images';
 import Button from '@/components/ui/Button';
 import { ShieldCheck, MonitorSmartphone, HeadphonesIcon, ArrowRight } from 'lucide-react';
@@ -11,32 +12,32 @@ export default function ProductHero() {
         // Outer dark background container
         <section className="w-full pt-22 pb-10 h-screen px-4 md:px-8 bg-emerald-950">
             {/* Background WebThreads Animation */}
-      <div className="absolute inset-0 w-full h-full z-0">
-        <WebThreads
-          color1="#00ff8b"
-          color2="#00ff10"
-          color3="#00ad26ff"
-          speed={0.2}
-          threadCount={6}
-          frequency={5}
-          spread={0.18}
-          taper={1}
-          position={0.5}
-          fanMode="center"
-          glow={0.02}
-          falloff={0.6}
-          thickness={1.1}
-          brightness={0.6}
-          opacity={1}
-          mirror={true}
-          shimmer={false}
-          grain={true}
-          grainIntensity={0.05}
-          mouseInteraction={true}
-          mouseStrength={0.3}
-        />
-      </div>
-            
+            <div className="absolute inset-0 w-full h-full z-0">
+                <WebThreads
+                    color1="#00ff8b"
+                    color2="#00ff10"
+                    color3="#00ad26ff"
+                    speed={0.2}
+                    threadCount={6}
+                    frequency={5}
+                    spread={0.18}
+                    taper={1}
+                    position={0.5}
+                    fanMode="center"
+                    glow={0.02}
+                    falloff={0.6}
+                    thickness={1.1}
+                    brightness={0.6}
+                    opacity={1}
+                    mirror={true}
+                    shimmer={false}
+                    grain={true}
+                    grainIntensity={0.05}
+                    mouseInteraction={true}
+                    mouseStrength={0.3}
+                />
+            </div>
+
             {/* Inner Floating Light Container matching the image layout */}
             <div className="relative w-full max-w-[1600px] h-[85vh] mx-auto bg-emerald-100 rounded-[2.5rem] md:rounded-[3rem] px-8 py-12 md:px-12 lg:px-16 grid xl:grid-cols-2 gap-12 lg:gap-16 items-center shadow-2xl overflow-hidden">
 
@@ -66,12 +67,16 @@ export default function ProductHero() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="flex flex-col sm:flex-row items-center gap-4 mb-14"
                     >
-                        <Button>
-                           Browse Products
-                        </Button>
-                        <Button>
-                           Get a Quote
-                        </Button>
+                        <Link href="#products">
+                            <Button>
+                                Browse Products
+                            </Button>
+                        </Link>
+                        <Link href="/contact#contact-form">
+                            <Button>
+                                Get a Quote
+                            </Button>
+                        </Link>
                     </motion.div>
 
                     <motion.div
@@ -124,7 +129,7 @@ export default function ProductHero() {
                         </div>
                     </div>
                 </motion.div>
-                
+
             </div>
         </section>
     );

@@ -79,10 +79,7 @@ export default function SolutionFinder() {
 
                                 {/* Separated CTA Area */}
                                 <div className="mt-auto pt-6 border-t border-emerald-50 group-hover:border-emerald-100 transition-colors duration-300">
-                                    <Link href="#services" className="inline-flex items-center gap-2 text-sm font-bold text-emerald-950 group-hover:text-emerald-700 transition-colors">
-                                        {item.cta}
-                                        <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
-                                    </Link>
+                                    
                                 </div>
 
                             </div>

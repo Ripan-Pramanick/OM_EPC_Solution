@@ -79,5 +79,5 @@ export const contactPageImages = {
   // Tech visual for the conversation section
   visual: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80", 
   office: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80",
-  cta: "https://images.unsplash.com/photo-1581092926214-7eb356f932e6?auto=format&fit=crop&q=80"
+  cta: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80"
 };

@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${manrope.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-emerald-100 text-emerald-950 font-sans">
+      <body className="min-h-full flex flex-col bg-emerald-100 text-emerald-950 font-helvetica">
         {children}
       </body>
     </html>

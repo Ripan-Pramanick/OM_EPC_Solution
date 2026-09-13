@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import { contactPageImages } from '@/data/images';
 import { contactData } from '@/data/contactData';
-import { X, MapPin, Phone, Mail, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { X, MapPin, Phone, Mail, ArrowRight, CheckCircle2, AlertCircle } from 'lucide-react';
 import Button from '@/components/ui/Button';
 
 // Custom Social SVGs
@@ -16,7 +16,10 @@ const YouTubeIcon = ({ size = 18, className }) => <svg xmlns="http://www.w3.org/
 export default function ContactConversation() {
     const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
     const [errors, setErrors] = useState({});
+    
+    // Added API states
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [status, setStatus] = useState({ loading: false, error: '' });
 
     const validateForm = () => {
         let newErrors = {};
@@ -28,12 +31,32 @@ export default function ContactConversation() {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        
         if (validateForm()) {
-            setIsSubmitted(true);
-            setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-            setTimeout(() => setIsSubmitted(false), 5000);
+            setStatus({ loading: true, error: '' });
+            
+            try {
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData),
+                });
+
+                if (res.ok) {
+                    setStatus({ loading: false, error: '' });
+                    setIsSubmitted(true);
+                    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+                    
+                    // Hide success message and show form again after 5 seconds
+                    setTimeout(() => setIsSubmitted(false), 5000);
+                } else {
+                    setStatus({ loading: false, error: 'Something went wrong. Please try again.' });
+                }
+            } catch (error) {
+                setStatus({ loading: false, error: 'Network error. Please check your connection.' });
+            }
         }
     };
 
@@ -98,9 +121,20 @@ export default function ContactConversation() {
                                     {errors.message && <p className="text-red-500 text-xs mt-1.5 ml-1">{errors.message}</p>}
                                 </div>
 
+                                {/* API Error Message Display */}
+                                {status.error && (
+                                    <div className="flex items-center gap-2 text-red-600 bg-red-50 p-3 rounded-lg text-sm font-bold border border-red-100 mt-2">
+                                        <AlertCircle size={18} /> {status.error}
+                                    </div>
+                                )}
+
                                 <div className="mt-2">
-                                    <Button>
-                                        Send Message
+                                    <Button 
+                                        type="submit"
+                                        disabled={status.loading}
+                                        className={status.loading ? 'opacity-70 cursor-not-allowed' : ''}
+                                    >
+                                        {status.loading ? 'Sending...' : 'Send Message'}
                                     </Button>
                                 </div>
                             </form>

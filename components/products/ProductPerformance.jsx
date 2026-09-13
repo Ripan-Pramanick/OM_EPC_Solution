@@ -29,7 +29,7 @@ const ProgressBar = ({ label, percentage, delay }) => {
 
 export default function ProductPerformance() {
     return (
-        <section className="py-24 md:py-32 bg-emerald-50/40 relative overflow-hidden">
+        <section className="py-24 md:py-32 bg-emerald-50 relative overflow-hidden">
 
             {/* Emerald Grid Background Pattern */}
             <div className="absolute inset-0 opacity-[0.4] bg-[linear-gradient(to_right,#10b98110_1px,transparent_1px),linear-gradient(to_bottom,#10b98110_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />

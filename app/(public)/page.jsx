@@ -11,6 +11,7 @@ import AmcCTA from '@/components/home/AmcCTA';
 import Testimonials from '@/components/home/Testimonials';
 import FAQ from '@/components/home/FAQ';
 import Contact from '@/components/home/Contact';
+import OurClients from '@/components/ui/OurClients';
 
 export default function Home() {
   return (
@@ -24,9 +25,11 @@ export default function Home() {
       <InteractiveDark />
       <WhyChooseUs />
       <Products />
+      
       <Industries />
       <Projects />
-      {/* <AmcCTA /> */}
+      <OurClients />
+      
       <Testimonials />
       <Contact />
       <FAQ />

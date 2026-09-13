@@ -1,0 +1,37 @@
+import nodemailer from 'nodemailer';
+import { NextResponse } from 'next/server';
+
+export async function POST(request) {
+  try {
+    const { name, email, phone, subject, message } = await request.json();
+
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      subject: `New Lead from OM EPC Website: ${subject}`,
+      html: `
+        <h3>New Contact Form Submission</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Subject:</strong> ${subject}</p>
+        <p><strong>Message:</strong><br/>${message}</p>
+      `,
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
+  } catch (error) {
+    console.error('Failed to send email:', error);
+    return NextResponse.json({ error: 'Failed to send email.' }, { status: 500 });
+  }
+}

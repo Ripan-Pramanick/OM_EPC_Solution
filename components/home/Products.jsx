@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'motion/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { images } from '@/data/images';
 import { X, ArrowRight, Download, Server, Monitor, Zap, Network } from 'lucide-react';
 import Button from '@/components/ui/DarkBtn';
@@ -94,16 +95,17 @@ export default function Products() {
 
             {/* Action Row */}
             <div className="flex flex-wrap items-center gap-6">
-              <Button>Get a Quote</Button>
+              <Link href="/products">
+                <Button>Explore Products</Button>
+              </Link>
 
-             
             </div>
           </motion.div>
 
         </div>
 
         {/* Bottom Client / Brand Logos Carousel */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -129,7 +131,7 @@ export default function Products() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'motion/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { servicePageImages } from '@/data/images';
 import Button from '@/components/ui/DarkBtn';
 import { Phone, Mail } from 'lucide-react';
@@ -31,7 +32,8 @@ export default function ServicesCTA() {
     ];
 
     return (
-        <section className="relative py-32 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 overflow-hidden">
+        <section className="relative py-24 md:py-32 bg-emerald-50 px-4 md:px-8">
+            <div className='relative w-full max-w-[1400px] mx-auto min-h-[500px] md:min-h-[550px] rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col justify-center items-center bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-900' >
             <div className="absolute inset-0 z-0">
                 <motion.div
                     initial={{ scale: 1.1 }}
@@ -69,8 +71,13 @@ export default function ServicesCTA() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14"
                 >
-                    <Button variant="light" className="w-full sm:w-auto text-emerald-800">Get a Free Quote</Button>
-                    <Button variant="outline" className="w-full sm:w-auto text-white border-white hover:bg-white/10">Contact Us</Button>
+                    <Link href="/contact#contact-form">
+
+                        <Button variant="light" className="w-full sm:w-auto text-emerald-800">Get a Free Quote</Button>
+                    </Link>
+                    <Link href="/contact">
+                        <Button variant="outline" className="w-full sm:w-auto text-white border-white hover:bg-white/10">Contact Us</Button>
+                    </Link>
                 </motion.div>
 
                 {/* Contact Icons Block */}
@@ -92,6 +99,7 @@ export default function ServicesCTA() {
                         </a>
                     ))}
                 </motion.div>
+            </div>
             </div>
         </section>
     );

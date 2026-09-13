@@ -104,7 +104,7 @@ export default function Hero() {
             </p>
 
             {/* Pill Button */}
-            <Link href="#contact">
+            <Link href="/services">
               <Button>Explore Our Services</Button>
             </Link>
           </motion.div>

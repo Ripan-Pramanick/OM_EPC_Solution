@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { aboutImages } from '@/data/images';
 import { ShieldCheck, Eye, Headset, ArrowRight, X } from 'lucide-react';
 import DarkBtn from '@/components/ui/DarkBtn';
@@ -129,10 +130,11 @@ export default function Principles() {
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
             >
-              {/* Note: Ensure your Button component accepts these classes or change variant to match your Emerald UI */}
-              <DarkBtn>
-                Get Started
-              </DarkBtn>
+              <Link href="/contact">
+                <DarkBtn>
+                  Get Started
+                </DarkBtn>
+              </Link>
             </motion.div>
           </div>
         </div>

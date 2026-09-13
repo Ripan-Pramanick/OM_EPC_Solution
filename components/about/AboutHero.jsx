@@ -80,7 +80,7 @@ export default function AboutHero() {
             </p>
 
             {/* Pill Button */}
-            <Link href="#contact">
+            <Link href="/services">
               <Button>Discover Our Story</Button>
             </Link>
           </motion.div>

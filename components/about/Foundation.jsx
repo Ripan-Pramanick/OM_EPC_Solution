@@ -39,7 +39,7 @@ export default function Foundation() {
               <p className="text-[13px] text-emerald-900/60 leading-relaxed mb-4 font-medium">
                 Providing the right technology, professional service, and dependable support for your business.
               </p>
-              <Link href="#services" className="text-[13px] font-bold text-emerald-950 flex items-center gap-1.5 hover:text-emerald-700 transition-colors group w-fit">
+              <Link href="/services" className="text-[13px] font-bold text-emerald-950 flex items-center gap-1.5 hover:text-emerald-700 transition-colors group w-fit">
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" /> Read More
               </Link>
             </div>
@@ -138,7 +138,7 @@ export default function Foundation() {
             </p>
             
             {/* CTA */}
-            <Link href="#contact" className="inline-flex items-center gap-2 font-bold text-emerald-950 hover:text-emerald-700 transition-colors group text-lg pb-1 border-b-2 border-emerald-900 w-fit">
+            <Link href="/about" className="inline-flex items-center gap-2 font-bold text-emerald-950 hover:text-emerald-700 transition-colors group text-lg pb-1 border-b-2 border-emerald-900 w-fit">
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               More About Us
             </Link>

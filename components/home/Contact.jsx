@@ -1,11 +1,12 @@
 "use client";
+import { useState } from 'react';
 import { motion } from 'motion/react';
-import { X, MapPin, Phone, Mail } from 'lucide-react';
+import { X, MapPin, Phone, Mail, CheckCircle2, AlertCircle } from 'lucide-react';
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
 import { images } from '@/data/images';
 
-// Custom Social Icons (Lucide alternatives)
+// Custom Social Icons
 const Facebook = ({ size = 20, className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
 );
@@ -20,11 +21,42 @@ const Linkedin = ({ size = 20, className }) => (
 );
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
+  const [status, setStatus] = useState({ loading: false, success: false, error: '' });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ loading: true, success: false, error: '' });
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setStatus({ loading: false, success: true, error: '' });
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' }); // Reset form
+        setTimeout(() => setStatus(prev => ({ ...prev, success: false })), 5000); // Hide success message after 5s
+      } else {
+        setStatus({ loading: false, success: false, error: 'Something went wrong. Please try again.' });
+      }
+    } catch (error) {
+      setStatus({ loading: false, success: false, error: 'Network error. Please check your connection.' });
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-emerald-950">
       <div className="max-w-[1400px] mx-auto px-6">
 
-        {/* Inner Light Container - Converted to Emerald */}
+        {/* Inner Light Container */}
         <div className="relative bg-emerald-50 text-emerald-950 rounded-[2.5rem] p-8 md:p-12 lg:p-16 overflow-hidden shadow-2xl border border-emerald-200">
 
           {/* Background Flare */}
@@ -37,7 +69,6 @@ export default function Contact() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              {/* Badge */}
               <div className="inline-flex items-center gap-2 border border-emerald-200 bg-emerald-100 rounded-full px-4 py-1.5 text-xs font-bold text-emerald-900 tracking-widest uppercase mb-6 shadow-sm">
                 <X size={12} className="text-emerald-700" /> GET IN TOUCH
               </div>
@@ -59,44 +90,83 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="bg-emerald-100/50 border border-emerald-900 rounded-[2rem] p-8 shadow-md"
-                onSubmit={(e) => e.preventDefault()}
+                className="bg-emerald-100/50 border border-emerald-900/10 rounded-[2rem] p-8 shadow-sm relative"
+                onSubmit={handleSubmit}
               >
                 <div className="grid md:grid-cols-2 gap-5 mb-5">
                   <input 
                     type="text" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                     placeholder="Name" 
-                    className="w-full px-5 py-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" 
+                    className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" 
                   />
                   <input 
                     type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                     placeholder="Email" 
-                    className="w-full px-5 py-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" 
+                    className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" 
                   />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-5 mb-5">
                   <input 
                     type="text" 
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
                     placeholder="Phone" 
-                    className="w-full px-5 py-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" 
+                    className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" 
                   />
                   <input 
                     type="text" 
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
                     placeholder="Subject" 
-                    className="w-full px-5 py-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" 
+                    className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" 
                   />
                 </div>
 
                 <div className="mb-8">
                   <textarea 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                     rows={4} 
                     placeholder="Your message" 
-                    className="w-full px-5 py-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors resize-none"
+                    className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors resize-none"
                   ></textarea>
                 </div>
 
-                <Button variant="premium" className="w-auto">Submit</Button>
+                {/* Status Messages */}
+                {status.success && (
+                  <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mb-6 flex items-center gap-2 text-emerald-700 bg-emerald-100 p-3 rounded-lg text-sm font-bold">
+                    <CheckCircle2 size={18} /> Message sent successfully!
+                  </motion.div>
+                )}
+                {status.error && (
+                  <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mb-6 flex items-center gap-2 text-red-600 bg-red-50 p-3 rounded-lg text-sm font-bold border border-red-100">
+                    <AlertCircle size={18} /> {status.error}
+                  </motion.div>
+                )}
+
+                <Button 
+                  type="submit" 
+                  variant="premium" 
+                  className={`w-auto ${status.loading ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  disabled={status.loading}
+                >
+                  {status.loading ? 'Sending...' : 'Submit'}
+                </Button>
               </motion.form>
 
               {/* Contact Info Section */}

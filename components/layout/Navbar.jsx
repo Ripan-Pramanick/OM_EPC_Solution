@@ -65,8 +65,9 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-4">
-          <Link href="/login">
-            <DarkBtn>Login</DarkBtn>
+          {/* Fix: Wrapped in Link instead of using onClick scrollIntoView */}
+          <Link href="/contact#contact-form">
+            <DarkBtn className="cursor-pointer">Get in Touch</DarkBtn>
           </Link>
         </div>
 
@@ -100,8 +101,9 @@ export default function Navbar() {
             );
           })}
 
-          <Link href="/login" onClick={() => setMobileOpen(false)} className="mt-4">
-            <DarkBtn className="w-full justify-center">Login</DarkBtn>
+          {/* Fix: Wrapped in Link, added close mobile menu onClick */}
+          <Link href="/contact#contact-form" onClick={() => setMobileOpen(false)} className="mt-4">
+             <DarkBtn className="cursor-pointer w-full justify-center">Get in Touch</DarkBtn>
           </Link>
         </div>
       )}
