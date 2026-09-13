@@ -5,13 +5,20 @@ import Link from 'next/link';
 import { productPageImages } from '@/data/images';
 import Button from '@/components/ui/Button';
 import { ShieldCheck, MonitorSmartphone, HeadphonesIcon, ArrowRight } from 'lucide-react';
-import WebThreads from '@/components/ui/WebThreads';
+import dynamic from 'next/dynamic'; 
+
+
+const WebThreads = dynamic(() => import('@/components/ui/WebThreads'), { 
+    ssr: false, 
+    loading: () => <div className="absolute inset-0 bg-emerald-950 z-0"></div> 
+});
 
 export default function ProductHero() {
     return (
-        // Outer dark background container
-        <section className="w-full pt-22 pb-10 h-screen px-4 md:px-8 bg-emerald-950">
-            {/* Background WebThreads Animation */}
+        
+        <section className="w-full pt-22 pb-10 h-screen px-4 md:px-8 bg-emerald-950 relative">
+            
+         
             <div className="absolute inset-0 w-full h-full z-0">
                 <WebThreads
                     color1="#00ff8b"
@@ -39,7 +46,7 @@ export default function ProductHero() {
             </div>
 
             {/* Inner Floating Light Container matching the image layout */}
-            <div className="relative w-full max-w-[1600px] h-[85vh] mx-auto bg-emerald-100 rounded-[2.5rem] md:rounded-[3rem] px-8 py-12 md:px-12 lg:px-16 grid xl:grid-cols-2 gap-12 lg:gap-16 items-center shadow-2xl overflow-hidden">
+            <div className="relative w-full max-w-[1600px] h-[85vh] mx-auto bg-emerald-100 rounded-[2.5rem] md:rounded-[3rem] px-8 py-12 md:px-12 lg:px-16 grid xl:grid-cols-2 gap-12 lg:gap-16 items-center shadow-2xl overflow-hidden z-10 mt-[8vh]">
 
                 {/* LEFT CONTENT */}
                 <div className="max-w-2xl relative z-10 py-8">

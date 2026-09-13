@@ -3,7 +3,13 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import Link from 'next/link';
-import WebThreads from '@/components/ui/WebThreads';
+import dynamic from 'next/dynamic';
+
+
+const WebThreads = dynamic(() => import('@/components/ui/WebThreads'), { 
+    ssr: false, 
+    loading: () => <div className="absolute inset-0 bg-emerald-950 z-0"></div> 
+});
 
 export default function Hero() {
   const inlineImages = [
