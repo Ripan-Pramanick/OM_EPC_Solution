@@ -3,7 +3,6 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { productPageImages } from '@/data/images';
-import Button from '@/components/ui/Button';
 import { ShieldCheck, MonitorSmartphone, HeadphonesIcon, ArrowRight } from 'lucide-react';
 import dynamic from 'next/dynamic'; 
 
@@ -14,7 +13,6 @@ const WebThreads = dynamic(() => import('@/components/ui/WebThreads'), {
 
 export default function ProductHero() {
     return (
-      
         <section className="relative w-full pt-24 pb-10 min-h-screen px-4 md:px-8 bg-emerald-950 flex flex-col justify-center overflow-hidden">
          
             <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
@@ -43,11 +41,8 @@ export default function ProductHero() {
                 />
             </div>
 
-            {/* Inner Floating Light Container */}
-            {/* FIXED: Changed fixed 'h-[85vh]' to 'min-h-[85vh] h-auto lg:h-[85vh]' to prevent content spilling on mobile */}
             <div className="relative w-full max-w-[1600px] min-h-[85vh] h-auto lg:h-[85vh] mx-auto bg-emerald-100 rounded-[2.5rem] md:rounded-[3rem] px-8 py-12 md:px-12 lg:px-16 grid xl:grid-cols-2 gap-12 lg:gap-16 items-center shadow-2xl overflow-hidden z-10">
 
-                {/* LEFT CONTENT */}
                 <div className="max-w-2xl relative z-10 py-8">
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
@@ -73,15 +68,19 @@ export default function ProductHero() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="flex flex-col sm:flex-row items-center gap-4 mb-14"
                     >
-                        <Link href="/services" className="w-full sm:w-auto">
-                            <Button >
-                                Browse services
-                            </Button>
+                        {/* FIXED: Removed nested Button components to fix HTML nesting and performance glitches */}
+                        <Link 
+                            href="/services" 
+                            className="w-full sm:w-auto flex items-center justify-center bg-emerald-950 hover:bg-emerald-800 text-emerald-50 px-7 py-3.5 rounded-xl text-[13px] font-bold transition-all shadow-lg uppercase tracking-widest"
+                        >
+                            Browse services
                         </Link>
-                        <Link href="/contact#contact-form" className="w-full sm:w-auto">
-                            <Button variant="outline" >
-                                Get a Quote
-                            </Button>
+                        <Link 
+                            href="/contact#contact-form" 
+                            prefetch={false}
+                            className="w-full sm:w-auto flex items-center justify-center border border-emerald-950 text-emerald-950 hover:bg-emerald-200 px-7 py-3.5 rounded-xl text-[13px] font-bold transition-all uppercase tracking-widest"
+                        >
+                            Get a Quote
                         </Link>
                     </motion.div>
 
@@ -103,25 +102,21 @@ export default function ProductHero() {
                     </motion.div>
                 </div>
 
-                {/* RIGHT CONTENT: Art-directed composition */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="relative h-[400px] md:h-[500px] w-full hidden xl:block"
                 >
-                    {/* Main Back Image */}
                     <div className="absolute right-0 top-4 w-3/4 h-[85%] rounded-[2rem] overflow-hidden shadow-2xl z-10 animate-[floating_6s_ease-in-out_infinite]">
                         <Image src={productPageImages.hero.main} alt="Technology Infrastructure" fill className="object-cover" />
                         <div className="absolute inset-0 bg-emerald-950/20 mix-blend-overlay" />
                     </div>
 
-                    {/* Front Overlapping Image */}
                     <div className="absolute left-0 bottom-[5%] w-[65%] h-[60%] rounded-[1.5rem] bg-emerald-50 overflow-hidden shadow-2xl z-20 border-[6px] border-emerald-100 animate-[floating_8s_ease-in-out_infinite_reverse]">
                         <Image src={productPageImages.hero.secondary} alt="Business IT" fill className="object-cover" />
                     </div>
 
-                    {/* Floating Info Card */}
                     <div className="absolute top-[25%] -left-6 bg-white/95 backdrop-blur-md p-4 pr-6 rounded-2xl shadow-xl z-30 flex items-center gap-4 border border-emerald-50">
                         <div className="w-10 h-10 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-600 shrink-0">
                             <ShieldCheck size={20} />

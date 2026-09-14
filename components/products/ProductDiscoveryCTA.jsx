@@ -3,8 +3,7 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { productPageImages } from '@/data/images';
-import Button from '@/components/ui/DarkBtn';
-import { ArrowRight, Package, CheckCircle2, DollarSign, HeadphonesIcon } from 'lucide-react';
+import { Package, CheckCircle2, DollarSign, HeadphonesIcon } from 'lucide-react';
 
 export default function ProductDiscoveryCTA() {
     const trustPoints = [
@@ -16,7 +15,7 @@ export default function ProductDiscoveryCTA() {
 
     return (
         <section className="relative py-32 bg-emerald-800 overflow-hidden">
-            <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0 pointer-events-none">
                 <motion.div
                     initial={{ scale: 1.1 }}
                     whileInView={{ scale: 1 }}
@@ -69,10 +68,17 @@ export default function ProductDiscoveryCTA() {
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="mb-20 flex justify-center"
                 >
-                    <Link href="/contact/#contact-form">
-                        <Button className="w-fit">
-                            Contact Our Experts
-                        </Button>
+                    {/* 
+                      FIXED: Removed the nested <Button> wrapper. 
+                      Added prefetch={false} to stop Next.js from blocking the thread on hover/click.
+                      Applied the exact CSS classes directly to the <Link> tag. 
+                    */}
+                    <Link 
+                        href="/contact#contact-form" 
+                        prefetch={false}
+                        className="flex items-center w-fit gap-1.5 px-6 py-2.5 rounded-full text-[17px] font-bold transition-all duration-300 bg-emerald-950 text-emerald-50 hover:bg-emerald-800/40 hover:text-white shadow-xl border border-emerald-600/30"
+                    >
+                        Contact Our Experts
                     </Link>
                 </motion.div>
 

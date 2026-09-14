@@ -5,11 +5,10 @@ import Image from 'next/image';
 import { productsList } from '@/data/productsData';
 import { Search, ChevronDown, Send } from 'lucide-react';
 import Link from 'next/link';
-import Button from '@/components/ui/Button';
 
 const ProductCard = ({ product }) => {
     const [isExpanded, setIsExpanded] = useState(false);
-    const description = product.description || product.desc;
+    const description = product.description || product.desc || "";
 
     return (
         <motion.div
@@ -32,8 +31,6 @@ const ProductCard = ({ product }) => {
             </div>
 
             <div className="p-6 flex flex-col flex-1">
-                <div className="flex justify-between items-start mb-2"></div>
-
                 <h3 className="text-lg font-bold text-emerald-950 mb-3 leading-snug group-hover:text-emerald-700 transition-colors line-clamp-2 min-h-[3.25rem]">
                     {product.name}
                 </h3>
@@ -57,6 +54,7 @@ const ProductCard = ({ product }) => {
                     <span className="text-xl font-black text-emerald-950">₹{product.price.toLocaleString('en-IN')}</span>
                     <Link
                         href={`/contact?product=${encodeURIComponent(product.name)}#contact-form`}
+                        prefetch={false}
                         className="px-4 h-10 rounded-xl border border-emerald-700 bg-emerald-700 text-emerald-50 flex items-center justify-center gap-2 text-sm font-bold group-hover:bg-emerald-200 group-hover:text-emerald-900 transition-colors duration-300"
                     >
                         Enquire <Send size={14} />
@@ -103,7 +101,7 @@ export default function ProductCatalog() {
     const currentProducts = filteredProducts.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
 
     return (
-        <section id="products" className="bg-[#F4F9F7] py-16 md:py-24 min-h-screen">
+        <section id="products" className="bg-emerald-50/60 py-16 md:py-24 min-h-screen">
             <div className="max-w-[1400px] mx-auto px-6">
                 <div className="flex flex-col min-h-[600px]">
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8">
@@ -153,9 +151,9 @@ export default function ProductCatalog() {
                             <Search size={48} className="text-emerald-300 mb-4" />
                             <h3 className="text-xl font-bold text-emerald-950 mb-2">No products found</h3>
                             <p className="text-emerald-900/70 max-w-sm mb-6">We couldn't find any products matching your search.</p>
-                            <Button onClick={() => { setSortOrder('latest'); setSearchQuery(''); }} variant="outline" className="text-emerald-950 border-emerald-200 hover:bg-emerald-100">
+                            <button onClick={() => { setSortOrder('latest'); setSearchQuery(''); }} className="px-5 py-2.5 rounded-lg text-emerald-950 font-bold border border-emerald-200 hover:bg-emerald-100 transition-colors">
                                 Reset View
-                            </Button>
+                            </button>
                         </div>
                     )}
 
@@ -164,7 +162,7 @@ export default function ProductCatalog() {
                             <button
                                 onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                                 disabled={currentPage === 1}
-                                className="px-5 py-2.5 rounded-lg font-bold text-sm transition-colors disabled:opacity-50 text-emerald-950 hover:bg-emerald-100/80"
+                                className="px-5 py-2.5 rounded-lg font-bold text-sm transition-colors disabled:opacity-50 text-emerald-950 hover:bg-emerald-100/80 cursor-pointer"
                             >
                                 Prev
                             </button>
@@ -172,7 +170,7 @@ export default function ProductCatalog() {
                                 <button
                                     key={i}
                                     onClick={() => setCurrentPage(i + 1)}
-                                    className={`w-11 h-11 rounded-lg font-bold text-sm transition-colors ${currentPage === i + 1 ? 'bg-emerald-700 text-white shadow-md' : 'text-emerald-900/70 hover:bg-emerald-100/80 hover:text-emerald-950'}`}
+                                    className={`w-11 h-11 rounded-lg font-bold text-sm transition-colors cursor-pointer ${currentPage === i + 1 ? 'bg-emerald-700 text-white shadow-md' : 'text-emerald-900/70 hover:bg-emerald-100/80 hover:text-emerald-950'}`}
                                 >
                                     {i + 1}
                                 </button>
@@ -180,7 +178,7 @@ export default function ProductCatalog() {
                             <button
                                 onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                                 disabled={currentPage === totalPages}
-                                className="px-5 py-2.5 rounded-lg font-bold text-sm transition-colors disabled:opacity-50 text-emerald-950 hover:bg-emerald-100/80"
+                                className="px-5 py-2.5 rounded-lg font-bold text-sm transition-colors disabled:opacity-50 text-emerald-950 hover:bg-emerald-100/80 cursor-pointer"
                             >
                                 Next
                             </button>

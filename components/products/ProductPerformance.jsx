@@ -15,7 +15,7 @@ const ProgressBar = ({ label, percentage, delay }) => {
                 <span className="text-sm font-bold text-emerald-950 uppercase tracking-wider">{label}</span>
                 <span className="text-sm font-bold text-emerald-700">{percentage}%</span>
             </div>
-            <div className="w-full h-2.5 bg-emerald-100/50 rounded-full overflow-hidden">
+            <div className="w-full h-2.5 bg-emerald-200/50 rounded-full overflow-hidden">
                 <motion.div
                     initial={{ width: 0 }}
                     animate={isInView ? { width: `${percentage}%` } : { width: 0 }}
