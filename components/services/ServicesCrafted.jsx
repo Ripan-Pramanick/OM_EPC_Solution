@@ -3,8 +3,9 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Image from 'next/image';
 import { interactiveServices } from '@/data/servicesData';
-import { ArrowRight, CheckCircle2, X } from 'lucide-react';
+import { ArrowRight, CheckCircle2, X, Settings } from 'lucide-react';
 import Button from '@/components/ui/Button';
+import Link from 'next/link';
 
 export default function ServicesCrafted() {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -23,9 +24,9 @@ export default function ServicesCrafted() {
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 text-[10px] font-bold text-emerald-800 tracking-widest uppercase mb-4 px-3 py-1.5 border border-emerald-200/80 rounded-full bg-emerald-100 backdrop-blur-sm shadow-sm"
+                        className="inline-flex items-center gap-2 text-[10px] font-bold text-emerald-950 tracking-widest uppercase mb-6 px-4 py-1.5 border border-emerald-300 rounded-full bg-emerald-200 shadow-sm"
                     >
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-100"></span> OUR SERVICES
+                        <Settings size={12} className="text-emerald-800" strokeWidth={2.5} /> OUR SERVICES
                     </motion.div>
 
                     <motion.h2
@@ -74,9 +75,9 @@ export default function ServicesCrafted() {
                                         </span>
                                     </div>
 
-                                    <div className={`relative z-10 transition-transform text-emerald-100/90 duration-300 ${isActive ? 'text-emerald-700 translate-x-0 opacity-100' : 'text-emerald-100/60 -translate-x-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0'}`}>
+                                    {/* <div className={`relative z-10 transition-transform text-emerald-100/90 duration-300 ${isActive ? 'text-emerald-700 translate-x-0 opacity-100' : 'text-emerald-100/60 -translate-x-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0'}`}>
                                         <ArrowRight size={20} />
-                                    </div>
+                                    </div> */}
                                 </button>
                             );
                         })}
@@ -136,9 +137,11 @@ export default function ServicesCrafted() {
                                         ))}
                                     </div>
 
-                                    <Button>
-                                        Learn More
-                                    </Button>
+                                    <Link href="/services">
+                                        <Button >
+                                            Learn More
+                                        </Button>
+                                    </Link>
                                 </motion.div>
 
                             </motion.div>
@@ -186,7 +189,11 @@ export default function ServicesCrafted() {
                                                     </div>
                                                 ))}
                                             </div>
-                                            <Button>Learn More</Button>
+                                            <Link href="/services">
+                                                <Button >
+                                                    Learn More
+                                                </Button>
+                                            </Link>
                                         </motion.div>
                                     )}
                                 </AnimatePresence>

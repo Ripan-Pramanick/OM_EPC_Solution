@@ -25,7 +25,7 @@ export default function WhyChooseUs() {
           >
             {/* Pill Badge - Mint Green style matching the image */}
             <div className="inline-flex items-center gap-2 border border-emerald-200 bg-emerald-100 rounded-full px-4 py-1.5 text-xs font-bold text-emerald-950 tracking-widest uppercase mb-8 shadow-sm">
-              <X size={12} className="text-emerald-950/70" /> WHY CHOOSE US
+              <Award size={12} className="text-emerald-950/70" /> WHY CHOOSE US
             </div>
 
             {/* Headings and Paragraphs updated to slate-900 and slate-500 */}

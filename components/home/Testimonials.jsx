@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Image from 'next/image';
-import { X, ArrowRight, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ArrowRight, Star, ChevronLeft, ChevronRight, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
 import { testimonials } from '@/data/siteData';
 
@@ -11,12 +11,12 @@ const reviews = testimonials;
 export default function Testimonials() {
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 2; // Show 2 reviews per slide
-  
+
   const totalPages = Math.ceil(reviews.length / itemsPerPage);
-  
+
   // Get the reviews for the current slide
   const currentReviews = reviews.slice(
-    currentPage * itemsPerPage, 
+    currentPage * itemsPerPage,
     (currentPage + 1) * itemsPerPage
   );
 
@@ -36,20 +36,20 @@ export default function Testimonials() {
     // Section Background: emerald-50
     <section className="py-24 bg-emerald-50 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6">
-        
+
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
           <div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 border border-emerald-200 text-[10px] font-bold text-emerald-950 tracking-widest uppercase mb-6 shadow-sm"
             >
-              <X size={12} className="text-emerald-800" strokeWidth={2.5} /> TESTIMONIALS
+              <MessageSquare size={12} className="text-emerald-800" strokeWidth={2.5} /> TESTIMONIALS
             </motion.div>
-            
-            <motion.h2 
+
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -60,7 +60,7 @@ export default function Testimonials() {
             </motion.h2>
           </div>
 
-          
+
         </div>
 
         {/* Cards Grid with Slider Animation */}
@@ -85,7 +85,7 @@ export default function Testimonials() {
                       <span className="text-xl font-semibold text-emerald-950 mr-2">{review.author}</span>
                       <span className="text-sm text-emerald-800/70 font-medium">{review.role}</span>
                     </div>
-                    
+
                     {/* Profile Squircle Image */}
                     <div className="absolute right-0 top-0 w-[68px] h-[68px] rounded-b-full rounded-t-xl overflow-hidden shadow-sm border border-emerald-200/50">
                       <Image src={review.image} alt={review.author} fill className="object-cover" />
@@ -116,25 +116,25 @@ export default function Testimonials() {
         </div>
 
         {/* Bottom Navigation Controls */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
           className="flex justify-center items-center gap-6 mt-12 text-[13px] font-bold tracking-wider"
         >
-          <button 
+          <button
             onClick={handlePrev}
             disabled={currentPage === 0}
             className="flex items-center gap-2 text-emerald-800 hover:text-emerald-950 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
           >
             <ChevronLeft size={18} strokeWidth={2.5} /> Prev
           </button>
-          
+
           {/* Divider */}
           <div className="w-[1.5px] h-4 bg-emerald-300 rounded-full"></div>
-          
-          <button 
+
+          <button
             onClick={handleNext}
             disabled={currentPage === totalPages - 1}
             className="flex items-center gap-2 text-emerald-800 hover:text-emerald-950 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"

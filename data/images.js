@@ -1,83 +1,85 @@
 export const images = {
   hero: {
-    main: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80",
+    main: "/images/hero_main.jpg",
   },
   services: {
-    networking: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80",
-    cctv: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80",
-    ups: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80",
+    networking: "/images/services_networking.jpg",
+    cctv: "/images/services_cctv.jpg",
+    ups: "/images/services_ups.jpg",
   },
-  about: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80",
+  about: "/images/about.jpg",
   products: {
-    ups: "https://images.unsplash.com/photo-1615147342761-9238e15d8f22?auto=format&fit=crop&q=80",
-    servers: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80",
-    workstations: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&q=80",
+    ups: "/images/products_ups.jpg",
+    servers: "/images/products_servers.jpg",
+    workstations: "/images/products_workstations.jpg",
   },
   projects: [
-    "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80"
+    "/images/projects_1.jpg",
+    "/images/projects_2.jpg",
+    "/images/projects_3.jpg"
   ]
 };
 
 export const aboutImages = {
-  hero: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80",
-  foundationMain: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80",
-  foundationSecondary: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80",
-  principles: "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80",
-  whyChooseUs: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80",
-  milestones: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80",
+  hero: "/images/aboutImages_hero.jpg",
+  foundationMain: "/images/aboutImages_foundationMain.jpg",
+  foundationSecondary: "/images/aboutImages_foundationSecondary.jpg",
+  principles: "/images/aboutImages_principles.jpg",
+  whyChooseUs: "/images/aboutImages_whyChooseUs.jpg",
+  milestones: "/images/aboutImages_milestones.jpg",
   expertise: {
-    computer: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&q=80",
-    ups: "https://images.unsplash.com/photo-1620283085439-3f6226dff063?auto=format&fit=crop&q=80",
-    cctv: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80",
-    networking: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80"
+    computer: "/images/aboutImages_expertise_computer.jpg",
+    ups: "/images/aboutImages_expertise_ups.jpg",
+    cctv: "/images/aboutImages_expertise_cctv.jpg",
+    networking: "/images/aboutImages_expertise_networking.jpg"
   },
-  cta: "https://images.unsplash.com/photo-1581092926214-7eb356f932e6?auto=format&fit=crop&q=80"
+ 
+  cta: "/images/contactPageImages_cta.jpg" 
 };
 
 export const servicePageImages = {
-  hero: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80",
-  craftedBg: "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80",
-  discoverImage: "https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&q=80",
-  cta: "https://images.unsplash.com/photo-1581092926214-7eb356f932e6?auto=format&fit=crop&q=80",
+  hero: "/images/servicePageImages_hero.jpg",
+  craftedBg: "/images/servicePageImages_craftedBg.jpg",
+  discoverImage: "/images/servicePageImages_discoverImage.jpg",
+
+  cta: "/images/contactPageImages_cta.jpg", 
   services: {
-    computer: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&q=80",
-    ups: "https://images.unsplash.com/photo-1620283085439-3f6226dff063?auto=format&fit=crop&q=80",
-    printer: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&q=80",
-    cctv: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80",
-    networking: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80",
-    amc: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80"
+    computer: "/images/servicePageImages_services_computer.jpg",
+    ups: "/images/servicePageImages_services_ups.jpg",
+    printer: "/images/servicePageImages_services_printer.jpg",
+    cctv: "/images/servicePageImages_services_cctv.jpg",
+    networking: "/images/servicePageImages_services_networking.jpg",
+    amc: "/images/servicePageImages_services_amc.jpg"
   }
 };
 
 export const productPageImages = {
   hero: {
-    main: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80",
-    secondary: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&q=80"
+    main: "/images/productPageImages_hero_main.jpg",
+    secondary: "/images/productPageImages_hero_secondary.jpg"
   },
   products: {
-    computer: "https://images.unsplash.com/photo-1587831990711-23ca6441447b?auto=format&fit=crop&q=80",
-    laptop: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80",
-    printer: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&q=80",
-    ups: "https://images.unsplash.com/photo-1620283085439-3f6226dff063?auto=format&fit=crop&q=80",
-    cctv: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80",
-    networking: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80",
-    accessories: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&q=80"
+    computer: "/images/productPageImages_products_computer.jpg",
+    laptop: "/images/productPageImages_products_laptop.jpg",
+    printer: "/images/productPageImages_products_printer.jpg",
+    ups: "/images/productPageImages_products_ups.jpg",
+    cctv: "/images/productPageImages_products_cctv.jpg",
+    networking: "/images/productPageImages_products_networking.jpg",
+    accessories: "/images/productPageImages_products_accessories.jpg"
   },
-  discovery: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80",
-  performance: "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80",
+  discovery: "/images/productPageImages_discovery.jpg",
+  performance: "/images/productPageImages_performance.jpg",
   articles: [
-    "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1516322073387-8fb9d41d99d1?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80"
+    "/images/productPageImages_articles_1.jpg",
+    
+    "/images/productPageImages_articles_3.jpg", 
+    "/images/productPageImages_articles_3.jpg"
   ]
 };
 
 export const contactPageImages = {
-  hero: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80",
-  // Tech visual for the conversation section
-  visual: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80", 
-  office: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80",
-  cta: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80"
+  hero: "/images/contactPageImages_hero.jpg",
+  visual: "/images/contactPageImages_visual.jpg",
+  office: "/images/contactPageImages_office.jpg",
+  cta: "/images/contactPageImages_cta.jpg"
 };

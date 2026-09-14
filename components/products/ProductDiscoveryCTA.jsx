@@ -67,10 +67,10 @@ export default function ProductDiscoveryCTA() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    className="mb-20"
+                    className="mb-20 flex justify-center"
                 >
                     <Link href="/contact/#contact-form">
-                        <Button>
+                        <Button className="w-fit">
                             Contact Our Experts
                         </Button>
                     </Link>

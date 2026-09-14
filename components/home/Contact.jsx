@@ -1,7 +1,7 @@
 "use client";
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { X, MapPin, Phone, Mail, CheckCircle2, AlertCircle } from 'lucide-react';
+import { X, MapPin, Phone, Mail, CheckCircle2, AlertCircle, Send } from 'lucide-react';
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
 import { images } from '@/data/images';
@@ -69,14 +69,14 @@ export default function Contact() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <div className="inline-flex items-center gap-2 border border-emerald-200 bg-emerald-100 rounded-full px-4 py-1.5 text-xs font-bold text-emerald-900 tracking-widest uppercase mb-6 shadow-sm">
-                <X size={12} className="text-emerald-700" /> GET IN TOUCH
+              <div className="inline-flex items-center gap-2 text-[10px] font-bold text-white tracking-widest uppercase mb-6 px-3 py-1.5 border border-emerald-400 rounded-full bg-emerald-800/50">
+                <Mail size={12} className="text-emerald-300" /> GET IN TOUCH
               </div>
-              
+
               <h2 className="text-4xl md:text-5xl font-bold text-emerald-950 mb-4 tracking-tight">
                 Start Your Conversation
               </h2>
-              
+
               <p className="text-emerald-900/70 text-base md:text-lg max-w-xl">
                 Reach us anytime, let's architect your resilient IT infrastructure together.
               </p>
@@ -94,55 +94,55 @@ export default function Contact() {
                 onSubmit={handleSubmit}
               >
                 <div className="grid md:grid-cols-2 gap-5 mb-5">
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    placeholder="Name" 
-                    className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" 
+                    placeholder="Name"
+                    className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
                   />
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    placeholder="Email" 
-                    className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" 
+                    placeholder="Email"
+                    className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
                   />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-5 mb-5">
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    placeholder="Phone" 
-                    className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" 
+                    placeholder="Phone"
+                    className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
                   />
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    placeholder="Subject" 
-                    className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" 
+                    placeholder="Subject"
+                    className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
                   />
                 </div>
 
                 <div className="mb-8">
-                  <textarea 
+                  <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={4} 
-                    placeholder="Your message" 
+                    rows={4}
+                    placeholder="Your message"
                     className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors resize-none"
                   ></textarea>
                 </div>
@@ -159,9 +159,9 @@ export default function Contact() {
                   </motion.div>
                 )}
 
-                <Button 
-                  type="submit" 
-                  variant="premium" 
+                <Button
+                  type="submit"
+                  variant="premium"
                   className={`w-auto ${status.loading ? 'opacity-70 cursor-not-allowed' : ''}`}
                   disabled={status.loading}
                 >
@@ -217,7 +217,7 @@ export default function Contact() {
           <div className="hidden lg:block absolute -bottom-10 -right-10 w-96 h-96 opacity-10 pointer-events-none z-0">
             <Image src={images.services.networking} alt="Decoration" fill className="object-cover rounded-full mix-blend-overlay" />
           </div>
-          
+
         </div>
       </div>
     </section>

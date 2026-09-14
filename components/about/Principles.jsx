@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { aboutImages } from '@/data/images';
-import { ShieldCheck, Eye, Headset, ArrowRight, X } from 'lucide-react';
+import { ShieldCheck, Eye, Headset, ArrowRight, X, Target } from 'lucide-react';
 import DarkBtn from '@/components/ui/DarkBtn';
 
 const principlesData = [
@@ -72,7 +72,7 @@ export default function Principles() {
               transition={{ duration: 0.6 }}
             >
               <div className="inline-flex items-center gap-2 text-xs font-bold text-white tracking-widest uppercase mb-6">
-                <X size={12} className="text-emerald-400" strokeWidth={3} /> OUR STATEMENT
+                <Target size={12} className="text-emerald-400" strokeWidth={3} /> OUR STATEMENT
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 tracking-tight">
                 The Principles Behind Everything We Do
@@ -91,9 +91,8 @@ export default function Principles() {
                   <div
                     key={item.id}
                     onClick={() => setActiveIndex(index)}
-                    className={`group flex items-center cursor-pointer transition-all duration-300 py-6 border-b ${
-                      isActive ? 'border-white' : 'border-emerald-800/50 hover:border-emerald-400'
-                    }`}
+                    className={`group flex items-center cursor-pointer transition-all duration-300 py-6 border-b ${isActive ? 'border-white' : 'border-emerald-800/50 hover:border-emerald-400'
+                      }`}
                   >
                     <div className="flex items-center gap-4">
                       {/* Only show number if not active */}
@@ -102,9 +101,8 @@ export default function Principles() {
                           {item.id}.
                         </span>
                       )}
-                      <h4 className={`text-xl md:text-2xl transition-colors duration-300 tracking-tight ${
-                        isActive ? 'font-bold text-white' : 'font-medium text-emerald-200/80 group-hover:text-white'
-                      }`}>
+                      <h4 className={`text-xl md:text-2xl transition-colors duration-300 tracking-tight ${isActive ? 'font-bold text-white' : 'font-medium text-emerald-200/80 group-hover:text-white'
+                        }`}>
                         {item.shortTitle}
                       </h4>
                     </div>

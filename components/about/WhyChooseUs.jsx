@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import { aboutImages } from '@/data/images';
 import { benefits } from '@/data/aboutData';
-import { X, Cpu } from 'lucide-react';
+import { X, Cpu, Award } from 'lucide-react';
 
 // Custom SVG Icon replicating the exact Blueprint/Design icon from your image
 const BlueprintIcon = ({ size = 48, className }) => (
@@ -44,8 +44,8 @@ export default function WhyChooseUs() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <div className="inline-flex items-center gap-2 text-[10px] font-bold text-emerald-800 tracking-widest uppercase mb-6 px-4 py-1.5 border border-emerald-200 bg-emerald-50/50 rounded-full shadow-sm">
-                            <X size={12} className="text-emerald-500" strokeWidth={2.5} /> WHY CHOOSE US
+                        <div className="inline-flex items-center gap-2 border border-emerald-200 bg-emerald-100 rounded-full px-4 py-1.5 text-xs font-bold text-emerald-950 tracking-widest uppercase mb-8 shadow-sm">
+                            <Award size={12} className="text-emerald-950/70" /> WHY CHOOSE US
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold text-emerald-950 tracking-tight leading-[1.1]">
                             Discover the Difference<br />We Can Make

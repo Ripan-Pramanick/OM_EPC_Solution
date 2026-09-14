@@ -17,13 +17,13 @@ export default function ServiceArea() {
 
                 <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
                     <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 text-[10px] font-bold text-emerald-800 tracking-widest uppercase mb-6 px-4 py-1.5 border border-emerald-200/80 rounded-full bg-emerald-100/30 shadow-sm"
-                    >
-                        <X size={12} className="text-emerald-600" /> OUR SERVICE AREA
-                    </motion.div>
+    initial={{ opacity: 0, y: 10 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="inline-flex items-center gap-2 text-[10px] font-bold text-emerald-800 tracking-widest uppercase mb-6 px-4 py-1.5 border border-emerald-200/80 rounded-full bg-emerald-100/30 shadow-sm"
+>
+    <MapPin size={12} className="text-emerald-600" strokeWidth={2.5} /> OUR SERVICE AREA
+</motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

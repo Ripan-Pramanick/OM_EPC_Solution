@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import { aboutImages } from '@/data/images';
 import { milestones } from '@/data/aboutData';
-import { X, Award } from 'lucide-react';
+import { X, Award, Trophy } from 'lucide-react';
 
 export default function Milestones() {
     return (
@@ -22,7 +22,7 @@ export default function Milestones() {
                         viewport={{ once: true }}
                         className="inline-flex items-center gap-2 text-[10px] font-bold text-emerald-800 tracking-widest uppercase mb-6 px-4 py-1.5 border border-emerald-200/80 rounded-full bg-emerald-100/90 backdrop-blur-sm shadow-sm"
                     >
-                        <X size={12} className="text-emerald-900" strokeWidth={2.5} /> OUR ACHIEVEMENTS
+                        <Trophy size={12} className="text-emerald-900" strokeWidth={2.5} /> OUR ACHIEVEMENTS
                     </motion.div>
 
                     <motion.h2

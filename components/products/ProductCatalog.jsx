@@ -1,14 +1,14 @@
 "use client";
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Image from 'next/image';
 import { productsList } from '@/data/productsData';
-import { Search, ShoppingCart, ChevronDown, Star } from 'lucide-react';
+import { Search, ChevronDown, Send } from 'lucide-react';
+import Link from 'next/link';
 import Button from '@/components/ui/Button';
 
 const ProductCard = ({ product }) => {
-    const [isExpanded, setIsExpanded] = useState(false);    
-   
+    const [isExpanded, setIsExpanded] = useState(false);
     const description = product.description || product.desc;
 
     return (
@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.3 }}           
+            transition={{ duration: 0.3 }}
             className="group bg-white rounded-2xl border border-emerald-100 overflow-hidden shadow-sm hover:shadow-[0_15px_40px_-10px_rgba(4,120,87,0.15)] hover:border-emerald-300 transition-all duration-300 flex flex-col h-fit"
         >
             <div className="relative w-full aspect-[4/3] bg-emerald-50/50 p-6 overflow-hidden border-b border-emerald-50 shrink-0">
@@ -32,18 +32,12 @@ const ProductCard = ({ product }) => {
             </div>
 
             <div className="p-6 flex flex-col flex-1">
-                <div className="flex justify-between items-start mb-2">
-                    <span className="text-xs font-bold text-emerald-600/60 uppercase tracking-wider">{product.brand}</span>
-                    <div className="flex items-center gap-1 text-xs font-semibold text-amber-500">
-                        <Star size={12} fill="currentColor" /> {product.rating}
-                    </div>
-                </div>
-                {/* Added min-height to ensure initial uniform look before expansion */}
+                <div className="flex justify-between items-start mb-2"></div>
+
                 <h3 className="text-lg font-bold text-emerald-950 mb-3 leading-snug group-hover:text-emerald-700 transition-colors line-clamp-2 min-h-[3.25rem]">
                     {product.name}
                 </h3>
 
-                {/* Expandable Description */}
                 <div className="mb-5">
                     <motion.p
                         layout="position"
@@ -59,12 +53,14 @@ const ProductCard = ({ product }) => {
                     </button>
                 </div>
 
-                {/* Price and Cart Button */}
-                <div className="mt-auto pt-4 border-t border-emerald-50 flex items-center justify-between">
+                <div className="mt-auto pt-4 border-t border-emerald-50 flex items-center justify-between gap-3">
                     <span className="text-xl font-black text-emerald-950">₹{product.price.toLocaleString('en-IN')}</span>
-                    <button className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center group-hover:bg-emerald-700 group-hover:text-white transition-colors duration-300">
-                        <ShoppingCart size={18} />
-                    </button>
+                    <Link
+                        href={`/contact?product=${encodeURIComponent(product.name)}#contact-form`}
+                        className="px-4 h-10 rounded-xl border border-emerald-700 bg-emerald-700 text-emerald-50 flex items-center justify-center gap-2 text-sm font-bold group-hover:bg-emerald-200 group-hover:text-emerald-900 transition-colors duration-300"
+                    >
+                        Enquire <Send size={14} />
+                    </Link>
                 </div>
             </div>
         </motion.div>
@@ -73,11 +69,19 @@ const ProductCard = ({ product }) => {
 
 export default function ProductCatalog() {
     const [sortOrder, setSortOrder] = useState('latest');
+    const [searchQuery, setSearchQuery] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
-    const ITEMS_PER_PAGE = 8; 
+    const ITEMS_PER_PAGE = 8;
+
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [searchQuery, sortOrder]);
 
     const filteredProducts = useMemo(() => {
-        let result = [...productsList];
+        let result = productsList.filter((product) =>
+            product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            (product.description || product.desc || "").toLowerCase().includes(searchQuery.toLowerCase())
+        );
 
         switch (sortOrder) {
             case 'price-low':
@@ -93,7 +97,7 @@ export default function ProductCatalog() {
                 break;
         }
         return result;
-    }, [sortOrder]);
+    }, [sortOrder, searchQuery]);
 
     const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
     const currentProducts = filteredProducts.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
@@ -102,18 +106,29 @@ export default function ProductCatalog() {
         <section id="products" className="bg-[#F4F9F7] py-16 md:py-24 min-h-screen">
             <div className="max-w-[1400px] mx-auto px-6">
                 <div className="flex flex-col min-h-[600px]">
-                    <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+                    <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8">
                         <h2 className="text-2xl md:text-3xl font-bold text-emerald-950">
                             All Products
                             <span className="text-emerald-600/60 text-lg font-medium ml-3">({filteredProducts.length})</span>
                         </h2>
 
-                        <div className="flex items-center gap-3">
-                            <div className="relative group">
+                        <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
+                            <div className="relative w-full sm:w-64">
+                                <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-emerald-600/60 pointer-events-none" />
+                                <input
+                                    type="text"
+                                    placeholder="Search products..."
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    className="w-full appearance-none bg-white border border-emerald-200 text-emerald-950 text-sm font-semibold rounded-lg pl-9 pr-4 py-2.5 focus:outline-none focus:border-emerald-500 shadow-sm transition-colors"
+                                />
+                            </div>
+
+                            <div className="relative w-full sm:w-auto group">
                                 <select
                                     value={sortOrder}
                                     onChange={(e) => setSortOrder(e.target.value)}
-                                    className="appearance-none bg-white border border-emerald-200 text-emerald-950 text-sm font-semibold rounded-lg px-4 py-2.5 pr-10 focus:outline-none focus:border-emerald-500 cursor-pointer shadow-sm"
+                                    className="w-full appearance-none bg-white border border-emerald-200 text-emerald-950 text-sm font-semibold rounded-lg px-4 py-2.5 pr-10 focus:outline-none focus:border-emerald-500 cursor-pointer shadow-sm transition-colors"
                                 >
                                     <option value="latest">Sort by: Latest</option>
                                     <option value="price-low">Price: Low to High</option>
@@ -125,7 +140,6 @@ export default function ProductCatalog() {
                         </div>
                     </div>
 
-                    {/* Product Grid - items-start ensures items don't stretch vertically */}
                     {currentProducts.length > 0 ? (
                         <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 flex-1 items-start">
                             <AnimatePresence mode="popLayout">
@@ -138,12 +152,13 @@ export default function ProductCatalog() {
                         <div className="flex flex-col items-center justify-center flex-1 text-center py-20 bg-emerald-50/50 rounded-3xl border border-dashed border-emerald-300">
                             <Search size={48} className="text-emerald-300 mb-4" />
                             <h3 className="text-xl font-bold text-emerald-950 mb-2">No products found</h3>
-                            <p className="text-emerald-900/70 max-w-sm mb-6">We couldn't find any products at the moment.</p>
-                            <Button onClick={() => setSortOrder('latest')} variant="outline" className="text-emerald-950 border-emerald-200 hover:bg-emerald-100">Reset View</Button>
+                            <p className="text-emerald-900/70 max-w-sm mb-6">We couldn't find any products matching your search.</p>
+                            <Button onClick={() => { setSortOrder('latest'); setSearchQuery(''); }} variant="outline" className="text-emerald-950 border-emerald-200 hover:bg-emerald-100">
+                                Reset View
+                            </Button>
                         </div>
                     )}
 
-                    {/* Pagination */}
                     {totalPages > 1 && (
                         <div className="flex justify-center items-center gap-2 mt-16 pt-8 border-t border-emerald-900/10">
                             <button
@@ -171,7 +186,6 @@ export default function ProductCatalog() {
                             </button>
                         </div>
                     )}
-
                 </div>
             </div>
         </section>

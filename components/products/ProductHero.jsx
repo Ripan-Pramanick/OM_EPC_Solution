@@ -73,9 +73,9 @@ export default function ProductHero() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="flex flex-col sm:flex-row items-center gap-4 mb-14"
                     >
-                        <Link href="#products">
+                        <Link href="/services">
                             <Button>
-                                Browse Products
+                                Browse services
                             </Button>
                         </Link>
                         <Link href="/contact#contact-form">

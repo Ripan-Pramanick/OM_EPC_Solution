@@ -1,14 +1,15 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { contactPageImages } from '@/data/images';
 import { contactData } from '@/data/contactData';
-import { X, MapPin, Phone, Mail, ArrowRight, CheckCircle2, AlertCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, CheckCircle2, AlertCircle, Send } from 'lucide-react';
 import Button from '@/components/ui/Button';
 
-// Custom Social SVGs
+// Custom Social SVGs (X/Twitter icon added properly)
+const XIcon = ({ size = 18, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>;
 const FacebookIcon = ({ size = 18, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>;
 const InstagramIcon = ({ size = 18, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>;
 const YouTubeIcon = ({ size = 18, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z" /><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" /></svg>;
@@ -16,10 +17,17 @@ const YouTubeIcon = ({ size = 18, className }) => <svg xmlns="http://www.w3.org/
 export default function ContactConversation() {
     const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
     const [errors, setErrors] = useState({});
-    
-    // Added API states
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [status, setStatus] = useState({ loading: false, error: '' });
+
+    // URL থেকে প্রোডাক্টের নাম রিড করে সাবজেক্ট ফিল্ডে বসানোর জন্য useEffect
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
+        const product = params.get('product');
+        if (product) {
+            setFormData(prev => ({ ...prev, subject: `Enquiry about: ${product}` }));
+        }
+    }, []);
 
     const validateForm = () => {
         let newErrors = {};
@@ -33,10 +41,10 @@ export default function ContactConversation() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+
         if (validateForm()) {
             setStatus({ loading: true, error: '' });
-            
+
             try {
                 const res = await fetch('/api/contact', {
                     method: 'POST',
@@ -48,8 +56,7 @@ export default function ContactConversation() {
                     setStatus({ loading: false, error: '' });
                     setIsSubmitted(true);
                     setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-                    
-                    // Hide success message and show form again after 5 seconds
+
                     setTimeout(() => setIsSubmitted(false), 5000);
                 } else {
                     setStatus({ loading: false, error: 'Something went wrong. Please try again.' });
@@ -69,8 +76,8 @@ export default function ContactConversation() {
                 {/* LEFT COLUMN: Text + Form */}
                 <div className="flex flex-col">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                        <div className="inline-flex items-center gap-2 text-[10px] font-bold text-white tracking-widest uppercase mb-6 px-3 py-1.5 border border-emerald-400 rounded-full bg-emerald-800/50">
-                            <X size={12} className="text-emerald-300" /> GET IN TOUCH
+                        <div className="inline-flex items-center gap-2 border border-emerald-200 bg-emerald-100 rounded-full px-4 py-1.5 text-xs font-bold text-emerald-900 tracking-widest uppercase mb-6 shadow-sm">
+                            <Send size={12} className="text-emerald-700" /> GET IN TOUCH
                         </div>
                         <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.1] mb-6 tracking-tight">
                             Start Your Conversation
@@ -129,7 +136,7 @@ export default function ContactConversation() {
                                 )}
 
                                 <div className="mt-2">
-                                    <Button 
+                                    <Button
                                         type="submit"
                                         disabled={status.loading}
                                         className={status.loading ? 'opacity-70 cursor-not-allowed' : ''}
@@ -144,7 +151,6 @@ export default function ContactConversation() {
 
                 {/* RIGHT COLUMN: Contact Info + Tech Visual */}
                 <div className="flex flex-col h-full pt-4">
-
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -191,10 +197,10 @@ export default function ContactConversation() {
                         transition={{ delay: 0.5 }}
                         className="flex items-center gap-4 mb-16"
                     >
-                        <Link href={contactData.social.facebook} className="w-10 h-10 rounded-full border border-emerald-400/30 flex items-center justify-center text-white hover:bg-white hover:text-emerald-800 transition-colors"><X size={14} /></Link>
-                        <Link href={contactData.social.facebook} className="w-10 h-10 rounded-full border border-emerald-400/30 flex items-center justify-center text-white hover:bg-white hover:text-emerald-800 transition-colors"><FacebookIcon size={16} /></Link>
-                        <Link href={contactData.social.instagram} className="w-10 h-10 rounded-full border border-emerald-400/30 flex items-center justify-center text-white hover:bg-white hover:text-emerald-800 transition-colors"><InstagramIcon size={16} /></Link>
-                        <Link href={contactData.social.youtube} className="w-10 h-10 rounded-full border border-emerald-400/30 flex items-center justify-center text-white hover:bg-white hover:text-emerald-800 transition-colors"><YouTubeIcon size={16} /></Link>
+                        <Link href={contactData.social.twitter || '#'} className="w-10 h-10 rounded-full border border-emerald-400/30 flex items-center justify-center text-white hover:bg-white hover:text-emerald-800 transition-colors"><XIcon size={14} /></Link>
+                        <Link href={contactData.social.facebook || '#'} className="w-10 h-10 rounded-full border border-emerald-400/30 flex items-center justify-center text-white hover:bg-white hover:text-emerald-800 transition-colors"><FacebookIcon size={16} /></Link>
+                        <Link href={contactData.social.instagram || '#'} className="w-10 h-10 rounded-full border border-emerald-400/30 flex items-center justify-center text-white hover:bg-white hover:text-emerald-800 transition-colors"><InstagramIcon size={16} /></Link>
+                        <Link href={contactData.social.youtube || '#'} className="w-10 h-10 rounded-full border border-emerald-400/30 flex items-center justify-center text-white hover:bg-white hover:text-emerald-800 transition-colors"><YouTubeIcon size={16} /></Link>
                     </motion.div>
 
                     {/* Decorative Floating Tech Visual */}

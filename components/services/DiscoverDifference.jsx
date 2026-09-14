@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import { aboutImages } from '@/data/images';
 import { serviceBenefits } from '@/data/servicesData';
-import { X, Cpu } from 'lucide-react';
+import { X, Cpu, Award } from 'lucide-react';
 
 // Custom SVG Icon replicating the exact Blueprint/Design icon from your image
 const BlueprintIcon = ({ size = 48, className }) => (
@@ -45,7 +45,7 @@ export default function DiscoverDifference() {
                         transition={{ duration: 0.6 }}
                     >
                         <div className="inline-flex items-center gap-2 text-[10px] font-bold text-emerald-800 tracking-widest uppercase mb-6 px-4 py-1.5 border border-emerald-200/80 rounded-full bg-emerald-100/30 backdrop-blur-sm shadow-sm">
-                            <X size={12} className="text-emerald-600" strokeWidth={2.5} /> WHY CHOOSE OM EPC
+                            <Award size={12} className="text-emerald-600" strokeWidth={2.5} /> WHY CHOOSE OM EPC
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold text-emerald-950 tracking-tight leading-[1.1]">
                             Discover the Difference<br />We Can Make

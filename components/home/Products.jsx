@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { images } from '@/data/images';
-import { X, ArrowRight, Download, Server, Monitor, Zap, Network } from 'lucide-react';
+import { X, ArrowRight, Download, Server, Monitor, Zap, Network, Cpu } from 'lucide-react';
 import Button from '@/components/ui/DarkBtn';
 
 export default function Products() {
@@ -34,7 +34,7 @@ export default function Products() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 border border-gray-200 rounded-full px-4 py-1.5 text-xs font-bold text-emerald-50 tracking-widest uppercase mb-6"
           >
-            <X size={12} className="text-emerald-200" /> HARDWARE DISTRIBUTION
+            <Cpu size={12} className="text-emerald-200" /> HARDWARE DISTRIBUTION
           </motion.div>
 
           <motion.h2
@@ -47,9 +47,6 @@ export default function Products() {
           </motion.h2>
         </div>
 
-        {/* The User-Requested Tab Bar is REMOVED here as instructed */}
-
-        {/* Main Content Layout */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-12">
 
           {/* Left: Image with subtle grid background */}

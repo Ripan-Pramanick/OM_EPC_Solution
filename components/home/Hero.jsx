@@ -12,11 +12,11 @@ const WebThreads = dynamic(() => import('@/components/ui/WebThreads'), {
 });
 
 export default function Hero() {
-  const inlineImages = [
-    "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=150&q=80",
-    "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=150&q=80",
-    "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=150&q=80",
-    "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=150&q=80",
+const inlineImages = [
+    "/images/inline_1.jpg",
+    "/images/inline_2.jpg",
+    "/images/inline_3.jpg",
+    "/images/inline_4.jpg",
   ];
 
   return (

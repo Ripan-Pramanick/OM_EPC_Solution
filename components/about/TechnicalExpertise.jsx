@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import Link from 'next/link';
-import { ArrowRight, ArrowLeft, Mail } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Mail, Lightbulb } from 'lucide-react';
 import { expertiseCards } from '@/data/aboutData';
 
 // Custom SVGs for Social Icons to match the reference exactly and prevent build errors
@@ -31,8 +31,7 @@ export default function TechnicalExpertise() {
                             viewport={{ once: true }}
                             className="inline-flex items-center gap-2 text-[10px] font-bold text-emerald-800 tracking-widest uppercase mb-6 px-4 py-1.5 border border-emerald-200/80 rounded-full bg-emerald-100/30 backdrop-blur-sm shadow-sm"
                         >
-                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-600"><path d="M18 6L6 18M6 6l12 12" /></svg>
-                            OUR EXPERTISE
+                            <Lightbulb size={12} className="text-emerald-600" strokeWidth={2.5} /> OUR EXPERTISE
                         </motion.div>
                         <motion.h2
                             initial={{ opacity: 0, y: 10 }}

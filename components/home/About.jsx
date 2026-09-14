@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { images } from '@/data/images';
-import { ArrowRight, ServerCog, Target, X, Zap } from 'lucide-react';
+import { ArrowRight, ServerCog, Target, X, Zap, Info } from 'lucide-react';
 import Link from 'next/link';
 
 export default function About() {
@@ -16,7 +16,7 @@ export default function About() {
     <section id="about" className="py-24 lg:py-32 bg-emerald-100 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 grid lg:grid-cols-[1.1fr_1fr] gap-16 lg:gap-24 items-center">
 
-        {/* LEFT COLUMN: Overlapping Masonry Composition (Refined) */}
+      
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -84,7 +84,7 @@ export default function About() {
           >
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 border border-emerald-200/60 bg-white/60 rounded-full px-4 py-1.5 text-[10px] font-bold text-emerald-950 tracking-widest uppercase mb-8 shadow-sm">
-              <X size={12} className="text-emerald-700" strokeWidth={2.5} /> ABOUT US
+            <Info size={12} className="text-emerald-700" strokeWidth={2.5} /> ABOUT US
             </div>
 
             {/* Main Heading */}
@@ -107,7 +107,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                // Hover interaction: subtle bg change, line color change
+             
                 className="group flex items-center justify-between py-5 border-b border-emerald-900/10 hover:bg-emerald-50/50 hover:pl-4 transition-all duration-300 cursor-default"
               >
                 <div className="flex items-center gap-6">
@@ -120,7 +120,7 @@ export default function About() {
                   </span>
                 </div>
                 {/* Arrow reveals on hover */}
-                <ArrowRight size={18} className="text-emerald-700 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 mr-2" strokeWidth={2} />
+                {/* <ArrowRight size={18} className="text-emerald-700 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 mr-2" strokeWidth={2} /> */}
               </motion.div>
             ))}
           </div>

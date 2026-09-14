@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { aboutImages } from '@/data/images';
 import { foundationRows } from '@/data/aboutData';
-import { ArrowRight, ShieldCheck, Target, X } from 'lucide-react';
+import { ArrowRight, Info, ShieldCheck, Target } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Foundation() {
@@ -79,7 +79,7 @@ export default function Foundation() {
           >
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 border border-emerald-200/60 bg-white/60 rounded-full px-4 py-1.5 text-[10px] font-bold text-emerald-950 tracking-widest uppercase mb-8 shadow-sm">
-              <X size={12} className="text-emerald-700" strokeWidth={2.5} /> ABOUT OM EPC
+              <Info size={12} className="text-emerald-700" strokeWidth={2.5} /> ABOUT OM EPC
             </div>
 
             {/* Main Heading */}
