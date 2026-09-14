@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 
-// Fallback images in case they are not in your images.js
 const defaultImages = [
   "/images/default_1.jpg",
   "/images/default_2.jpg",
@@ -41,16 +40,10 @@ export default function Industries() {
   ];
 
   return (
-    // Section background set to emerald-50 with relative positioning
     <section className="relative py-24 bg-emerald-50 overflow-hidden">
-
-      {/* Subtle Grid Background Pattern (Blueprint style) */}
       <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#064e3b_1px,transparent_1px),linear-gradient(to_bottom,#064e3b_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
 
-      {/* Main Content Container - relative z-10 keeps it above the grid */}
       <div className="relative z-10 max-w-[1400px] mx-auto px-6">
-
-        {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,69 +57,54 @@ export default function Industries() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-emerald-950 tracking-tight max-w-2xl leading-[1.1]"
+          className="text-4xl md:text-5xl font-bold text-emerald-950 tracking-tight max-w-2xl leading-[1.1] mb-12"
         >
           Engineering Infrastructures That Inspire Growth
         </motion.h2>
-      </div>
 
-      {/* Expandable Hover Cards List */}
-      <div className="flex flex-col gap-6">
-        {highlightedProjects.map((project, index) => (
-          <motion.div
-            key={project.id}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="group relative w-full h-[140px] hover:h-[380px] flex overflow-hidden rounded-[2rem] border border-emerald-200 bg-emerald-100 transition-all duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer shadow-sm hover:shadow-xl"
-          >
-
-            {/* Left Content Area */}
-            <div className="relative w-[50%] md:w-[45%] h-full shrink-0 bg-emerald-100">
-
-              {/* Title & Category (Moves up on hover) */}
-              <div className="absolute top-1/2 -translate-y-1/2 left-6 md:left-10 right-4 group-hover:top-10 group-hover:-translate-y-0 transition-all duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
-                <div className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-emerald-900/60 mb-2">
-                  <project.icon size={14} /> {project.category}
+        <div className="flex flex-col gap-6">
+          {highlightedProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="group relative w-full h-[140px] hover:h-[380px] flex overflow-hidden rounded-[2rem] border border-emerald-200 bg-emerald-100 transition-all duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer shadow-sm hover:shadow-xl"
+            >
+              <div className="relative w-[50%] md:w-[45%] h-full shrink-0 bg-emerald-100">
+                <div className="absolute top-1/2 -translate-y-1/2 left-6 md:left-10 right-4 group-hover:top-10 group-hover:-translate-y-0 transition-all duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
+                  <div className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-emerald-900/60 mb-2">
+                    <project.icon size={14} /> {project.category}
+                  </div>
+                  <h3 className="text-lg md:text-2xl font-bold text-emerald-950 leading-tight pr-4">
+                    {project.title}
+                  </h3>
                 </div>
-                <h3 className="text-lg md:text-2xl font-bold text-emerald-950 leading-tight pr-4">
-                  {project.title}
-                </h3>
+
+                <div className="absolute bottom-10 left-6 md:left-10 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out delay-100 pointer-events-none group-hover:pointer-events-auto">
+                  <p className="flex items-center gap-2 text-xs font-medium text-emerald-900/70 mb-6">
+                    <ArrowRight size={14} className="text-emerald-950" /> {project.location}
+                  </p>
+                  <Link href="/contact#contact-form">
+                    <Button>Get a Quote</Button>
+                  </Link>
+                </div>
               </div>
 
-              {/* Hidden Details & Button (Fades in and slides up on hover) */}
-              <div className="absolute bottom-10 left-6 md:left-10 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out delay-100 pointer-events-none group-hover:pointer-events-auto">
-
-                <p className="flex items-center gap-2 text-xs font-medium text-emerald-900/70 mb-6">
-                  <ArrowRight size={14} className="text-emerald-950" /> {project.location}
-                </p>
-                <Link href="/contact#contact-form">
-                  <Button>Get a Quote</Button>
-                </Link>
+              <div className="relative w-[50%] md:w-[55%] h-full overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-transform duration-[10s] group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-100/60 via-transparent to-transparent pointer-events-none" />
               </div>
-
-            </div>
-
-            {/* Right Image Area */}
-            <div className="relative w-[50%] md:w-[55%] h-full overflow-hidden">
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover transition-transform duration-[10s] group-hover:scale-110"
-              />
-              {/* Subtle inner shadow/gradient for depth */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-transparent pointer-events-none" />
-            </div>
-
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
       </div>
-
-
-
-    
-    </section >
+    </section>
   );
 }
