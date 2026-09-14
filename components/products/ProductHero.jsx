@@ -7,7 +7,6 @@ import Button from '@/components/ui/Button';
 import { ShieldCheck, MonitorSmartphone, HeadphonesIcon, ArrowRight } from 'lucide-react';
 import dynamic from 'next/dynamic'; 
 
-
 const WebThreads = dynamic(() => import('@/components/ui/WebThreads'), { 
     ssr: false, 
     loading: () => <div className="absolute inset-0 bg-emerald-950 z-0"></div> 
@@ -15,10 +14,10 @@ const WebThreads = dynamic(() => import('@/components/ui/WebThreads'), {
 
 export default function ProductHero() {
     return (
-        // Outer dark background container
-        <section className="w-full pt-22 pb-10 h-screen px-4 md:px-8 bg-emerald-950">
-            {/* Background WebThreads Animation */}
-            <div className="absolute inset-0 w-full h-full z-0">
+      
+        <section className="relative w-full pt-24 pb-10 min-h-screen px-4 md:px-8 bg-emerald-950 flex flex-col justify-center overflow-hidden">
+         
+            <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
                 <WebThreads
                     color1="#00ff8b"
                     color2="#00ff10"
@@ -44,8 +43,9 @@ export default function ProductHero() {
                 />
             </div>
 
-            {/* Inner Floating Light Container matching the image layout */}
-            <div className="relative w-full max-w-[1600px] h-[85vh] mx-auto bg-emerald-100 rounded-[2.5rem] md:rounded-[3rem] px-8 py-12 md:px-12 lg:px-16 grid xl:grid-cols-2 gap-12 lg:gap-16 items-center shadow-2xl overflow-hidden">
+            {/* Inner Floating Light Container */}
+            {/* FIXED: Changed fixed 'h-[85vh]' to 'min-h-[85vh] h-auto lg:h-[85vh]' to prevent content spilling on mobile */}
+            <div className="relative w-full max-w-[1600px] min-h-[85vh] h-auto lg:h-[85vh] mx-auto bg-emerald-100 rounded-[2.5rem] md:rounded-[3rem] px-8 py-12 md:px-12 lg:px-16 grid xl:grid-cols-2 gap-12 lg:gap-16 items-center shadow-2xl overflow-hidden z-10">
 
                 {/* LEFT CONTENT */}
                 <div className="max-w-2xl relative z-10 py-8">
@@ -73,13 +73,13 @@ export default function ProductHero() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="flex flex-col sm:flex-row items-center gap-4 mb-14"
                     >
-                        <Link href="/services">
-                            <Button>
+                        <Link href="/services" className="w-full sm:w-auto">
+                            <Button >
                                 Browse services
                             </Button>
                         </Link>
-                        <Link href="/contact#contact-form">
-                            <Button>
+                        <Link href="/contact#contact-form" className="w-full sm:w-auto">
+                            <Button variant="outline" >
                                 Get a Quote
                             </Button>
                         </Link>

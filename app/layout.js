@@ -1,5 +1,5 @@
 import "./globals.css";
-
+import PageLoader from "@/components/ui/PageLoader"; 
 export const metadata = {
   metadataBase: new URL('https://www.omepcsolution.com'),
   title: {
@@ -58,7 +58,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-emerald-50 text-emerald-950 font-sans">
-        {children}
+       
+        <PageLoader>
+          {children}
+        </PageLoader>
       </body>
     </html>
   );
