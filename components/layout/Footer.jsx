@@ -114,6 +114,11 @@ export default function Footer() {
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-700 group-hover:bg-emerald-400 transition-colors shrink-0"></span> Contact
                   </Link>
                 </li>
+                <li>
+                  <Link href="/login" className="hover:text-emerald-50 transition-colors flex items-center gap-3 group w-fit">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-700 group-hover:bg-emerald-400 transition-colors shrink-0"></span> Login
+                  </Link>
+                </li>
               </ul>
             </div>
             
