@@ -76,10 +76,42 @@ export default function Principles() {
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-4 md:mb-6 tracking-tight">
                 The Principles Behind Everything We Do
               </h2>
-              <p className="text-emerald-100/70 text-sm md:text-base lg:text-lg mb-8 md:mb-12 leading-relaxed">
+              <p className="text-emerald-100/70 text-sm md:text-base lg:text-lg mb-8 lg:mb-12 leading-relaxed">
                 We stay true to our values, delivering reliable IT solutions while striving for meaningful business growth.
               </p>
             </motion.div>
+
+            {/* Mobile/Tablet Circle Display - MOVED HERE (Under Heading, Above Accordion) */}
+            <div className="lg:hidden relative w-full mb-10 z-20">
+              <div className="relative w-full max-w-[320px] sm:max-w-[360px] aspect-square mx-auto bg-emerald-50 rounded-full shadow-2xl flex flex-col items-center justify-center p-6 sm:p-8 text-center border-[6px] border-emerald-900">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeIndex}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex flex-col items-center"
+                  >
+                    <div className="mb-3 sm:mb-4 text-emerald-950">
+                      {(() => {
+                        const IconComponent = principlesData[activeIndex].icon;
+                        return <IconComponent className="w-10 h-10 sm:w-12 sm:h-12" strokeWidth={1.2} />;
+                      })()}
+                    </div>
+                    <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-emerald-700 mb-1.5 sm:mb-2">
+                      {principlesData[activeIndex].subtitle}
+                    </p>
+                    <h3 className="text-lg sm:text-xl font-bold text-emerald-950 mb-2 leading-tight tracking-tight">
+                      {principlesData[activeIndex].title}
+                    </h3>
+                    <p className="text-emerald-900/70 text-[11px] sm:text-xs leading-relaxed font-medium px-2">
+                      {principlesData[activeIndex].desc}
+                    </p>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
 
             {/* Interactive Accordion List */}
             <div className="flex flex-col mb-10 md:mb-12 border-t border-emerald-800/50">
@@ -125,7 +157,6 @@ export default function Principles() {
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
             >
-              {/* FIXED: Removed nested DarkBtn to avoid HTML nesting warnings. Replaced with direct Link styling. */}
               <Link 
                 href="/contact" 
                 prefetch={false}
@@ -139,7 +170,7 @@ export default function Principles() {
 
         {/* 
           The White/Emerald Circle (Centered perfectly on the seam for Desktop)
-          FIXED: Responsive width & height for lg and xl screens 
+          Hidden on Mobile/Tablet (lg:flex ensures this only shows on PC)
         */}
         <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 right-[45%] translate-x-1/2 z-30 w-[360px] h-[360px] xl:w-[460px] xl:h-[460px] bg-emerald-50 rounded-full shadow-[0_30px_60px_rgba(4,60,38,0.4)] flex-col items-center justify-center p-8 xl:p-12 text-center border-[6px] xl:border-8 border-emerald-950/20">
           <AnimatePresence mode="wait">
@@ -167,39 +198,6 @@ export default function Principles() {
               </h3>
 
               <p className="text-emerald-900/70 text-xs xl:text-sm leading-relaxed max-w-[280px] mx-auto font-medium">
-                {principlesData[activeIndex].desc}
-              </p>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </div>
-
-      {/* Mobile/Tablet Circle Display */}
-      {/* FIXED: Responsive dimensions to prevent overflow on small screens */}
-      <div className="lg:hidden relative w-full mt-12 sm:mt-16 px-4 z-20">
-        <div className="relative w-full max-w-[340px] sm:max-w-[380px] aspect-square mx-auto bg-emerald-50 rounded-full shadow-2xl flex flex-col items-center justify-center p-6 sm:p-8 text-center border-[6px] border-emerald-900">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeIndex}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3 }}
-              className="flex flex-col items-center"
-            >
-              <div className="mb-3 sm:mb-4 text-emerald-950">
-                {(() => {
-                  const IconComponent = principlesData[activeIndex].icon;
-                  return <IconComponent className="w-10 h-10 sm:w-12 sm:h-12" strokeWidth={1.2} />;
-                })()}
-              </div>
-              <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-emerald-700 mb-1.5 sm:mb-2">
-                {principlesData[activeIndex].subtitle}
-              </p>
-              <h3 className="text-lg sm:text-xl font-bold text-emerald-950 mb-2 leading-tight tracking-tight">
-                {principlesData[activeIndex].title}
-              </h3>
-              <p className="text-emerald-900/70 text-[11px] sm:text-xs leading-relaxed font-medium px-2">
                 {principlesData[activeIndex].desc}
               </p>
             </motion.div>

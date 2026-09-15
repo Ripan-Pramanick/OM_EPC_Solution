@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 // Custom Social SVGs
 const FacebookIcon = ({ size = 18, strokeWidth = 2.5, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>;
@@ -16,19 +16,22 @@ export default function Footer() {
   // Hide footer on login page
   if (pathname === '/login') return null;
 
+  // Function to smoothly scroll to top
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    // Reduced top padding on mobile (pt-8 instead of pt-12)
     <footer className="w-full bg-emerald-50 pt-8 md:pt-12 px-4 md:px-6">
-      {/* Reduced inner padding for mobile (pt-12 pb-6 instead of pt-16 pb-8) */}
       <div className="bg-emerald-950 rounded-t-[2.5rem] md:rounded-t-[80px] pt-12 md:pt-20 pb-6 md:pb-8 mx-auto max-w-[1400px]">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
-          {/* Main 2-Column Grid - Reduced gap on mobile */}
+          {/* Main 2-Column Grid */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
             
             {/* COLUMN 1: Company Info */}
             <div className="md:col-span-8 lg:col-span-8 lg:pr-12">
-              <Link href="/" className="inline-block mb-4 md:mb-6">
+              <Link href="/" onClick={handleScrollToTop} className="inline-block mb-4 md:mb-6">
                 <Image 
                   src="/light_logo.webp" 
                   alt="OM EPC Solution" 
@@ -41,7 +44,6 @@ export default function Footer() {
                 Your trusted partner for comprehensive IT infrastructure, networking, power backup, and security solutions.
               </p>
 
-              {/* Reduced gap and margin on mobile */}
               <div className="flex flex-col gap-3 md:gap-4 text-sm md:text-base text-emerald-50 mb-8 md:mb-10">
                 <a href="tel:+919876543210" className="flex items-center gap-3 md:gap-4 hover:text-emerald-300 transition-colors group w-fit">
                   <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-emerald-800/50 border border-emerald-700/50 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-700 transition-colors shrink-0">
@@ -56,7 +58,6 @@ export default function Footer() {
                   contact@omepcsolution.com
                 </a>
                 
-                {/* Updated Address */}
                 <div className="flex items-start gap-3 md:gap-4 group w-fit">
                   <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-emerald-800/50 border border-emerald-700/50 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5 md:mt-1">
                     <MapPin size={16} className="md:w-[18px] md:h-[18px]" />
@@ -88,35 +89,35 @@ export default function Footer() {
             {/* COLUMN 2: Quick Links */}
             <div className="md:col-span-4 lg:col-span-4">
               <h4 className="text-lg md:text-xl font-bold mb-5 md:mb-8 text-emerald-50 tracking-tight">Quick Links</h4>
-              {/* FIXED: Added grid cols on mobile (grid-cols-2) to save vertical space */}
               <ul className="grid grid-cols-2 md:grid-cols-1 gap-y-3 gap-x-4 text-sm md:text-base text-emerald-200/80">
+                {/* FIXED: Added onClick={handleScrollToTop} to force scroll when clicking current route */}
                 <li>
-                  <Link href="/" className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
+                  <Link href="/" onClick={handleScrollToTop} className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
+                  <Link href="/about" onClick={handleScrollToTop} className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
                      About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
+                  <Link href="/services" onClick={handleScrollToTop} className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products" className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
+                  <Link href="/products" onClick={handleScrollToTop} className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
                     Products
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
+                  <Link href="/contact" onClick={handleScrollToTop} className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="/login" className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
+                  <Link href="/login" onClick={handleScrollToTop} className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
                      Login
                   </Link>
                 </li>
@@ -125,14 +126,13 @@ export default function Footer() {
             
           </div>
 
-          {/* Compact CTA Section - Reduced padding on mobile */}
+          {/* Compact CTA Section */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-5 md:gap-6 py-6 md:py-10 mt-10 md:mt-12 border-t border-emerald-800/50">
             <div>
               <h4 className="text-xl md:text-3xl font-bold text-white mb-1.5 md:mb-2 tracking-tight">Need reliable IT infrastructure?</h4>
               <p className="text-emerald-300 text-sm md:text-base font-medium">Let's build a smarter setup for your business.</p>
             </div>
             
-            {/* FIXED: Removed DarkBtn inside Link to fix nesting error */}
             <Link 
               href="/contact#contact-form"
               prefetch={false}
@@ -142,12 +142,12 @@ export default function Footer() {
             </Link>
           </div>
 
-          {/* Bottom Legal Bar - Reduced top padding on mobile */}
+          {/* Bottom Legal Bar */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 pt-6 md:pt-8 border-t border-emerald-800/50 text-xs md:text-sm text-emerald-400/60 font-medium">
             <p className="text-center md:text-left">© {new Date().getFullYear()} OM EPC Solution. All rights reserved.</p>
             <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
-              <Link href="/privacy" className="hover:text-emerald-300 transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-emerald-300 transition-colors">Terms & Conditions</Link>
+              <Link href="/privacy" onClick={handleScrollToTop} className="hover:text-emerald-300 transition-colors">Privacy Policy</Link>
+              <Link href="/terms" onClick={handleScrollToTop} className="hover:text-emerald-300 transition-colors">Terms & Conditions</Link>
             </div>
           </div>
 
