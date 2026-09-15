@@ -68,21 +68,21 @@ export default function ContactConversation() {
     };
 
     return (
-        <section id="contact-form" className="py-24 md:py-32 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 relative overflow-hidden">
+        <section id="contact-form" className="py-16 md:py-24 lg:py-32 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 relative overflow-hidden">
             <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-            <div className="max-w-[1400px] mx-auto px-6 grid lg:grid-cols-[1fr_450px] xl:grid-cols-[1.2fr_500px] gap-12 lg:gap-20 items-start relative z-10">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1.2fr_500px] gap-10 lg:gap-16 xl:gap-20 items-start relative z-10">
 
                 {/* LEFT COLUMN: Text + Form */}
                 <div className="flex flex-col">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                        <div className="inline-flex items-center gap-2 border border-emerald-200 bg-emerald-100 rounded-full px-4 py-1.5 text-xs font-bold text-emerald-900 tracking-widest uppercase mb-6 shadow-sm">
+                        <div className="inline-flex items-center gap-2 border border-emerald-200 bg-emerald-100 rounded-full px-4 py-1.5 text-[10px] md:text-xs font-bold text-emerald-900 tracking-widest uppercase mb-4 md:mb-6 shadow-sm">
                             <Send size={12} className="text-emerald-700" /> GET IN TOUCH
                         </div>
-                        <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.1] mb-6 tracking-tight">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.1] mb-4 md:mb-6 tracking-tight">
                             Start Your Conversation
                         </h2>
-                        <p className="text-emerald-100 text-base md:text-lg mb-12 max-w-xl leading-relaxed">
+                        <p className="text-emerald-100 text-sm sm:text-base md:text-lg mb-8 md:mb-12 max-w-xl leading-relaxed">
                             Have a question, need technical support, or looking for the right technology solution? Tell us what you need and our team will get back to you.
                         </p>
                     </motion.div>
@@ -92,39 +92,39 @@ export default function ContactConversation() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="bg-white rounded-[2rem] p-8 md:p-10 shadow-2xl relative overflow-hidden"
+                        className="bg-white rounded-[1.5rem] md:rounded-[2rem] p-6 sm:p-8 md:p-10 shadow-2xl relative overflow-hidden"
                     >
                         {isSubmitted ? (
                             <div className="flex flex-col items-center justify-center text-center h-full min-h-[350px] py-12">
-                                <div className="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500 mb-6">
-                                    <CheckCircle2 size={40} />
+                                <div className="w-16 h-16 md:w-20 md:h-20 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500 mb-4 md:mb-6">
+                                    <CheckCircle2 size={40} className="w-8 h-8 md:w-10 md:h-10" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-emerald-950 mb-2">Message Sent!</h3>
-                                <p className="text-emerald-700/70">Thank you! Your message has been received. Our team will contact you shortly.</p>
+                                <h3 className="text-xl md:text-2xl font-bold text-emerald-950 mb-2">Message Sent!</h3>
+                                <p className="text-sm md:text-base text-emerald-700/70">Thank you! Your message has been received. Our team will contact you shortly.</p>
                             </div>
                         ) : (
-                            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                                <div className="grid md:grid-cols-2 gap-5">
+                            <form onSubmit={handleSubmit} className="flex flex-col gap-4 md:gap-5">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
                                     <div>
-                                        <input type="text" placeholder="Full Name *" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} className={`w-full px-5 py-4 bg-emerald-50/50 border ${errors.name ? 'border-red-300' : 'border-emerald-100'} rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors`} />
+                                        <input type="text" placeholder="Full Name *" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} className={`w-full px-4 sm:px-5 py-3.5 sm:py-4 bg-emerald-50/50 border ${errors.name ? 'border-red-300' : 'border-emerald-100'} rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors`} />
                                         {errors.name && <p className="text-red-500 text-xs mt-1.5 ml-1">{errors.name}</p>}
                                     </div>
                                     <div>
-                                        <input type="email" placeholder="Email Address *" value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} className={`w-full px-5 py-4 bg-emerald-50/50 border ${errors.email ? 'border-red-300' : 'border-emerald-100'} rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors`} />
+                                        <input type="email" placeholder="Email Address *" value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} className={`w-full px-4 sm:px-5 py-3.5 sm:py-4 bg-emerald-50/50 border ${errors.email ? 'border-red-300' : 'border-emerald-100'} rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors`} />
                                         {errors.email && <p className="text-red-500 text-xs mt-1.5 ml-1">{errors.email}</p>}
                                     </div>
                                 </div>
 
-                                <div className="grid md:grid-cols-2 gap-5">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
                                     <div>
-                                        <input type="text" placeholder="Phone Number *" value={formData.phone} onChange={e => setFormData({ ...formData, phone: e.target.value })} className={`w-full px-5 py-4 bg-emerald-50/50 border ${errors.phone ? 'border-red-300' : 'border-emerald-100'} rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors`} />
+                                        <input type="text" placeholder="Phone Number *" value={formData.phone} onChange={e => setFormData({ ...formData, phone: e.target.value })} className={`w-full px-4 sm:px-5 py-3.5 sm:py-4 bg-emerald-50/50 border ${errors.phone ? 'border-red-300' : 'border-emerald-100'} rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors`} />
                                         {errors.phone && <p className="text-red-500 text-xs mt-1.5 ml-1">{errors.phone}</p>}
                                     </div>
-                                    <input type="text" placeholder="Subject (Optional)" value={formData.subject} onChange={e => setFormData({ ...formData, subject: e.target.value })} className="w-full px-5 py-4 bg-emerald-50/50 border border-emerald-100 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" />
+                                    <input type="text" placeholder="Subject (Optional)" value={formData.subject} onChange={e => setFormData({ ...formData, subject: e.target.value })} className="w-full px-4 sm:px-5 py-3.5 sm:py-4 bg-emerald-50/50 border border-emerald-100 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" />
                                 </div>
 
                                 <div>
-                                    <textarea rows={5} placeholder="Your Message *" value={formData.message} onChange={e => setFormData({ ...formData, message: e.target.value })} className={`w-full px-5 py-4 bg-emerald-50/50 border ${errors.message ? 'border-red-300' : 'border-emerald-100'} rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors resize-none min-h-[140px]`}></textarea>
+                                    <textarea rows={4} placeholder="Your Message *" value={formData.message} onChange={e => setFormData({ ...formData, message: e.target.value })} className={`w-full px-4 sm:px-5 py-3.5 sm:py-4 bg-emerald-50/50 border ${errors.message ? 'border-red-300' : 'border-emerald-100'} rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors resize-none min-h-[120px] md:min-h-[140px]`}></textarea>
                                     {errors.message && <p className="text-red-500 text-xs mt-1.5 ml-1">{errors.message}</p>}
                                 </div>
 
@@ -135,11 +135,11 @@ export default function ContactConversation() {
                                     </div>
                                 )}
 
-                                <div className="mt-2">
+                                <div className="mt-2 md:mt-4">
                                     <Button
                                         type="submit"
                                         disabled={status.loading}
-                                        className={status.loading ? 'opacity-70 cursor-not-allowed' : ''}
+                                        className={`w-full sm:w-auto ${status.loading ? 'opacity-70 cursor-not-allowed' : ''}`}
                                     >
                                         {status.loading ? 'Sending...' : 'Send Message'}
                                     </Button>
@@ -150,41 +150,41 @@ export default function ContactConversation() {
                 </div>
 
                 {/* RIGHT COLUMN: Contact Info + Tech Visual */}
-                <div className="flex flex-col h-full pt-4">
+                <div className="flex flex-col h-full lg:pt-4">
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className="flex flex-col gap-8 mb-12"
+                        className="flex flex-col gap-6 md:gap-8 mb-10 md:mb-12"
                     >
-                        <div className="flex items-start gap-4">
-                            <div className="w-12 h-12 rounded-full bg-emerald-800/50 border border-emerald-500/30 flex items-center justify-center text-emerald-300 shrink-0">
-                                <MapPin size={20} />
+                        <div className="flex items-start gap-3 sm:gap-4">
+                            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-emerald-800/50 border border-emerald-500/30 flex items-center justify-center text-emerald-300 shrink-0">
+                                <MapPin className="w-5 h-5 md:w-6 md:h-6" />
                             </div>
                             <div>
-                                <p className="text-xs font-bold text-emerald-300 uppercase tracking-widest mb-1">Main Office</p>
-                                <p className="text-base font-bold text-white">{contactData.locations[0].address}</p>
+                                <p className="text-[10px] md:text-xs font-bold text-emerald-300 uppercase tracking-widest mb-1">Main Office</p>
+                                <p className="text-sm sm:text-base font-bold text-white leading-snug">{contactData.locations[0].address}</p>
                             </div>
                         </div>
 
-                        <div className="flex items-start gap-4">
-                            <div className="w-12 h-12 rounded-full bg-emerald-800/50 border border-emerald-500/30 flex items-center justify-center text-emerald-300 shrink-0">
-                                <Phone size={20} />
+                        <div className="flex items-start gap-3 sm:gap-4">
+                            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-emerald-800/50 border border-emerald-500/30 flex items-center justify-center text-emerald-300 shrink-0">
+                                <Phone className="w-5 h-5 md:w-6 md:h-6" />
                             </div>
                             <div>
-                                <p className="text-xs font-bold text-emerald-300 uppercase tracking-widest mb-1">Call Us</p>
-                                <p className="text-base font-bold text-white">{contactData.phone}</p>
+                                <p className="text-[10px] md:text-xs font-bold text-emerald-300 uppercase tracking-widest mb-1">Call Us</p>
+                                <p className="text-sm sm:text-base font-bold text-white leading-snug">{contactData.phone}</p>
                             </div>
                         </div>
 
-                        <div className="flex items-start gap-4">
-                            <div className="w-12 h-12 rounded-full bg-emerald-800/50 border border-emerald-500/30 flex items-center justify-center text-emerald-300 shrink-0">
-                                <Mail size={20} />
+                        <div className="flex items-start gap-3 sm:gap-4">
+                            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-emerald-800/50 border border-emerald-500/30 flex items-center justify-center text-emerald-300 shrink-0">
+                                <Mail className="w-5 h-5 md:w-6 md:h-6" />
                             </div>
                             <div>
-                                <p className="text-xs font-bold text-emerald-300 uppercase tracking-widest mb-1">Email Us</p>
-                                <p className="text-base font-bold text-white">{contactData.email}</p>
+                                <p className="text-[10px] md:text-xs font-bold text-emerald-300 uppercase tracking-widest mb-1">Email Us</p>
+                                <p className="text-sm sm:text-base font-bold text-white break-all leading-snug">{contactData.email}</p>
                             </div>
                         </div>
                     </motion.div>
@@ -195,25 +195,24 @@ export default function ContactConversation() {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.5 }}
-                        className="flex items-center gap-4 mb-16"
+                        className="flex items-center gap-3 sm:gap-4 mb-10 lg:mb-16"
                     >
-                        <Link href={contactData.social.twitter || '#'} className="w-10 h-10 rounded-full border border-emerald-400/30 flex items-center justify-center text-white hover:bg-white hover:text-emerald-800 transition-colors"><XIcon size={14} /></Link>
-                        <Link href={contactData.social.facebook || '#'} className="w-10 h-10 rounded-full border border-emerald-400/30 flex items-center justify-center text-white hover:bg-white hover:text-emerald-800 transition-colors"><FacebookIcon size={16} /></Link>
-                        <Link href={contactData.social.instagram || '#'} className="w-10 h-10 rounded-full border border-emerald-400/30 flex items-center justify-center text-white hover:bg-white hover:text-emerald-800 transition-colors"><InstagramIcon size={16} /></Link>
-                        <Link href={contactData.social.youtube || '#'} className="w-10 h-10 rounded-full border border-emerald-400/30 flex items-center justify-center text-white hover:bg-white hover:text-emerald-800 transition-colors"><YouTubeIcon size={16} /></Link>
+                        <Link href={contactData.social.twitter || '#'} className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-emerald-400/30 flex items-center justify-center text-white hover:bg-white hover:text-emerald-800 transition-colors"><XIcon size={14} /></Link>
+                        <Link href={contactData.social.facebook || '#'} className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-emerald-400/30 flex items-center justify-center text-white hover:bg-white hover:text-emerald-800 transition-colors"><FacebookIcon size={16} /></Link>
+                        <Link href={contactData.social.instagram || '#'} className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-emerald-400/30 flex items-center justify-center text-white hover:bg-white hover:text-emerald-800 transition-colors"><InstagramIcon size={16} /></Link>
+                        <Link href={contactData.social.youtube || '#'} className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-emerald-400/30 flex items-center justify-center text-white hover:bg-white hover:text-emerald-800 transition-colors"><YouTubeIcon size={16} /></Link>
                     </motion.div>
 
-                    {/* Decorative Floating Tech Visual */}
+                    {/* Decorative Floating Tech Visual - Hidden on extra small, shown as banner on mobile/tablet, full height on Desktop */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1 }}
-                        className="relative flex-1 min-h-[300px] w-full rounded-[2.5rem] bg-emerald-800/50 overflow-hidden border border-emerald-500/20 shadow-2xl animate-[floating_6s_ease-in-out_infinite]"
+                        className="relative w-full h-[200px] sm:h-[250px] lg:flex-1 min-h-[250px] lg:min-h-[300px] rounded-[1.5rem] md:rounded-[2.5rem] bg-emerald-800/50 overflow-hidden border border-emerald-500/20 shadow-2xl lg:animate-[floating_6s_ease-in-out_infinite]"
                     >
                         <Image src={contactPageImages.visual} alt="IT Infrastructure" fill className="object-cover opacity-80" />
                     </motion.div>
-
                 </div>
             </div>
         </section>

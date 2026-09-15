@@ -1,7 +1,7 @@
 "use client";
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { X, MapPin, Phone, Mail, CheckCircle2, AlertCircle, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, CheckCircle2, AlertCircle } from 'lucide-react';
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
 import { images } from '@/data/images';
@@ -42,8 +42,8 @@ export default function Contact() {
 
       if (res.ok) {
         setStatus({ loading: false, success: true, error: '' });
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' }); // Reset form
-        setTimeout(() => setStatus(prev => ({ ...prev, success: false })), 5000); // Hide success message after 5s
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' }); 
+        setTimeout(() => setStatus(prev => ({ ...prev, success: false })), 5000); 
       } else {
         setStatus({ loading: false, success: false, error: 'Something went wrong. Please try again.' });
       }
@@ -53,36 +53,36 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-emerald-950">
-      <div className="max-w-[1400px] mx-auto px-6">
+    <section id="contact" className="py-16 md:py-24 bg-emerald-950">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
 
         {/* Inner Light Container */}
-        <div className="relative bg-emerald-50 text-emerald-950 rounded-[2.5rem] p-8 md:p-12 lg:p-16 overflow-hidden shadow-2xl border border-emerald-200">
+        <div className="relative bg-emerald-50 text-emerald-950 rounded-[1.5rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-12 lg:p-16 overflow-hidden shadow-2xl border border-emerald-200">
 
           {/* Background Flare */}
-          <div className="absolute top-0 right-[20%] w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-3xl -translate-y-1/2 pointer-events-none z-0"></div>
+          <div className="absolute top-0 right-[20%] w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-emerald-500/10 rounded-full blur-3xl -translate-y-1/2 pointer-events-none z-0"></div>
 
           <div className="relative z-10">
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-8 md:mb-12"
             >
-              <div className="inline-flex items-center gap-2 text-[10px] font-bold text-white tracking-widest uppercase mb-6 px-3 py-1.5 border border-emerald-400 rounded-full bg-emerald-800/50">
+              <div className="inline-flex items-center gap-2 text-[10px] md:text-xs font-bold text-white tracking-widest uppercase mb-4 md:mb-6 px-3 py-1.5 border border-emerald-400 rounded-full bg-emerald-800/50">
                 <Mail size={12} className="text-emerald-300" /> GET IN TOUCH
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-bold text-emerald-950 mb-4 tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-950 mb-3 md:mb-4 tracking-tight">
                 Start Your Conversation
               </h2>
 
-              <p className="text-emerald-900/70 text-base md:text-lg max-w-xl">
+              <p className="text-emerald-900/70 text-sm sm:text-base md:text-lg max-w-xl">
                 Reach us anytime, let's architect your resilient IT infrastructure together.
               </p>
             </motion.div>
 
-            <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-start">
+            <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 md:gap-12 lg:gap-20 items-start">
 
               {/* Form Section */}
               <motion.form
@@ -90,10 +90,10 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="bg-emerald-100/50 border border-emerald-900/10 rounded-[2rem] p-8 shadow-sm relative"
+                className="bg-emerald-100/50 border border-emerald-900/10 rounded-[1.5rem] md:rounded-[2rem] p-5 sm:p-8 shadow-sm relative"
                 onSubmit={handleSubmit}
               >
-                <div className="grid md:grid-cols-2 gap-5 mb-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 mb-4 md:mb-5">
                   <input
                     type="text"
                     name="name"
@@ -101,7 +101,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="Name"
-                    className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
+                    className="w-full px-4 sm:px-5 py-3.5 sm:py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
                   />
                   <input
                     type="email"
@@ -110,11 +110,11 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="Email"
-                    className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
+                    className="w-full px-4 sm:px-5 py-3.5 sm:py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
                   />
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-5 mb-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 mb-4 md:mb-5">
                   <input
                     type="text"
                     name="phone"
@@ -122,7 +122,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="Phone"
-                    className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
+                    className="w-full px-4 sm:px-5 py-3.5 sm:py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
                   />
                   <input
                     type="text"
@@ -131,11 +131,11 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="Subject"
-                    className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
+                    className="w-full px-4 sm:px-5 py-3.5 sm:py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
                   />
                 </div>
 
-                <div className="mb-8">
+                <div className="mb-6 md:mb-8">
                   <textarea
                     name="message"
                     value={formData.message}
@@ -143,18 +143,18 @@ export default function Contact() {
                     required
                     rows={4}
                     placeholder="Your message"
-                    className="w-full px-5 py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors resize-none"
+                    className="w-full px-4 sm:px-5 py-3.5 sm:py-4 bg-white border border-emerald-200 rounded-xl text-sm font-medium text-emerald-950 placeholder:text-emerald-900/40 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors resize-none"
                   ></textarea>
                 </div>
 
                 {/* Status Messages */}
                 {status.success && (
-                  <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mb-6 flex items-center gap-2 text-emerald-700 bg-emerald-100 p-3 rounded-lg text-sm font-bold">
+                  <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mb-5 md:mb-6 flex items-center gap-2 text-emerald-700 bg-emerald-100 p-3 rounded-lg text-sm font-bold">
                     <CheckCircle2 size={18} /> Message sent successfully!
                   </motion.div>
                 )}
                 {status.error && (
-                  <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mb-6 flex items-center gap-2 text-red-600 bg-red-50 p-3 rounded-lg text-sm font-bold border border-red-100">
+                  <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mb-5 md:mb-6 flex items-center gap-2 text-red-600 bg-red-50 p-3 rounded-lg text-sm font-bold border border-red-100">
                     <AlertCircle size={18} /> {status.error}
                   </motion.div>
                 )}
@@ -162,7 +162,7 @@ export default function Contact() {
                 <Button
                   type="submit"
                   variant="premium"
-                  className={`w-auto ${status.loading ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  className={`w-full sm:w-auto ${status.loading ? 'opacity-70 cursor-not-allowed' : ''}`}
                   disabled={status.loading}
                 >
                   {status.loading ? 'Sending...' : 'Submit'}
@@ -175,38 +175,38 @@ export default function Contact() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="flex flex-col gap-10 pt-4"
+                className="flex flex-col gap-8 md:gap-10 lg:pt-4"
               >
                 <div className="flex gap-4">
-                  <div className="mt-1 text-emerald-700"><MapPin size={24} /></div>
+                  <div className="mt-1 text-emerald-700"><MapPin size={24} className="w-5 h-5 md:w-6 md:h-6" /></div>
                   <div>
-                    <p className="text-sm text-emerald-900/60 font-medium mb-1">Just Visit Us:</p>
-                    <p className="text-base font-bold text-emerald-950">Sector V, Salt Lake,<br />Kolkata, WB 700091</p>
+                    <p className="text-xs md:text-sm text-emerald-900/60 font-medium mb-1">Just Visit Us:</p>
+                    <p className="text-sm sm:text-base font-bold text-emerald-950">Sector V, Salt Lake,<br />Kolkata, WB 700091</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="mt-1 text-emerald-700"><Phone size={24} /></div>
+                  <div className="mt-1 text-emerald-700"><Phone size={24} className="w-5 h-5 md:w-6 md:h-6" /></div>
                   <div>
-                    <p className="text-sm text-emerald-900/60 font-medium mb-1">Need help? Call Us:</p>
-                    <p className="text-base font-bold text-emerald-950">+91 98765 43210</p>
+                    <p className="text-xs md:text-sm text-emerald-900/60 font-medium mb-1">Need help? Call Us:</p>
+                    <p className="text-sm sm:text-base font-bold text-emerald-950">+91 98765 43210</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="mt-1 text-emerald-700"><Mail size={24} /></div>
+                  <div className="mt-1 text-emerald-700"><Mail size={24} className="w-5 h-5 md:w-6 md:h-6" /></div>
                   <div>
-                    <p className="text-sm text-emerald-900/60 font-medium mb-1">Just Mail Us:</p>
-                    <p className="text-base font-bold text-emerald-950">support@omepcsolution.com</p>
+                    <p className="text-xs md:text-sm text-emerald-900/60 font-medium mb-1">Just Mail Us:</p>
+                    <p className="text-sm sm:text-base font-bold text-emerald-950 break-all">support@omepcsolution.com</p>
                   </div>
                 </div>
 
                 {/* Social Icons */}
-                <div className="flex items-center gap-6 mt-4">
-                  <a href="#" className="text-emerald-800/40 hover:text-emerald-700 transition-colors"><Twitter size={20} /></a>
-                  <a href="#" className="text-emerald-800/40 hover:text-emerald-700 transition-colors"><Facebook size={20} /></a>
-                  <a href="#" className="text-emerald-800/40 hover:text-emerald-700 transition-colors"><Instagram size={20} /></a>
-                  <a href="#" className="text-emerald-800/40 hover:text-emerald-700 transition-colors"><Linkedin size={20} /></a>
+                <div className="flex items-center gap-5 md:gap-6 mt-2 md:mt-4">
+                  <a href="#" className="text-emerald-800/40 hover:text-emerald-700 transition-colors"><Twitter size={20} className="w-5 h-5" /></a>
+                  <a href="#" className="text-emerald-800/40 hover:text-emerald-700 transition-colors"><Facebook size={20} className="w-5 h-5" /></a>
+                  <a href="#" className="text-emerald-800/40 hover:text-emerald-700 transition-colors"><Instagram size={20} className="w-5 h-5" /></a>
+                  <a href="#" className="text-emerald-800/40 hover:text-emerald-700 transition-colors"><Linkedin size={20} className="w-5 h-5" /></a>
                 </div>
               </motion.div>
 

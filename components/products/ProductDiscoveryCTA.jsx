@@ -14,7 +14,7 @@ export default function ProductDiscoveryCTA() {
     ];
 
     return (
-        <section className="relative py-32 bg-emerald-800 overflow-hidden">
+        <section className="relative py-20 md:py-24 lg:py-32 bg-emerald-800 overflow-hidden">
             <div className="absolute inset-0 z-0 pointer-events-none">
                 <motion.div
                     initial={{ scale: 1.1 }}
@@ -28,16 +28,16 @@ export default function ProductDiscoveryCTA() {
                 <div className="absolute inset-0 bg-emerald-900/80 mix-blend-multiply" />
             </div>
 
-            <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="flex justify-center mb-8"
+                    className="flex justify-center mb-6 md:mb-8"
                 >
-                    <div className="w-16 h-16 bg-emerald-100/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20">
-                        <Package size={28} />
+                    <div className="w-14 h-14 md:w-16 md:h-16 bg-emerald-100/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20">
+                        <Package size={24} className="md:w-7 md:h-7" />
                     </div>
                 </motion.div>
 
@@ -46,7 +46,7 @@ export default function ProductDiscoveryCTA() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.1 }}
-                    className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight"
+                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 tracking-tight"
                 >
                     Find the Right Product
                 </motion.h2>
@@ -56,7 +56,7 @@ export default function ProductDiscoveryCTA() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-emerald-100 text-lg md:text-xl mb-12 leading-relaxed max-w-2xl mx-auto"
+                    className="text-emerald-100/90 text-sm sm:text-base md:text-xl mb-10 md:mb-12 leading-relaxed max-w-2xl mx-auto"
                 >
                     Not sure which product is right for your business? Our team can help you choose the correct technology solution.
                 </motion.p>
@@ -66,23 +66,19 @@ export default function ProductDiscoveryCTA() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    className="mb-20 flex justify-center"
+                    className="mb-16 md:mb-20 flex justify-center"
                 >
-                    {/* 
-                      FIXED: Removed the nested <Button> wrapper. 
-                      Added prefetch={false} to stop Next.js from blocking the thread on hover/click.
-                      Applied the exact CSS classes directly to the <Link> tag. 
-                    */}
+                    {/* FIXED: Removed nested <DarkBtn> to fix Next.js hydration & INP issue. Styled directly on Link. */}
                     <Link 
                         href="/contact#contact-form" 
                         prefetch={false}
-                        className="flex items-center w-fit gap-1.5 px-6 py-2.5 rounded-full text-[17px] font-bold transition-all duration-300 bg-emerald-950 text-emerald-50 hover:bg-emerald-800/40 hover:text-white shadow-xl border border-emerald-600/30"
+                        className="w-full sm:w-fit flex items-center justify-center bg-white text-emerald-950 px-8 py-3.5 rounded-xl font-bold shadow-[0_8px_30px_rgba(255,255,255,0.1)] hover:bg-emerald-50 hover:shadow-[0_8px_30px_rgba(255,255,255,0.2)] transition-all duration-300 text-sm uppercase tracking-wider"
                     >
                         Contact Our Experts
                     </Link>
                 </motion.div>
 
-                <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/20 pt-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 border-t border-white/20 pt-10 md:pt-12">
                     {trustPoints.map((point, index) => (
                         <motion.div
                             key={index}
@@ -90,11 +86,11 @@ export default function ProductDiscoveryCTA() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.4 + (index * 0.1) }}
-                            className="text-left"
+                            className="text-center sm:text-left flex flex-col items-center sm:items-start"
                         >
-                            <point.icon size={24} className="text-emerald-300 mb-4" />
-                            <h4 className="text-base font-bold text-white mb-2">{point.title}</h4>
-                            <p className="text-emerald-200 text-sm">{point.desc}</p>
+                            <point.icon size={24} className="text-emerald-300 mb-3 md:mb-4" />
+                            <h4 className="text-base md:text-lg font-bold text-white mb-2">{point.title}</h4>
+                            <p className="text-emerald-200/80 text-xs md:text-sm leading-relaxed">{point.desc}</p>
                         </motion.div>
                     ))}
                 </div>

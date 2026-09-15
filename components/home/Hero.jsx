@@ -114,7 +114,7 @@ export default function Hero() {
 
                         {/* Pill Button */}
                         <Link href="/services" className="block w-fit">
-                            <Button className="!bg-emerald-950 hover:!bg-emerald-800 text-emerald-50 shadow-lg">
+                            <Button>
                                 Explore Our Services
                             </Button>
                         </Link>

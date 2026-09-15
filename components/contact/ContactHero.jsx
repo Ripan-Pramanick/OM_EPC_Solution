@@ -86,7 +86,7 @@ export default function ContactHero() {
 
             {/* Pill Button */}
             <Button 
-              className="!bg-emerald-950 hover:!bg-emerald-800 text-emerald-50 shadow-lg cursor-pointer" 
+              
               onClick={() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })}
             >
               Get in Touch

@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
-import DarkBtn from '@/components/ui/DarkBtn';
 
 // Custom Social SVGs
 const FacebookIcon = ({ size = 18, strokeWidth = 2.5, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>;
@@ -18,48 +17,51 @@ export default function Footer() {
   if (pathname === '/login') return null;
 
   return (
-    <footer className="w-full bg-emerald-50 pt-12 px-4 md:px-6">
-      <div className="bg-emerald-950 rounded-t-[3rem] md:rounded-t-[80px] pt-16 md:pt-20 pb-8 mx-auto max-w-[1400px]">
+    // Reduced top padding on mobile (pt-8 instead of pt-12)
+    <footer className="w-full bg-emerald-50 pt-8 md:pt-12 px-4 md:px-6">
+      {/* Reduced inner padding for mobile (pt-12 pb-6 instead of pt-16 pb-8) */}
+      <div className="bg-emerald-950 rounded-t-[2.5rem] md:rounded-t-[80px] pt-12 md:pt-20 pb-6 md:pb-8 mx-auto max-w-[1400px]">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
-          {/* Main 2-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8">
+          {/* Main 2-Column Grid - Reduced gap on mobile */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
             
             {/* COLUMN 1: Company Info */}
             <div className="md:col-span-8 lg:col-span-8 lg:pr-12">
-              <Link href="/" className="inline-block mb-6">
+              <Link href="/" className="inline-block mb-4 md:mb-6">
                 <Image 
                   src="/light_logo.webp" 
                   alt="OM EPC Solution" 
-                  width={220} 
-                  height={100} 
-                  className="w-auto h-15 object-contain" 
+                  width={200} 
+                  height={90} 
+                  className="w-auto h-12 md:h-15 object-contain" 
                 />
               </Link>
-              <p className="text-emerald-100/70 text-sm md:text-base leading-relaxed mb-8 max-w-md">
+              <p className="text-emerald-100/70 text-sm md:text-base leading-relaxed mb-6 md:mb-8 max-w-md">
                 Your trusted partner for comprehensive IT infrastructure, networking, power backup, and security solutions.
               </p>
 
-              <div className="flex flex-col gap-4 text-sm md:text-base text-emerald-50 mb-10">
-                <a href="tel:+919876543210" className="flex items-center gap-4 hover:text-emerald-300 transition-colors group w-fit">
-                  <div className="w-10 h-10 rounded-full bg-emerald-800/50 border border-emerald-700/50 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-700 transition-colors shrink-0">
-                    <Phone size={18} />
+              {/* Reduced gap and margin on mobile */}
+              <div className="flex flex-col gap-3 md:gap-4 text-sm md:text-base text-emerald-50 mb-8 md:mb-10">
+                <a href="tel:+919876543210" className="flex items-center gap-3 md:gap-4 hover:text-emerald-300 transition-colors group w-fit">
+                  <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-emerald-800/50 border border-emerald-700/50 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-700 transition-colors shrink-0">
+                    <Phone size={16} className="md:w-[18px] md:h-[18px]" />
                   </div>
                   +91 98765 43210
                 </a>
-                <a href="mailto:contact@omepcsolution.com" className="flex items-center gap-4 hover:text-emerald-300 transition-colors group w-fit">
-                  <div className="w-10 h-10 rounded-full bg-emerald-800/50 border border-emerald-700/50 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-700 transition-colors shrink-0">
-                    <Mail size={18} />
+                <a href="mailto:contact@omepcsolution.com" className="flex items-center gap-3 md:gap-4 hover:text-emerald-300 transition-colors group w-fit">
+                  <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-emerald-800/50 border border-emerald-700/50 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-700 transition-colors shrink-0">
+                    <Mail size={16} className="md:w-[18px] md:h-[18px]" />
                   </div>
                   contact@omepcsolution.com
                 </a>
                 
                 {/* Updated Address */}
-                <div className="flex items-start gap-4 group w-fit">
-                  <div className="w-10 h-10 rounded-full bg-emerald-800/50 border border-emerald-700/50 flex items-center justify-center text-emerald-400 shrink-0 mt-1">
-                    <MapPin size={18} />
+                <div className="flex items-start gap-3 md:gap-4 group w-fit">
+                  <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-emerald-800/50 border border-emerald-700/50 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5 md:mt-1">
+                    <MapPin size={16} className="md:w-[18px] md:h-[18px]" />
                   </div>
-                  <span className="leading-relaxed pt-1.5">
+                  <span className="leading-relaxed pt-1 sm:pt-1.5 text-sm md:text-base">
                     Sector V, Salt Lake, Kolkata,<br />
                     WB 700091, India
                   </span>
@@ -68,55 +70,54 @@ export default function Footer() {
 
               {/* Social Media */}
               <div className="flex items-center gap-3">
-                <a href="#" aria-label="Facebook" className="w-10 h-10 rounded-full border border-emerald-800 flex items-center justify-center text-emerald-400/80 hover:text-emerald-100 hover:border-emerald-500 hover:bg-emerald-800/50 transition-all">
-                  <FacebookIcon size={18} strokeWidth={2.5} />
+                <a href="#" aria-label="Facebook" className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-emerald-800 flex items-center justify-center text-emerald-400/80 hover:text-emerald-100 hover:border-emerald-500 hover:bg-emerald-800/50 transition-all">
+                  <FacebookIcon size={16} strokeWidth={2.5} className="md:w-[18px] md:h-[18px]" />
                 </a>
-                <a href="#" aria-label="Twitter" className="w-10 h-10 rounded-full border border-emerald-800 flex items-center justify-center text-emerald-400/80 hover:text-emerald-100 hover:border-emerald-500 hover:bg-emerald-800/50 transition-all">
-                  <TwitterIcon size={18} strokeWidth={2.5} />
+                <a href="#" aria-label="Twitter" className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-emerald-800 flex items-center justify-center text-emerald-400/80 hover:text-emerald-100 hover:border-emerald-500 hover:bg-emerald-800/50 transition-all">
+                  <TwitterIcon size={16} strokeWidth={2.5} className="md:w-[18px] md:h-[18px]" />
                 </a>
-                <a href="#" aria-label="Instagram" className="w-10 h-10 rounded-full border border-emerald-800 flex items-center justify-center text-emerald-400/80 hover:text-emerald-100 hover:border-emerald-500 hover:bg-emerald-800/50 transition-all">
-                  <InstagramIcon size={18} strokeWidth={2.5} />
+                <a href="#" aria-label="Instagram" className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-emerald-800 flex items-center justify-center text-emerald-400/80 hover:text-emerald-100 hover:border-emerald-500 hover:bg-emerald-800/50 transition-all">
+                  <InstagramIcon size={16} strokeWidth={2.5} className="md:w-[18px] md:h-[18px]" />
                 </a>
-                <a href="#" aria-label="LinkedIn" className="w-10 h-10 rounded-full border border-emerald-800 flex items-center justify-center text-emerald-400/80 hover:text-emerald-100 hover:border-emerald-500 hover:bg-emerald-800/50 transition-all">
-                  <LinkedinIcon size={18} strokeWidth={2.5} />
+                <a href="#" aria-label="LinkedIn" className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-emerald-800 flex items-center justify-center text-emerald-400/80 hover:text-emerald-100 hover:border-emerald-500 hover:bg-emerald-800/50 transition-all">
+                  <LinkedinIcon size={16} strokeWidth={2.5} className="md:w-[18px] md:h-[18px]" />
                 </a>
               </div>
             </div>
 
             {/* COLUMN 2: Quick Links */}
             <div className="md:col-span-4 lg:col-span-4">
-              <h4 className="text-xl font-bold mb-8 text-emerald-50 tracking-tight">Quick Links</h4>
-              <ul className="space-y-4 text-sm md:text-base text-emerald-200/80">
+              <h4 className="text-lg md:text-xl font-bold mb-5 md:mb-8 text-emerald-50 tracking-tight">Quick Links</h4>
+              {/* FIXED: Added grid cols on mobile (grid-cols-2) to save vertical space */}
+              <ul className="grid grid-cols-2 md:grid-cols-1 gap-y-3 gap-x-4 text-sm md:text-base text-emerald-200/80">
                 <li>
-                  <Link href="/" className="hover:text-emerald-50 transition-colors flex items-center gap-3 group w-fit">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-700 group-hover:bg-emerald-400 transition-colors shrink-0"></span> Home
+                  <Link href="/" className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
+                    Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="hover:text-emerald-50 transition-colors flex items-center gap-3 group w-fit">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-700 group-hover:bg-emerald-400 transition-colors shrink-0"></span> About Us
+                  <Link href="/about" className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
+                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="hover:text-emerald-50 transition-colors flex items-center gap-3 group w-fit">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-700 group-hover:bg-emerald-400 transition-colors shrink-0"></span> Services
+                  <Link href="/services" className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
+                    Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products" className="hover:text-emerald-50 transition-colors flex items-center gap-3 group w-fit">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-700 group-hover:bg-emerald-400 transition-colors shrink-0"></span> Products
-                  </Link>
-                </li>
-          
-               
-                <li>
-                  <Link href="/contact" className="hover:text-emerald-50 transition-colors flex items-center gap-3 group w-fit">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-700 group-hover:bg-emerald-400 transition-colors shrink-0"></span> Contact
+                  <Link href="/products" className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
+                    Products
                   </Link>
                 </li>
                 <li>
-                  <Link href="/login" className="hover:text-emerald-50 transition-colors flex items-center gap-3 group w-fit">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-700 group-hover:bg-emerald-400 transition-colors shrink-0"></span> Login
+                  <Link href="/contact" className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/login" className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
+                     Login
                   </Link>
                 </li>
               </ul>
@@ -124,25 +125,29 @@ export default function Footer() {
             
           </div>
 
-          {/* Compact CTA Section */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 py-10 mt-12 border-t border-emerald-800/50">
+          {/* Compact CTA Section - Reduced padding on mobile */}
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-5 md:gap-6 py-6 md:py-10 mt-10 md:mt-12 border-t border-emerald-800/50">
             <div>
-              <h4 className="text-2xl md:text-3xl font-bold text-white mb-2 tracking-tight">Need reliable IT infrastructure?</h4>
+              <h4 className="text-xl md:text-3xl font-bold text-white mb-1.5 md:mb-2 tracking-tight">Need reliable IT infrastructure?</h4>
               <p className="text-emerald-300 text-sm md:text-base font-medium">Let's build a smarter setup for your business.</p>
             </div>
+            
+            {/* FIXED: Removed DarkBtn inside Link to fix nesting error */}
             <Link 
-              href="/contact#contact-form">
-             <DarkBtn>Get a Quote</DarkBtn>
+              href="/contact#contact-form"
+              prefetch={false}
+              className="w-fit flex items-center justify-center bg-white text-emerald-950 px-6 sm:px-8 py-3 rounded-xl font-bold shadow-lg hover:bg-emerald-100 transition-all duration-300 tracking-wide text-[13px] uppercase mt-2 md:mt-0"
+            >
+              Get a Quote
             </Link>
           </div>
 
-          {/* Bottom Legal Bar */}
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-emerald-800/50 text-sm text-emerald-400/60 font-medium">
-            <p>© {new Date().getFullYear()} OM EPC Solution. All rights reserved.</p>
-            <div className="flex flex-wrap justify-center items-center gap-6">
+          {/* Bottom Legal Bar - Reduced top padding on mobile */}
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 pt-6 md:pt-8 border-t border-emerald-800/50 text-xs md:text-sm text-emerald-400/60 font-medium">
+            <p className="text-center md:text-left">© {new Date().getFullYear()} OM EPC Solution. All rights reserved.</p>
+            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
               <Link href="/privacy" className="hover:text-emerald-300 transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-emerald-300 transition-colors">Terms & Conditions</Link>
-              {/* <Link href="/sitemap" className="hover:text-emerald-300 transition-colors">Sitemap</Link> */}
             </div>
           </div>
 

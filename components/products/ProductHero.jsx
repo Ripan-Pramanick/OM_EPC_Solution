@@ -2,6 +2,7 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Button from '@/components/ui/Button';
 import { productPageImages } from '@/data/images';
 import { ShieldCheck, MonitorSmartphone, HeadphonesIcon, ArrowRight } from 'lucide-react';
 import dynamic from 'next/dynamic'; 
@@ -71,16 +72,16 @@ export default function ProductHero() {
                         {/* FIXED: Removed nested Button components to fix HTML nesting and performance glitches */}
                         <Link 
                             href="/services" 
-                            className="w-full sm:w-auto flex items-center justify-center bg-emerald-950 hover:bg-emerald-800 text-emerald-50 px-7 py-3.5 rounded-xl text-[13px] font-bold transition-all shadow-lg uppercase tracking-widest"
+                           
                         >
-                            Browse services
+                            <Button> Browse services</Button>
                         </Link>
                         <Link 
                             href="/contact#contact-form" 
                             prefetch={false}
-                            className="w-full sm:w-auto flex items-center justify-center border border-emerald-950 text-emerald-950 hover:bg-emerald-200 px-7 py-3.5 rounded-xl text-[13px] font-bold transition-all uppercase tracking-widest"
+                           
                         >
-                            Get a Quote
+                            <Button>Get a Quote</Button>
                         </Link>
                     </motion.div>
 

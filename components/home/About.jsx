@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { images } from '@/data/images';
-import { ArrowRight, ServerCog, Target, X, Zap, Info } from 'lucide-react';
+import { ArrowRight, ServerCog, Target, Zap, Info } from 'lucide-react';
 import Link from 'next/link';
 
 export default function About() {
@@ -16,16 +16,18 @@ export default function About() {
     <section id="about" className="py-24 lg:py-32 bg-emerald-100 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 grid lg:grid-cols-[1.1fr_1fr] gap-16 lg:gap-24 items-center">
 
-      
+        {/* LEFT COLUMN: Images & Floating Cards */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative h-[550px] lg:h-[650px] w-full"
+          // FIXED: Adjusted height for mobile/tablet to prevent stretching
+          className="relative h-[480px] sm:h-[550px] lg:h-[650px] w-full max-w-[500px] lg:max-w-none mx-auto"
         >
           {/* Top Left Image */}
-          <div className="absolute top-0 left-0 w-[55%] h-[320px] lg:h-[380px] rounded-[2.5rem] overflow-hidden z-0 shadow-[0_8px_30px_rgba(4,60,38,0.06)]">
+          {/* FIXED: Responsive width and height */}
+          <div className="absolute top-0 left-0 w-[65%] md:w-[55%] h-[260px] sm:h-[320px] lg:h-[380px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden z-0 shadow-[0_8px_30px_rgba(4,60,38,0.06)]">
             <Image
               src={images.about}
               alt="Engineering Team"
@@ -35,23 +37,25 @@ export default function About() {
           </div>
 
           {/* Top Right White Info Card: "The Foundation" */}
-          <div className="absolute top-[8%] right-0 w-[45%] bg-white rounded-2xl p-6 shadow-[0_15px_40px_rgba(4,60,38,0.05)] z-20 flex gap-5 border border-emerald-50">
-            <div className="shrink-0 w-11 h-11 rounded-t-lg bg-emerald-50 text-emerald-800 flex items-center justify-center">
-              <ServerCog size={22} strokeWidth={1.5} />
+          {/* FIXED: Increased width on mobile, reduced padding/gap and font sizes to prevent squishing */}
+          <div className="absolute top-[2%] md:top-[8%] right-0 w-[70%] sm:w-[55%] md:w-[45%] bg-white rounded-[1.25rem] md:rounded-2xl p-4 md:p-6 shadow-[0_15px_40px_rgba(4,60,38,0.05)] z-20 flex gap-3 md:gap-5 border border-emerald-50">
+            <div className="shrink-0 w-8 h-8 md:w-11 md:h-11 rounded-t-lg bg-emerald-50 text-emerald-800 flex items-center justify-center">
+              <ServerCog className="w-4 h-4 md:w-[22px] md:h-[22px]" strokeWidth={1.5} />
             </div>
             <div>
-              <h4 className="font-bold text-emerald-950 text-base mb-1.5 tracking-tight">The Foundation</h4>
-              <p className="text-[13px] text-emerald-900/60 leading-relaxed mb-4 font-medium">
+              <h4 className="font-bold text-emerald-950 text-sm md:text-base mb-1 md:mb-1.5 tracking-tight">The Foundation</h4>
+              <p className="text-[11px] md:text-[13px] text-emerald-900/60 leading-relaxed mb-3 md:mb-4 font-medium line-clamp-4 sm:line-clamp-none">
                 Since 2010, we’ve built reliable IT infrastructure designed for performance, security, and growth.
               </p>
-              <Link href="#services" className="text-[13px] font-bold text-emerald-950 flex items-center gap-1.5 hover:text-emerald-700 transition-colors group w-fit">
+              <Link href="#services" className="text-[11px] md:text-[13px] font-bold text-emerald-950 flex items-center gap-1.5 hover:text-emerald-700 transition-colors group w-fit">
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" /> Read More
               </Link>
             </div>
           </div>
 
           {/* Bottom Right Image */}
-          <div className="absolute bottom-[10%] right-0 w-[60%] h-[280px] lg:h-[340px] rounded-[2.5rem] overflow-hidden z-10 shadow-[0_8px_30px_rgba(4,60,38,0.06)] border-4 border-[#F4F9F7]">
+          {/* FIXED: Responsive width, height and bottom position */}
+          <div className="absolute bottom-[8%] md:bottom-[10%] right-0 w-[75%] md:w-[60%] h-[240px] sm:h-[280px] lg:h-[340px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden z-10 shadow-[0_8px_30px_rgba(4,60,38,0.06)] border-4 border-[#F4F9F7]">
             <Image
               src={images.services.networking}
               alt="Server Infrastructure"
@@ -61,15 +65,16 @@ export default function About() {
           </div>
 
           {/* Bottom Left Dark Stats Card: "500+ Projects" */}
-          <div className="absolute bottom-[5%] left-[2%] w-[42%] bg-emerald-950 rounded-2xl p-7 shadow-[0_20px_40px_rgba(4,60,38,0.12)] z-30 flex items-center justify-between">
+          {/* FIXED: Responsive width, padding, text sizes, and hid the icon on extra small screens */}
+          <div className="absolute bottom-0 md:bottom-[5%] left-0 md:left-[2%] w-[55%] sm:w-[45%] md:w-[42%] bg-emerald-950 rounded-2xl p-4 md:p-7 shadow-[0_20px_40px_rgba(4,60,38,0.12)] z-30 flex items-center justify-between gap-2">
             <div>
-              <h3 className="text-[2.5rem] font-bold text-white leading-none tracking-tight mb-2">500+</h3>
-              <p className="text-[13px] font-semibold text-emerald-200/80 leading-snug uppercase tracking-widest">
-                Projects<br />Completed
+              <h3 className="text-2xl sm:text-3xl md:text-[2.5rem] font-bold text-white leading-none tracking-tight mb-1 md:mb-2">500+</h3>
+              <p className="text-[9px] sm:text-[11px] md:text-[13px] font-semibold text-emerald-200/80 leading-snug uppercase tracking-widest">
+                Projects<br className="hidden sm:block" /> Completed
               </p>
             </div>
-            <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white shrink-0">
-              <Target size={20} strokeWidth={1.5} />
+            <div className="hidden sm:flex w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 items-center justify-center text-white shrink-0">
+              <Target className="w-4 h-4 md:w-5 md:h-5" strokeWidth={1.5} />
             </div>
           </div>
         </motion.div>
@@ -107,7 +112,6 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-             
                 className="group flex items-center justify-between py-5 border-b border-emerald-900/10 hover:bg-emerald-50/50 hover:pl-4 transition-all duration-300 cursor-default"
               >
                 <div className="flex items-center gap-6">
@@ -119,8 +123,6 @@ export default function About() {
                     {step.title}
                   </span>
                 </div>
-                {/* Arrow reveals on hover */}
-                {/* <ArrowRight size={18} className="text-emerald-700 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 mr-2" strokeWidth={2} /> */}
               </motion.div>
             ))}
           </div>

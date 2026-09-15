@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Button from '@/components/ui/Button';
 import { aboutImages } from '@/data/images'; 
 import dynamic from 'next/dynamic';
 
@@ -88,9 +89,9 @@ export default function AboutHero() {
             <Link 
               href="/services"
               prefetch={false}
-              className="w-fit flex items-center justify-center bg-emerald-950 hover:bg-emerald-800 text-emerald-50 px-7 py-3.5 rounded-xl text-[13px] font-bold transition-all shadow-lg uppercase tracking-widest"
+             
             >
-              Discover Our Story
+             <Button> Discover Our Story</Button>
             </Link>
           </motion.div>
         </motion.div>

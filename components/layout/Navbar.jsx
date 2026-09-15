@@ -97,7 +97,7 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
               >
                 {link.name}
-                <ChevronDown size={16} className={`transition-transform ${isActive ? 'text-white' : 'text-emerald-100/50'}`} />
+                
               </Link>
             );
           })}
