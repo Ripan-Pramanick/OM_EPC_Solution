@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import DarkBtn from '../ui/DarkBtn';
 import { aboutImages } from '@/data/images';
 import { ShieldCheck, Eye, Headset, ArrowRight, Target } from 'lucide-react';
 
@@ -143,7 +144,7 @@ export default function Principles() {
                         animate={{ opacity: 1, x: 0 }}
                         className="text-white ml-auto"
                       >
-                        <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
+                      
                       </motion.div>
                     )}
                   </div>
@@ -160,9 +161,9 @@ export default function Principles() {
               <Link 
                 href="/contact" 
                 prefetch={false}
-                className="w-fit flex items-center justify-center bg-white text-emerald-950 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-bold shadow-[0_8px_30px_rgba(255,255,255,0.1)] hover:bg-emerald-50 hover:shadow-[0_8px_30px_rgba(255,255,255,0.2)] transition-all duration-300 tracking-wide text-sm"
+                
               >
-                Get Started
+                <DarkBtn>                Get Started</DarkBtn>
               </Link>
             </motion.div>
           </div>

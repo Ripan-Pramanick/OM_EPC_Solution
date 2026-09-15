@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import DarkBtn from '@/components/ui/DarkBtn';
 
 // Custom Social SVGs
 const FacebookIcon = ({ size = 18, strokeWidth = 2.5, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>;
@@ -136,9 +137,9 @@ export default function Footer() {
             <Link 
               href="/contact#contact-form"
               prefetch={false}
-              className="w-fit flex items-center justify-center bg-white text-emerald-950 px-6 sm:px-8 py-3 rounded-xl font-bold shadow-lg hover:bg-emerald-100 transition-all duration-300 tracking-wide text-[13px] uppercase mt-2 md:mt-0"
+             
             >
-              Get a Quote
+              <DarkBtn>Get a Quote</DarkBtn>
             </Link>
           </div>
 
