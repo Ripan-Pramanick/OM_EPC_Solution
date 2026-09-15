@@ -7,7 +7,7 @@ export default function ContactMap() {
     const location = contactData.locations[0];
 
     return (
-        <section id="map" className="py-16 md:py-24 px-4 md:px-6 bg-emerald-200">
+        <section id="map" className="py-16 md:py-24 px-4 md:px-6 bg-emerald-50">
             {/* Floating Card Container */}
             <div className="relative max-w-[1400px] mx-auto h-[500px] md:h-[600px] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl bg-gray-100 border border-emerald-100/10">
 

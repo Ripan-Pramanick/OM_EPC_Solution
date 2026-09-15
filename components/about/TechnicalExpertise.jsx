@@ -44,20 +44,7 @@ export default function TechnicalExpertise() {
                         </motion.h2>
                     </div>
 
-                    {/* Pagination Controls (Prev / Next) */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        className="hidden md:flex items-center gap-4 text-sm font-bold text-emerald-600/70"
-                    >
-                        <button className="flex items-center gap-1 hover:text-emerald-800 transition-colors">
-                            <ArrowLeft size={16} /> Prev
-                        </button>
-                        <button className="flex items-center gap-1 hover:text-emerald-800 transition-colors">
-                            Next <ArrowRight size={16} />
-                        </button>
-                    </motion.div>
+                   
                 </div>
 
                 {/* Cards Grid */}

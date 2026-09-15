@@ -13,7 +13,7 @@ const WebThreads = dynamic(() => import('@/components/ui/WebThreads'), {
 
 export default function ProductHero() {
     return (
-        <section className="relative w-full pt-24 pb-10 min-h-screen px-4 md:px-8 bg-emerald-950 flex flex-col justify-center overflow-hidden">
+        <section className="relative w-full pt-20 pb-10 min-h-screen px-4 md:px-8 bg-emerald-950 flex flex-col justify-center overflow-hidden">
          
             <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
                 <WebThreads

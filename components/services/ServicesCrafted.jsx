@@ -137,9 +137,9 @@ export default function ServicesCrafted() {
                                         ))}
                                     </div>
 
-                                    <Link href="/services">
+                                    <Link href="/contact">
                                         <Button >
-                                            Learn More
+                                            Lets Connect
                                         </Button>
                                     </Link>
                                 </motion.div>
@@ -189,9 +189,9 @@ export default function ServicesCrafted() {
                                                     </div>
                                                 ))}
                                             </div>
-                                            <Link href="/services">
+                                            <Link href="/contact">
                                                 <Button >
-                                                    Learn More
+                                                   Lets Connect
                                                 </Button>
                                             </Link>
                                         </motion.div>

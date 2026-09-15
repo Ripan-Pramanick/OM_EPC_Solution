@@ -1,11 +1,10 @@
+// AboutHero.jsx
 "use client";
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import Button from '@/components/ui/Button';
 import Link from 'next/link';
 import { aboutImages } from '@/data/images'; 
 import dynamic from 'next/dynamic';
-
 
 const WebThreads = dynamic(() => import('@/components/ui/WebThreads'), { 
     ssr: false, 
@@ -14,10 +13,10 @@ const WebThreads = dynamic(() => import('@/components/ui/WebThreads'), {
 
 export default function AboutHero() {
   return (
-    <section className="w-full pt-22 pb-10 h-screen px-4 md:px-8 bg-emerald-950">
+    <section className="relative w-full pt-20 pb-10 min-h-screen px-4 md:px-8 bg-emerald-950 flex flex-col justify-center overflow-hidden">
       
       {/* Background WebThreads Animation (Same as Hero_2) */}
-      <div className="absolute inset-0 w-full h-full z-0">
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
         <WebThreads
           color1="#00ff8b"
           color2="#00ff10"
@@ -44,7 +43,7 @@ export default function AboutHero() {
       </div>
 
       {/* Main Inner Container */}
-      <div className="relative w-full max-w-[1600px] mx-auto h-[85vh] min-h-[650px] rounded-[2.5rem] overflow-hidden shadow-2xl flex items-start justify-end bg-emerald-950">
+      <div className="relative w-full max-w-[1600px] mx-auto min-h-[650px] h-[85vh] lg:h-[80vh] xl:h-[85vh] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl flex items-start justify-center md:justify-end bg-emerald-950 z-10">
 
         {/* Background Image inside the floating box */}
         <div className="absolute inset-0 w-full h-full">
@@ -63,7 +62,7 @@ export default function AboutHero() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="bg-emerald-50 w-full max-w-[320px] md:max-w-[380px] lg:max-w-[420px] h-auto pt-10 pb-10 px-6 md:px-10 flex flex-col justify-center relative z-10 md:mr-20 lg:mr-48 shadow-2xl rounded-b-[2.5rem] border-b border-emerald-100"
+          className="bg-emerald-50 w-[92%] md:w-full max-w-[340px] md:max-w-[400px] lg:max-w-[420px] xl:max-w-[460px] h-auto pt-8 pb-10 md:pt-12 md:pb-12 px-6 md:px-10 flex flex-col justify-center relative z-10 md:mr-12 lg:mr-24 xl:mr-36 2xl:mr-48 shadow-2xl rounded-b-[2.5rem] border-b border-emerald-100"
         >
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -81,13 +80,17 @@ export default function AboutHero() {
             </h1>
             
             {/* Paragraph */}
-            <p className="text-emerald-900/70 text-sm md:text-base mb-10 leading-relaxed pr-2">
+            <p className="text-emerald-900/70 text-sm lg:text-[15px] mb-10 leading-relaxed pr-2">
               Building scalable networks, robust security, and seamless infrastructure to drive your business forward.
             </p>
 
             {/* Pill Button */}
-            <Link href="/services">
-              <Button>Discover Our Story</Button>
+            <Link 
+              href="/services"
+              prefetch={false}
+              className="w-fit flex items-center justify-center bg-emerald-950 hover:bg-emerald-800 text-emerald-50 px-7 py-3.5 rounded-xl text-[13px] font-bold transition-all shadow-lg uppercase tracking-widest"
+            >
+              Discover Our Story
             </Link>
           </motion.div>
         </motion.div>

@@ -75,6 +75,16 @@ export default function ProductCatalog() {
         setCurrentPage(1);
     }, [searchQuery, sortOrder]);
 
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+        const section = document.getElementById('products');
+        if (section) {
+            const yOffset = -80; 
+            const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    };
+
     const filteredProducts = useMemo(() => {
         let result = productsList.filter((product) =>
             product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -160,7 +170,7 @@ export default function ProductCatalog() {
                     {totalPages > 1 && (
                         <div className="flex justify-center items-center gap-2 mt-16 pt-8 border-t border-emerald-900/10">
                             <button
-                                onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                                onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
                                 disabled={currentPage === 1}
                                 className="px-5 py-2.5 rounded-lg font-bold text-sm transition-colors disabled:opacity-50 text-emerald-950 hover:bg-emerald-100/80 cursor-pointer"
                             >
@@ -169,14 +179,14 @@ export default function ProductCatalog() {
                             {[...Array(totalPages)].map((_, i) => (
                                 <button
                                     key={i}
-                                    onClick={() => setCurrentPage(i + 1)}
+                                    onClick={() => handlePageChange(i + 1)}
                                     className={`w-11 h-11 rounded-lg font-bold text-sm transition-colors cursor-pointer ${currentPage === i + 1 ? 'bg-emerald-700 text-white shadow-md' : 'text-emerald-900/70 hover:bg-emerald-100/80 hover:text-emerald-950'}`}
                                 >
                                     {i + 1}
                                 </button>
                             ))}
                             <button
-                                onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                                onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
                                 disabled={currentPage === totalPages}
                                 className="px-5 py-2.5 rounded-lg font-bold text-sm transition-colors disabled:opacity-50 text-emerald-950 hover:bg-emerald-100/80 cursor-pointer"
                             >

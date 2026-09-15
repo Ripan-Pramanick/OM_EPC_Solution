@@ -85,7 +85,7 @@ export default function AboutPage() {
                 <Foundation />
                 <Principles />
                 <WhyChooseUs />
-                <Milestones />
+                {/* <Milestones /> */}
                 <Stats />
                 <TechnicalExpertise />
                 <AboutCTA />

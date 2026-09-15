@@ -22,6 +22,7 @@ export default function Navbar() {
   if (pathname === '/login') return null;
 
   const navLinks = [
+    { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Products', path: '/products' },

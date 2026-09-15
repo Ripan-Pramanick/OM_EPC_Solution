@@ -162,13 +162,10 @@ export default function DiscoverDifference() {
                             transition={{ delay: 0.6 }}
                             className="mt-12 pt-8 border-t border-emerald-200/50 flex items-center gap-6"
                         >
-                            <svg width="80" height="40" viewBox="0 0 200 80" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="stroke-emerald-900 opacity-80">
-                                <path d="M 20 60 C 40 20, 60 20, 80 50 C 90 70, 100 70, 110 40 C 130 10, 150 30, 170 50" />
-                                <path d="M 60 40 L 100 40" />
-                            </svg>
+
                             <div>
-                                <h5 className="font-bold text-emerald-950 text-sm mb-0.5">Srijan Das</h5>
-                                <p className="text-xs text-emerald-700/60 font-medium">Founder & Technical Lead</p>
+                                <h5 className="font-bold text-emerald-950 text-xl mb-0.5">Srijan Das</h5>
+                                <p className="text-sm text-emerald-700/60 font-medium">Founder & Technical Lead</p>
                             </div>
                         </motion.div>
                     </div>
