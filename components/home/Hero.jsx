@@ -12,10 +12,10 @@ const WebThreads = dynamic(() => import('@/components/ui/WebThreads'), {
 
 export default function Hero() {
     const inlineImages = [
-        "/images/inline_1.jpg",
-        "/images/inline_2.jpg",
-        "/images/inline_3.jpg",
-        "/images/inline_4.jpg",
+        "/home/home-industris-1.webp",
+        "/home/home-industris-2.webp",
+        "/home/home-industris-3.webp",
+        "/home/home-intreactive-2.webp",
     ];
 
     return (
@@ -54,8 +54,8 @@ export default function Hero() {
                 {/* Background Image inside the floating box */}
                 <div className="absolute inset-0 w-full h-full">
                     <Image
-                        src="/images/home-hero.png"
-                        alt="Modern IT Server Room"
+                        src="/home/home-hero.webp"
+                        alt="Modern UPS Room"
                         fill
                         className="object-cover opacity-60 md:opacity-80"
                         priority

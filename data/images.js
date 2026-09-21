@@ -1,13 +1,13 @@
 export const images = {
   hero: {
-    main: "/images/hero_main.jpg",
+    main: "/home/home-hero.webp",
   },
   services: {
-    networking: "/images/services_networking.jpg",
-    cctv: "/images/services_cctv.jpg",
-    ups: "/images/services_ups.jpg",
+    networking: "/home/home-service-1.webp",
+    cctv: "/home/home-why-choose-us.webp",
+    ups: "/home/home-service-3.webp",
   },
-  about: "/images/about.jpg",
+  about: "/home/home-about-1.webp",
   products: {
     ups: "/images/products_ups.jpg",
     servers: "/images/products_servers.jpg",
@@ -21,7 +21,7 @@ export const images = {
 };
 
 export const aboutImages = {
-  hero: "/images/aboutImages_hero.jpg",
+  hero: "/about/about-hero.webp",
   foundationMain: "/images/aboutImages_foundationMain.jpg",
   foundationSecondary: "/images/aboutImages_foundationSecondary.jpg",
   principles: "/images/aboutImages_principles.jpg",
@@ -38,7 +38,7 @@ export const aboutImages = {
 };
 
 export const servicePageImages = {
-  hero: "/images/servicePageImages_hero.jpg",
+  hero: "/service/service-hero.webp",
   craftedBg: "/images/servicePageImages_craftedBg.jpg",
   discoverImage: "/images/servicePageImages_discoverImage.jpg",
 

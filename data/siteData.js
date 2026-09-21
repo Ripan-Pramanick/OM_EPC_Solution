@@ -134,29 +134,29 @@ export const services = [
   {
     id: 1,
     number: "01",
-    title: "Computer & Server Solutions",
-    description: "Enterprise-grade desktops, laptops, and server rack installations with comprehensive AMC support.",
+    title: "UPS Installation",
+    description: "Professional installation, configuration and commissioning of UPS systems for homes, offices and commercial environments.",
     icon: Monitor,
   },
   {
     id: 2,
     number: "02",
-    title: "Networking & Infrastructure",
-    description: "Structured cabling, high-speed routers, and managed switches for seamless office connectivity.",
+    title: "UPS Repair & Maintenance",
+    description: "Diagnosis, repair and preventive maintenance to keep your UPS running reliably.",
     icon: Network,
   },
   {
     id: 3,
     number: "03",
-    title: "Power Backup (UPS)",
-    description: "Online UPS systems and high-capacity batteries ensuring zero downtime for critical hardware.",
+    title: "Battery Replacement",
+    description: "UPS battery testing, replacement and battery-bank solutions for dependable backup power.",
     icon: Zap,
   },
   {
     id: 4,
     number: "04",
-    title: "CCTV & Security",
-    description: "IP camera installations, DVR/NVR setups, and biometric access control systems.",
+    title: "AMC & Support",
+    description: "Annual maintenance contracts, regular health checks and technical support for long-term reliability.",
     icon: Video,
   }
 ];

@@ -1,26 +1,28 @@
 "use client";
 import { motion } from 'framer-motion';
-import { Server, ShieldCheck, Network, Activity } from 'lucide-react';
+import { BatteryCharging, Wrench, Zap, Activity } from 'lucide-react';
 
 const features = [
-  {
-    id: "01",
-    title: "Reliable Infrastructure",
-    desc: "Scalable systems engineered for stability, performance, and long-term growth.",
-    icon: Server
-  },
-  {
-    id: "02",
-    title: "Expert Technical Support",
-    desc: "Professional support that keeps your technology reliable and running smoothly.",
-    icon: ShieldCheck
-  },
-  {
-    id: "03",
-    title: "Seamless Connectivity",
-    desc: "High-performance networking that keeps your people, devices, and systems connected.",
-    icon: Network
-  }
+{
+  id: "01",
+  title: "Reliable Power Protection",
+  desc: "Online UPS systems engineered to deliver stable, uninterrupted power for critical equipment.",
+  icon: BatteryCharging
+},
+
+{
+  id: "02",
+  title: "Expert Technical Support",
+  desc: "Professional installation, maintenance, and troubleshooting to keep your UPS system performing reliably.",
+  icon: Wrench
+},
+
+{
+  id: "03",
+  title: "Seamless Power Continuity",
+  desc: "High-performance backup power solutions that protect servers, networks, and essential business equipment.",
+  icon: Zap
+}
 ];
 
 export default function Stats() {
@@ -54,7 +56,7 @@ export default function Stats() {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-emerald-950 tracking-tight leading-[1.1] mb-6"
             >
-              Infrastructure Built Around Your Business
+              Power Infrastructure Built Around Your Business
             </motion.h2>
             
             <motion.p
@@ -64,7 +66,7 @@ export default function Stats() {
               transition={{ delay: 0.2 }}
               className="text-emerald-900/70 text-base md:text-lg leading-relaxed max-w-lg mb-10"
             >
-              Reliable systems, expert support, and seamless connectivity designed to keep your business connected, protected, and ready to grow.
+           Reliable UPS systems, backup power, and expert support designed to keep your critical operations running without interruption.
             </motion.p>
 
             {/* Subtle Supporting Visual Element (Understated Statistic) */}
@@ -80,10 +82,10 @@ export default function Stats() {
               </div>
               <div>
                 <h5 className="text-emerald-950 font-bold text-[22px] leading-none mb-1.5 tracking-tight">
-                  99.9% Uptime
+                  99.9% Power Availability
                 </h5>
                 <p className="text-emerald-900/60 text-xs font-bold uppercase tracking-widest">
-                  Guaranteed Reliability
+                 RELIABLE BACKUP POWER
                 </p>
               </div>
             </motion.div>

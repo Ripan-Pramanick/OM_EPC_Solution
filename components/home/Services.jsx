@@ -124,7 +124,7 @@ export default function Services() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white mb-4 tracking-tight"
           >
-            Solutions Crafted for You
+           Services Crafted for Reliable Power
           </motion.h2>
 
           <motion.p
@@ -134,7 +134,7 @@ export default function Services() {
             transition={{ delay: 0.2 }}
             className="text-gray-400 max-w-xl text-base md:text-lg leading-relaxed"
           >
-            From concept to completion, we've got your IT infrastructure covered.
+           From installation to maintenance, we provide complete UPS and power backup support for uninterrupted operations.
           </motion.p>
         </div>
 

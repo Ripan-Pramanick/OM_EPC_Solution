@@ -14,25 +14,25 @@ const DriftWall = dynamic(() => import('@/components/ui/DriftWall'), {
 });
 
 const items = [
-  { image: '/images/item_1.jpg', title: 'Data Center & Servers' },
-  { image: '/images/item_2.jpg', title: 'Network Infrastructure' },
-  { image: '/images/item_3.jpg', title: 'CCTV & Security' },
-  { image: '/images/item_4.jpg', title: 'Modern Workstations' },
-  { image: '/images/item_5.jpg', title: 'Technical Support' },
-  { image: '/images/item_6.jpg', title: 'Hardware Solutions' },
-  { image: '/images/item_7.jpg', title: 'Server Management' },
-  { image: '/images/item_8.jpg', title: 'Power & UPS' },
-  { image: '/images/item_9.jpg', title: 'Fiber Optics & Cabling' },
-  { image: '/images/item_10.jpg', title: 'Surveillance Systems' },
-  { image: '/images/item_11.jpg', title: 'IT Consulting' },
-  { image: '/images/item_12.jpg', title: 'Cloud Infrastructure' },
-  // { image: '/images/item_13.jpg', title: 'Smart Office Setup'},
-  { image: '/images/item_14.jpg', title: 'IT Accessories' },
-  { image: '/images/item_15.jpg', title: 'Data Security' },
-  { image: '/images/item_16.jpg', title: 'Corporate Laptops' },
-  { image: '/images/item_17.jpg', title: 'Enterprise Printers' },
-  // { image: '/images/item_18.jpg', title: 'Industrial UPS' },
-  { image: '/images/item_19.jpg', title: 'AMC Services' },
+  { image: '/home/home-industris-1.webp', title: 'Data Center & Servers' },
+  { image: '/home/home-industris-2.webp', title: 'Network Infrastructure' },
+  { image: '/home/home-industris-3.webp', title: 'CCTV & Security' },
+  { image: '/home/home-about-1.webp', title: 'Modern Workstations' },
+  { image: '/home/home-about-2.webp', title: 'Technical Support' },
+  { image: '/home/home-intreactive-1.webp', title: 'Hardware Solutions' },
+  { image: '/home/home-intreactive-2.webp', title: 'Server Management' },
+  { image: '/home/home-intreactive-3.webp', title: 'Power & UPS' },
+  { image: '/home/home-service-1.webp', title: 'Fiber Optics & Cabling' },
+  { image: '/home/home-service-2.webp', title: 'Surveillance Systems' },
+  { image: '/home/home-service-3.webp', title: 'IT Consulting' },
+  { image: '/home/home-service-hero.webp', title: 'Cloud Infrastructure' },
+  
+  { image: '/home/home-industris-1.webp', title: 'IT Accessories' },
+  { image: '/home//home-about-1.webp', title: 'Data Security' },
+  { image: '/home/home-intreactive-3.webp', title: 'Corporate Laptops' },
+  { image: '/home/home-industris-2.webp', title: 'Enterprise Printers' },
+ 
+  { image: '/home/home-service-1.webp', title: 'AMC Services' },
 
 ];
 

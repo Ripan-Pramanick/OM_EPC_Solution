@@ -5,9 +5,10 @@ import Image from 'next/image';
 import { images } from '@/data/images';
 
 const tabs = [
-  { id: 'networking', label: 'Network Control', image: images.services.networking },
-  { id: 'ups', label: 'Power Backup', image: images.services.ups },
-  { id: 'cctv', label: 'Security Systems', image: images.services.cctv },
+  { id: 'online-ups', label: 'Online UPS', image: images.services.networking, description: "Continuous, clean and stable power for critical equipment and sensitive electronics." },
+  { id: 'line-interactive-ups', label: 'Line Interactive UPS', image: images.services.ups, description: "Efficient backup power with voltage regulation for offices and everyday business equipment." },
+  { id: 'industrial-ups', label: 'Industrial UPS', image: images.services.cctv, description: "High-capacity power backup solutions for demanding commercial and industrial applications." }
+  
 ];
 
 export default function InteractiveDark() {
@@ -70,7 +71,7 @@ export default function InteractiveDark() {
                     {tabs.find(t => t.id === activeTab)?.label}
                   </h3>
                   <p className="text-emerald-100/90 font-medium leading-relaxed text-sm md:text-base lg:text-lg">
-                    Enterprise-grade implementation ensuring reliability, scalability, and security for your business operations.
+                   {tabs.find(t => t.id === activeTab)?.description}
                   </p>
                 </div>
               </div>

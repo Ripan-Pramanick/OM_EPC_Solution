@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 import { servicePageImages } from '@/data/images'; 
 import dynamic from 'next/dynamic';
+import Button from '../ui/Button';
 
 const WebThreads = dynamic(() => import('@/components/ui/WebThreads'), { 
     ssr: false, 
@@ -89,9 +90,10 @@ export default function ServicesHero() {
             <Link 
               href="#services"
               prefetch={false}
-              className="w-fit flex items-center justify-center bg-emerald-950 hover:bg-emerald-800 text-emerald-50 px-7 py-3.5 rounded-xl text-[13px] font-bold transition-all shadow-lg uppercase tracking-widest"
             >
+              <Button>
               Explore Services
+              </Button>
             </Link>
           </motion.div>
         </motion.div>

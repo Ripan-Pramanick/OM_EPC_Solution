@@ -8,10 +8,10 @@ import Button from '@/components/ui/DarkBtn';
 
 export default function Products() {
   const hardwareList = [
-    "High-Capacity Online UPS",
-    "Server & Storage Arrays",
-    "Commercial Workstations",
-    "Networking Switches & Routers"
+    "Online UPS Systems",
+    "Line-Interactive UPS",
+    "UPS Battery Systems",
+    "Industrial & Commercial UPS"
   ];
 
   const brands = [
@@ -34,7 +34,7 @@ export default function Products() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 border border-gray-200 rounded-full px-4 py-1.5 text-xs font-bold text-emerald-50 tracking-widest uppercase mb-6"
           >
-            <Cpu size={12} className="text-emerald-200" /> HARDWARE DISTRIBUTION
+            <Cpu size={12} className="text-emerald-200" /> OUR UPS SOLUTIONS
           </motion.div>
 
           <motion.h2
@@ -43,7 +43,7 @@ export default function Products() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold text-emerald-50 Tracking-tight"
           >
-            Products We Support
+            Power Solutions We Provide
           </motion.h2>
         </div>
 
@@ -61,7 +61,7 @@ export default function Products() {
 
             <div className="relative w-full h-full">
               <Image
-                src="/01.png"
+                src="/home/home-product-card.webp"
                 alt="Enterprise Hardware"
                 fill
                 className="object-center hover:scale-102 transition-transform duration-700"
@@ -76,9 +76,9 @@ export default function Products() {
             viewport={{ once: true }}
             className="flex flex-col"
           >
-            <h3 className="text-3xl font-bold text-emareld-50 mb-4">Enterprise IT Equipment</h3>
+            <h3 className="text-3xl font-bold text-emerald-50 mb-4">Enterprise UPS Equipment</h3>
             <p className="text-emerald-100/70 text-base mb-8 leading-relaxed max-w-md">
-              Functional and resilient hardware solutions that combine performance, scalability, and security for seamless business continuity.
+              Reliable UPS and power backup solutions designed to keep your critical equipment protected, powered, and running without interruption.
             </p>
 
             {/* List Items */}

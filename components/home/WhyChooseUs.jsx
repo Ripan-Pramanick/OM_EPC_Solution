@@ -29,11 +29,11 @@ export default function WhyChooseUs() {
 
             {/* Headings and Paragraphs */}
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-slate-900 leading-[1.1] mb-4 md:mb-6 tracking-tight">
-              Discover the Difference We Can Make
+              Reliable Power. Trusted Support.
             </h2>
 
             <p className="text-slate-500 text-sm sm:text-base md:text-lg mb-10 md:mb-12 max-w-2xl leading-relaxed">
-              Simple and easy to distinguish in a free hour, when our power of choice is untrammelled. We deliver uncompromising IT quality, ensuring your digital and physical infrastructure is resilient and scalable.
+              We provide dependable UPS and power backup solutions designed to keep your business running smoothly. From system selection and installation to maintenance and support, we focus on reliable performance and long-term value.
             </p>
           </motion.div>
 
@@ -54,9 +54,9 @@ export default function WhyChooseUs() {
                 <Award className="relative z-10 text-slate-900" size={24} strokeWidth={1.5} />
               </div>
               <div>
-                <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">Proven Expertise</h4>
+                <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">Expert Guidance</h4>
                 <p className="text-sm text-slate-500 mb-3 sm:mb-4 leading-relaxed">
-                  Many years of hands-on experience in delivering successful IT and networking projects.
+                 We help you choose the right UPS and power backup solution based on your equipment, load requirements, and business needs.
                 </p>
                 <Link href="#about" className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-900 hover:text-emerald-600 transition-colors group">
                   <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" /> Read More
@@ -77,9 +77,9 @@ export default function WhyChooseUs() {
                 <Lightbulb className="relative z-10 text-slate-900" size={24} strokeWidth={1.5} />
               </div>
               <div>
-                <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">Creative Solutions</h4>
+                <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">Professional Installation</h4>
                 <p className="text-sm text-slate-500 mb-3 sm:mb-4 leading-relaxed">
-                  Advanced hardware configurations that blend high functionality with security.
+                 Our team ensures proper installation, configuration, and testing for safe and reliable UPS performance.
                 </p>
                 <Link href="#services" className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-900 hover:text-emerald-600 transition-colors group">
                   <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" /> Read More
@@ -100,9 +100,9 @@ export default function WhyChooseUs() {
             <div>
               <UserCog className="text-emerald-50 mb-4 md:mb-5" size={28} strokeWidth={1.5} />
               <p className="text-[10px] font-bold text-emerald-50 tracking-[0.2em] mb-1.5 md:mb-2 uppercase">Reason 01</p>
-              <h4 className="text-base md:text-lg font-bold text-emerald-100 mb-2 md:mb-3">Expert Technicians</h4>
+              <h4 className="text-base md:text-lg font-bold text-emerald-100 mb-2 md:mb-3">Reliable UPS Solutions</h4>
               <p className="text-xs md:text-sm text-emerald-50 leading-relaxed">
-                Skilled IT professionals configuring resilient and secure enterprise networks.
+               Quality UPS systems designed to provide stable and uninterrupted power for critical equipment.
               </p>
             </div>
 
@@ -110,9 +110,9 @@ export default function WhyChooseUs() {
             <div>
               <Server className="text-emerald-50 mb-4 md:mb-5" size={28} strokeWidth={1.5} />
               <p className="text-[10px] font-bold text-emerald-50 tracking-[0.2em] mb-1.5 md:mb-2 uppercase">Reason 02</p>
-              <h4 className="text-base md:text-lg font-bold text-emerald-100 mb-2 md:mb-3">Premium Hardware</h4>
+              <h4 className="text-base md:text-lg font-bold text-emerald-100 mb-2 md:mb-3">Professional Service</h4>
               <p className="text-xs md:text-sm text-emerald-50 leading-relaxed">
-                Durable, enterprise-grade materials and servers for lasting operational uptime.
+                Complete support from installation and setup to maintenance and troubleshooting.
               </p>
             </div>
 
@@ -120,9 +120,9 @@ export default function WhyChooseUs() {
             <div className="sm:col-span-2 lg:col-span-1">
               <Headset className="text-emerald-50 mb-4 md:mb-5" size={28} strokeWidth={1.5} />
               <p className="text-[10px] font-bold text-emerald-50 tracking-[0.2em] mb-1.5 md:mb-2 uppercase">Reason 03</p>
-              <h4 className="text-base md:text-lg font-bold text-emerald-100 mb-2 md:mb-3">24/7 AMC Support</h4>
+              <h4 className="text-base md:text-lg font-bold text-emerald-100 mb-2 md:mb-3">Fast Technical Support</h4>
               <p className="text-xs md:text-sm text-emerald-50 leading-relaxed">
-                Dedicated maintenance contracts ensuring every project runs on time, every time.
+                Responsive assistance to help minimize downtime and keep your systems running.
               </p>
             </div>
           </motion.div>
