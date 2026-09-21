@@ -5,42 +5,11 @@ import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import { productPageImages } from '@/data/images';
 import { ShieldCheck, MonitorSmartphone, HeadphonesIcon, ArrowRight } from 'lucide-react';
-import dynamic from 'next/dynamic'; 
-
-const WebThreads = dynamic(() => import('@/components/ui/WebThreads'), { 
-    ssr: false, 
-    loading: () => <div className="absolute inset-0 bg-emerald-950 z-0"></div> 
-});
 
 export default function ProductHero() {
     return (
         <section className="relative w-full pt-20 pb-10 min-h-screen px-4 md:px-8 bg-emerald-950 flex flex-col justify-center overflow-hidden">
-         
-            <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-                <WebThreads
-                    color1="#00ff8b"
-                    color2="#00ff10"
-                    color3="#00ad26ff"
-                    speed={0.2}
-                    threadCount={6}
-                    frequency={5}
-                    spread={0.18}
-                    taper={1}
-                    position={0.5}
-                    fanMode="center"
-                    glow={0.02}
-                    falloff={0.6}
-                    thickness={1.1}
-                    brightness={0.6}
-                    opacity={1}
-                    mirror={true}
-                    shimmer={false}
-                    grain={true}
-                    grainIntensity={0.05}
-                    mouseInteraction={true}
-                    mouseStrength={0.3}
-                />
-            </div>
+                      
 
             <div className="relative w-full max-w-[1600px] min-h-[85vh] h-auto lg:h-[85vh] mx-auto bg-emerald-100 rounded-[2.5rem] md:rounded-[3rem] px-8 py-12 md:px-12 lg:px-16 grid xl:grid-cols-2 gap-12 lg:gap-16 items-center shadow-2xl overflow-hidden z-10">
 
