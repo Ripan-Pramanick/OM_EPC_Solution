@@ -1,91 +1,165 @@
-import { Zap, Monitor, Shield, Laptop, Camera, Network, Wrench, HardDrive, Printer } from 'lucide-react';
+import { Zap, BatteryCharging, Monitor, Shield,
+  Wrench,
+ 
+  ShieldCheck,
+  Headset, HardDrive,
+  Cpu,
+  MapPin,
+  Settings } from 'lucide-react';
 import { servicePageImages } from './images';
 
 export const solutionFinders = [
   {
     id: "01",
-    title: "Power & Continuity",
+    title: "UPS & Power Protection",
     icon: Zap,
-    desc: "Keep critical systems running with reliable UPS and power backup solutions.",
-    cta: "Explore Power Solutions"
+    desc: "Keep critical equipment running with reliable online UPS and uninterrupted power protection.",
+    cta: "Explore UPS Solutions",
   },
   {
     id: "02",
-    title: "IT & Productivity",
-    icon: Laptop,
-    desc: "Equip your business with dependable computers, printers and complete IT support.",
-    cta: "Explore IT Solutions"
+    title: "UPS Installation & Service",
+    icon: Wrench,
+    desc: "Professional UPS installation, commissioning, maintenance, and technical support.",
+    cta: "Explore UPS Services",
   },
   {
     id: "03",
-    title: "Security & Connectivity",
-    icon: Shield,
-    desc: "Build a secure and connected workplace with CCTV and networking solutions.",
-    cta: "Explore Security Solutions"
-  }
+    title: "Battery & AMC Support",
+    icon: BatteryCharging,
+    desc: "Reliable battery backup, preventive maintenance, and AMC support for long-term performance.",
+    cta: "Explore AMC Support",
+  },
 ];
 
 export const interactiveServices = [
   {
-    id: "computer",
+    id: "online-ups",
     number: "01",
-    title: "Computer Solutions",
-    description: "Complete computer solutions for offices, businesses and professional work environments.",
-    features: ["Desktop & Laptop Sales", "Computer Repair", "Hardware Upgrades", "Software Support", "On-Site Assistance"],
-    image: servicePageImages.services.computer,
-    icon: Monitor
-  },
-  {
-    id: "ups",
-    number: "02",
-    title: "UPS & Power Backup",
-    description: "Reliable power backup solutions designed to protect critical business equipment.",
-    features: ["Online UPS", "Offline UPS", "Inverter Systems", "Battery Solutions", "Installation & Maintenance"],
+    title: "Online UPS Systems",
+    description:
+      "High-performance online UPS systems designed to provide stable, uninterrupted power for critical equipment.",
+    features: [
+      "Single & Three Phase UPS",
+      "Online Double Conversion",
+      "Critical Load Protection",
+      "Power Conditioning",
+      "System Configuration",
+    ],
     image: servicePageImages.services.ups,
-    icon: Zap
+    icon: Zap,
   },
+
   {
-    id: "printer",
+    id: "ups-installation",
+    number: "02",
+    title: "UPS Installation",
+    description:
+      "Professional UPS installation, commissioning, and configuration for reliable power protection.",
+    features: [
+      "Site Assessment",
+      "UPS Installation",
+      "System Commissioning",
+      "Load Configuration",
+      "Performance Testing",
+    ],
+    image: servicePageImages.services.installation,
+    icon: Wrench,
+  },
+
+  {
+    id: "battery-solutions",
     number: "03",
-    title: "Printer Solutions",
-    description: "Sales, servicing and maintenance solutions for business printing requirements.",
-    features: ["Printer Sales", "Printer Repair", "Cartridge Support", "Multi-Brand Service", "Maintenance"],
-    image: servicePageImages.services.printer,
-    icon: Printer
+    title: "Battery Solutions",
+    description:
+      "Reliable battery backup solutions designed to provide dependable runtime and long-term performance.",
+    features: [
+      "UPS Battery Supply",
+      "Battery Replacement",
+      "Battery Testing",
+      "Backup Runtime Testing",
+      "Battery Maintenance",
+    ],
+    image: servicePageImages.services.battery,
+    icon: BatteryCharging,
   },
+
   {
-    id: "cctv",
+    id: "ups-maintenance",
     number: "04",
-    title: "CCTV & Surveillance",
-    description: "Modern surveillance solutions to help protect your premises and business.",
-    features: ["CCTV Installation", "Camera Configuration", "DVR/NVR Setup", "Remote Monitoring", "Maintenance"],
-    image: servicePageImages.services.cctv,
-    icon: Camera
+    title: "UPS Maintenance",
+    description:
+      "Preventive and corrective maintenance to keep your UPS system reliable and operating at peak performance.",
+    features: [
+      "Preventive Maintenance",
+      "UPS Health Check",
+      "Fault Diagnosis",
+      "System Testing",
+      "Component Inspection",
+    ],
+    image: servicePageImages.services.maintenance,
+    icon: Settings,
   },
-  {
-    id: "networking",
-    number: "05",
-    title: "Networking Solutions",
-    description: "Structured networking and connectivity solutions for reliable business communication.",
-    features: ["LAN Setup", "Structured Cabling", "Network Configuration", "Router & Switch Setup", "Network Maintenance"],
-    image: servicePageImages.services.networking,
-    icon: Network
-  },
+
   {
     id: "amc",
-    number: "06",
-    title: "AMC & Technical Support",
-    description: "Preventive maintenance and responsive technical support to keep your IT infrastructure running.",
-    features: ["Computer AMC", "Printer AMC", "UPS AMC", "CCTV AMC", "Network Maintenance"],
+    number: "05",
+    title: "UPS AMC Support",
+    description:
+      "Comprehensive annual maintenance contracts for continuous UPS reliability and professional technical support.",
+    features: [
+      "Scheduled Maintenance",
+      "Preventive Service",
+      "Priority Support",
+      "Emergency Assistance",
+      "Performance Monitoring",
+    ],
     image: servicePageImages.services.amc,
-    icon: Wrench
-  }
+    icon: ShieldCheck,
+  },
+
+  {
+    id: "emergency-support",
+    number: "06",
+    title: "Emergency Technical Support",
+    description:
+      "Responsive technical assistance for UPS faults, power issues, and unexpected system failures.",
+    features: [
+      "Emergency Service",
+      "Fault Troubleshooting",
+      "On-Site Assistance",
+      "System Diagnostics",
+      "Technical Consultation",
+    ],
+    image: servicePageImages.services.support,
+    icon: Headset,
+  },
 ];
 
 export const serviceBenefits = [
-  { title: "Experienced Engineers", desc: "Skilled technicians with practical field experience.", icon: Wrench },
-  { title: "Multi-Brand Support", desc: "Technical support across major brands and equipment.", icon: HardDrive },
-  { title: "On-Site Service", desc: "Fast response and on-site technical assistance.", icon: Monitor },
-  { title: "Genuine Products", desc: "Reliable products backed by professional support.", icon: Shield },
-  { title: "Preventive Maintenance", desc: "Regular maintenance to reduce unexpected downtime.", icon: Zap }
+  {
+    title: "Experienced Engineers",
+    desc: "Skilled UPS technicians with practical experience in installation, maintenance, and troubleshooting.",
+    icon: Wrench
+  },
+  {
+    title: "Multi-Brand Support",
+    desc: "Technical support for major UPS brands, batteries, and power backup equipment.",
+    icon: Cpu
+  },
+  {
+    title: "On-Site Service",
+    desc: "Fast on-site assistance for UPS installation, inspection, maintenance, and troubleshooting.",
+    icon: MapPin
+  },
+  {
+    title: "Genuine Products",
+    desc: "Reliable UPS systems and battery solutions backed by professional technical support.",
+    icon: ShieldCheck
+  },
+  {
+    title: "Preventive Maintenance",
+    desc: "Regular UPS maintenance designed to improve reliability and reduce unexpected downtime.",
+    icon: Settings
+  }
 ];

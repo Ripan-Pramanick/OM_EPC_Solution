@@ -3,10 +3,9 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import Link from 'next/link';
-import { ArrowRight, ArrowLeft, Mail, Lightbulb } from 'lucide-react';
+import { ArrowRight, Mail, Lightbulb } from 'lucide-react';
 import { expertiseCards } from '@/data/aboutData';
 
-// Custom SVGs for Social Icons to match the reference exactly and prevent build errors
 const FacebookIcon = ({ size = 16, className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
 );
@@ -22,7 +21,6 @@ export default function TechnicalExpertise() {
         <section className="py-24 md:py-32 bg-emerald-50/40 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
 
-                {/* Header Section */}
                 <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-12 md:mb-16">
                     <div className="max-w-2xl">
                         <motion.div
@@ -43,37 +41,32 @@ export default function TechnicalExpertise() {
                             Our Technical Expertise
                         </motion.h2>
                     </div>
-
-                   
                 </div>
 
-                {/* Cards Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {expertiseCards.map((card, index) => (
                         <motion.div
-                            key={card.id}
+                            key={card.id || index}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             className="group relative w-full h-[400px] md:h-[450px] rounded-t-[1.5rem] bg-white overflow-hidden shadow-[0_5px_15px_rgba(4,120,87,0.04)] border border-emerald-100 flex flex-col cursor-pointer"
                         >
-                            {/* Top Image Background */}
                             <div className="absolute inset-0 w-full h-full pb-[48px]">
-                                <Image
-                                    src={card.image}
-                                    alt={card.title}
-                                    fill
-                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                />
+                                {card.image ? (
+                                    <Image
+                                        src={card.image}
+                                        alt={card.title || "Expertise"}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                ) : null}
                             </div>
 
-                            {/* Invisible spacer to push the curved block down */}
                             <div className="flex-1 pointer-events-none"></div>
 
-                            {/* Curved Animated Block */}
                             <div className="relative w-full h-[200px] group-hover:h-[210px] bg-emerald-50/80 backdrop-blur-sm group-hover:bg-emerald-800 rounded-t-[140px] group-hover:rounded-t-none transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] flex flex-col items-center justify-center p-6 text-center z-10 overflow-hidden">
-
                                 <h4 className="text-[17px] font-bold text-emerald-950 group-hover:text-white transition-colors duration-300 z-20">
                                     {card.title}
                                 </h4>
@@ -82,7 +75,6 @@ export default function TechnicalExpertise() {
                                     Core Solutions
                                 </p>
 
-                                {/* Social Icons */}
                                 <div className="absolute bottom-6 flex items-center justify-center gap-5 text-white opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out z-20 delay-75">
                                     <FacebookIcon size={15} className="hover:text-emerald-300 transition-colors" />
                                     <InstagramIcon size={15} className="hover:text-emerald-300 transition-colors" />
@@ -90,7 +82,6 @@ export default function TechnicalExpertise() {
                                 </div>
                             </div>
 
-                            {/* Bottom White Footer Bar */}
                             <div className="relative h-[48px] w-full bg-white flex items-center justify-between px-5 z-20 shrink-0">
                                 <div className="absolute top-0 left-4 right-4 h-[1px] bg-emerald-100"></div>
                                 <div className="flex items-center gap-2 text-[12px] font-medium text-emerald-700">
@@ -103,7 +94,6 @@ export default function TechnicalExpertise() {
                     ))}
                 </div>
 
-                {/* Bottom Centered Link */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}

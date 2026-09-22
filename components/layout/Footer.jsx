@@ -17,9 +17,13 @@ export default function Footer() {
   // Hide footer on login page
   if (pathname === '/login') return null;
 
-  // Function to smoothly scroll to top
-  const handleScrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  // FIXED: Advanced Scroll Handler
+  // Check if target path is the same as current pathname
+  const handleLinkClick = (e, targetPath) => {
+    if (pathname === targetPath) {
+      e.preventDefault(); // Next.js এর ডিফল্ট বিহেভিয়ার বন্ধ করে দিলাম
+      window.scrollTo({ top: 0, behavior: 'smooth' }); // সরাসরি উপরে স্ক্রল করবে
+    }
   };
 
   return (
@@ -32,7 +36,7 @@ export default function Footer() {
             
             {/* COLUMN 1: Company Info */}
             <div className="md:col-span-8 lg:col-span-8 lg:pr-12">
-              <Link href="/" onClick={handleScrollToTop} className="inline-block mb-4 md:mb-6">
+              <Link href="/" onClick={(e) => handleLinkClick(e, '/')} className="inline-block mb-4 md:mb-6">
                 <Image 
                   src="/light_logo.webp" 
                   alt="OM EPC Solution" 
@@ -91,34 +95,33 @@ export default function Footer() {
             <div className="md:col-span-4 lg:col-span-4">
               <h4 className="text-lg md:text-xl font-bold mb-5 md:mb-8 text-emerald-50 tracking-tight">Quick Links</h4>
               <ul className="grid grid-cols-2 md:grid-cols-1 gap-y-3 gap-x-4 text-sm md:text-base text-emerald-200/80">
-                {/* FIXED: Added onClick={handleScrollToTop} to force scroll when clicking current route */}
                 <li>
-                  <Link href="/" onClick={handleScrollToTop} className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
+                  <Link href="/" onClick={(e) => handleLinkClick(e, '/')} className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" onClick={handleScrollToTop} className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
+                  <Link href="/about" onClick={(e) => handleLinkClick(e, '/about')} className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
                      About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" onClick={handleScrollToTop} className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
+                  <Link href="/services" onClick={(e) => handleLinkClick(e, '/services')} className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products" onClick={handleScrollToTop} className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
+                  <Link href="/products" onClick={(e) => handleLinkClick(e, '/products')} className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
                     Products
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" onClick={handleScrollToTop} className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
+                  <Link href="/contact" onClick={(e) => handleLinkClick(e, '/contact')} className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="/login" onClick={handleScrollToTop} className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
+                  <Link href="/login" onClick={(e) => handleLinkClick(e, '/login')} className="hover:text-emerald-50 transition-colors flex items-center gap-2.5 group w-fit">
                      Login
                   </Link>
                 </li>
@@ -134,11 +137,8 @@ export default function Footer() {
               <p className="text-emerald-300 text-sm md:text-base font-medium">Let's build a smarter setup for your business.</p>
             </div>
             
-            <Link 
-              href="/contact#contact-form"
-              prefetch={false}
-             
-            >
+            <Link href="/contact#contact-form" prefetch={false}>
+              {/* <DarkBtn> ব্যবহার করলে HTML Nesting এরর আসতে পারে, তাই সরাসরি ক্লাসে স্টাইল দেওয়া ভালো, তবে আপনি চাইলে DarkBtn রাখতে পারেন */}
               <DarkBtn>Get a Quote</DarkBtn>
             </Link>
           </div>
@@ -147,8 +147,8 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 pt-6 md:pt-8 border-t border-emerald-800/50 text-xs md:text-sm text-emerald-400/60 font-medium">
             <p className="text-center md:text-left">© {new Date().getFullYear()} OM EPC Solution. All rights reserved.</p>
             <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
-              <Link href="/privacy" onClick={handleScrollToTop} className="hover:text-emerald-300 transition-colors">Privacy Policy</Link>
-              <Link href="/terms" onClick={handleScrollToTop} className="hover:text-emerald-300 transition-colors">Terms & Conditions</Link>
+              <Link href="/privacy" onClick={(e) => handleLinkClick(e, '/privacy')} className="hover:text-emerald-300 transition-colors">Privacy Policy</Link>
+              <Link href="/terms" onClick={(e) => handleLinkClick(e, '/terms')} className="hover:text-emerald-300 transition-colors">Terms & Conditions</Link>
             </div>
           </div>
 

@@ -136,13 +136,13 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.8 }}
           // FIXED: Adjusted height for mobile/tablet to prevent massive stretching
-          className="relative w-full h-[350px] sm:h-[450px] lg:h-full lg:min-h-[700px] rounded-[2rem] overflow-hidden shadow-xl"
+          className="relative w-full h-[350px] sm:h-[450px] lg:h-full lg:min-h-[700px] rounded-[2rem] overflow-hidden hidden md:block shadow-xl"
         >
           <Image
             src={images.services.cctv}
             alt="OM EPC Infrastructure Setup"
             fill
-            className="object-cover hover:scale-105 transition-transform duration-1000"
+            className="object-cover  hover:scale-105 transition-transform duration-1000"
           />
           {/* Subtle overlay for better blending */}
           <div className="absolute inset-0 bg-slate-900/10 mix-blend-overlay"></div>

@@ -28,6 +28,7 @@ const ProgressBar = ({ label, percentage, delay }) => {
 };
 
 export default function ProductPerformance() {
+    const hero = "/about/about-hero.webp";
     return (
         <section className="py-24 md:py-32 bg-emerald-50 relative overflow-hidden">
 
@@ -43,7 +44,7 @@ export default function ProductPerformance() {
                     transition={{ duration: 0.8 }}
                     className="relative h-[450px] md:h-[600px] w-full rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white z-10"
                 >
-                    <Image src={productPageImages.performance} alt="IT Infrastructure Performance" fill className="object-cover" />
+                    <Image src={hero} alt="IT Infrastructure Performance" fill className="object-cover" />
                     <div className="absolute inset-0 bg-emerald-900/10 mix-blend-overlay" />
 
                     <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 bg-emerald-50/95 backdrop-blur-md p-6 rounded-2xl shadow-xl flex items-center gap-4">

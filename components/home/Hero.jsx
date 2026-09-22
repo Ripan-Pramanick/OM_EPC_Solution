@@ -109,7 +109,7 @@ export default function Hero() {
                         </div>
 
                         <p className="text-emerald-900/70 text-sm lg:text-[15px] mb-8 leading-relaxed pr-2">
-                            Engineering elegant, functional IT infrastructure that blends high-performance networking and power backup for lasting continuity.
+                            High-performance UPS and backup power solutions designed to keep your critical systems protected, powered, and running without interruption.
                         </p>
 
                         {/* Pill Button */}

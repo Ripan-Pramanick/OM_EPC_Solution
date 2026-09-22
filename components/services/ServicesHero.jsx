@@ -78,12 +78,12 @@ export default function ServicesHero() {
             
             {/* Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-emerald-950 mb-6 tracking-tight leading-[1.1]">
-              Complete IT <br /> Solutions
+              Complete UPS<br />Solutions
             </h1>
             
             {/* Paragraph */}
             <p className="text-emerald-900/70 text-sm lg:text-[15px] mb-10 leading-relaxed pr-2">
-              From power backup and computers to networking, surveillance and technical support, OM EPC provides technology designed around your business.
+              From UPS installation and battery backup to preventive maintenance and technical support, we provide reliable power solutions designed to keep your critical equipment running without interruption.
             </p>
 
             {/* Pill Button */}
@@ -92,7 +92,7 @@ export default function ServicesHero() {
               prefetch={false}
             >
               <Button>
-              Explore Services
+              Explore UPS Services
               </Button>
             </Link>
           </motion.div>

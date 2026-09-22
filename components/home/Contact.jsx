@@ -215,7 +215,7 @@ export default function Contact() {
 
           {/* Decorative Image */}
           <div className="hidden lg:block absolute -bottom-10 -right-10 w-96 h-96 opacity-10 pointer-events-none z-0">
-            <Image src={images.services.networking} alt="Decoration" fill className="object-cover rounded-full mix-blend-overlay" />
+            <Image src="/service/service-hero.webp" alt="Decoration" fill className="object-cover rounded-full mix-blend-overlay" />
           </div>
 
         </div>

@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
                             <Award size={12} className="text-emerald-950/70" /> WHY CHOOSE US
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold text-emerald-950 tracking-tight leading-[1.1]">
-                            Discover the Difference<br />We Can Make
+                            Reliable Power Protection <br /> for Your Business
                         </h2>
                     </motion.div>
 
@@ -59,7 +59,7 @@ export default function WhyChooseUs() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
                         <p className="text-emerald-900/70 text-base md:text-lg leading-relaxed max-w-md">
-                            Simple and easy to distinguish. From the right IT product to dependable after-sales support, we focus on making technology easier and more reliable for your business.
+                            From selecting the right UPS system to dependable after-sales support, we focus on keeping your critical equipment protected and your business running without interruption.
                         </p>
                     </motion.div>
                 </div>
@@ -86,7 +86,7 @@ export default function WhyChooseUs() {
                                 <path id="textPath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="transparent" />
                                 <text className="text-[9.5px] font-bold fill-emerald-800/60 uppercase tracking-[0.2em]">
                                     <textPath href="#textPath" startOffset="0%">
-                                        RELIABLE IT SOLUTIONS • TECHNICAL SUPPORT •
+                                        UPS SOLUTIONS • POWER PROTECTION • TECHNICAL SUPPORT •
                                     </textPath>
                                 </text>
                             </svg>
@@ -119,8 +119,8 @@ export default function WhyChooseUs() {
                                     {/* Using the custom Blueprint icon */}
                                     <BlueprintIcon size={46} />
                                 </div>
-                                <h3 className="text-[2.5rem] font-light text-emerald-950 mb-2 leading-none tracking-tight">10+</h3>
-                                <p className="text-[15px] font-bold text-emerald-900/80 uppercase tracking-wide">Core IT Solutions</p>
+                                <h3 className="text-[2.5rem] font-light text-emerald-950 mb-2 leading-none tracking-tight">Reliable UPS Solutions</h3>
+                                <p className="text-[15px] font-bold text-emerald-900/80 uppercase tracking-wide">POWER PROTECTION</p>
                             </div>
 
                             {/* Bottom Image Half */}
@@ -166,7 +166,7 @@ export default function WhyChooseUs() {
                             transition={{ delay: 0.6 }}
                             className="mt-12 pt-8 border-t border-emerald-900/10 flex items-center gap-6"
                         >
-                            
+
                             <div>
                                 <h5 className="font-bold text-emerald-950 text-lg mb-0.5 tracking-tight">Srijan Das</h5>
                                 <p className="text-sm text-emerald-900/50 uppercase tracking-widest font-bold">Founder & Technical Lead</p>

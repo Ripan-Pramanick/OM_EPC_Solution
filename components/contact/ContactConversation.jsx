@@ -209,9 +209,9 @@ export default function ContactConversation() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1 }}
-                        className="relative w-full h-[200px] sm:h-[250px] lg:flex-1 min-h-[250px] lg:min-h-[300px] rounded-[1.5rem] md:rounded-[2.5rem] bg-emerald-800/50 overflow-hidden border border-emerald-500/20 shadow-2xl lg:animate-[floating_6s_ease-in-out_infinite]"
+                        className="relative w-full h-[200px] sm:h-[250px] lg:flex-1 min-h-[250px] lg:min-h-[300px] rounded-[1.5rem] md:rounded-[2.5rem] bg-emerald-800/50 overflow-hidden border border-emerald-500/20 shadow-2xl lg:animate-[floating_6s_ease-in-out_infinite] hidden md:block"
                     >
-                        <Image src={contactPageImages.visual} alt="IT Infrastructure" fill className="object-cover opacity-80" />
+                        <Image src="/service/service-hero.webp" alt="IT Infrastructure" fill className="object-cover opacity-80" />
                     </motion.div>
                 </div>
             </div>

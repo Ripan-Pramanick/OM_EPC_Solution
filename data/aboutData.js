@@ -1,10 +1,18 @@
-import { Monitor, Zap, Video, Network, Wrench, ShieldCheck, Cpu, HardDrive } from 'lucide-react';
+import {
+  Monitor, Zap, Video, Network, Wrench,
+  CircuitBoard,
+  HardHat,
+  BadgeCheck,
+  CalendarCheck,
+  BatteryCharging,
+  ShieldCheck,
+} from 'lucide-react';
 import { aboutImages } from './images';
 
 export const foundationRows = [
-  { id: "01", title: "Understand", desc: "We understand your business and technical requirements." },
-  { id: "02", title: "Implement", desc: "We provide practical technology solutions tailored to your needs." },
-  { id: "03", title: "Support", desc: "We provide continued technical assistance after installation." }
+  { id: "01", title: "Understand", desc: "We understand your power requirements, equipment load, and business needs before recommending a UPS solution." },
+  { id: "02", title: "Implement", desc: "We provide and install reliable UPS systems tailored to your power capacity, infrastructure, and operational requirements." },
+  { id: "03", title: "Support", desc: "We provide ongoing technical support, maintenance, and troubleshooting to keep your UPS system performing reliably." }
 ];
 
 export const principleRows = [
@@ -14,11 +22,31 @@ export const principleRows = [
 ];
 
 export const benefits = [
-  { title: "Experienced Engineers", desc: "Skilled technicians with practical field experience.", icon: Wrench },
-  { title: "Multi-Brand Support", desc: "Support for major brands and equipment.", icon: Cpu },
-  { title: "On-Site Service", desc: "Quick response and on-site technical assistance.", icon: Monitor },
-  { title: "Genuine Products", desc: "Reliable products backed by professional technical support.", icon: ShieldCheck },
-  { title: "AMC Support", desc: "Preventive maintenance for hassle-free operations.", icon: HardDrive }
+  {
+    title: "Experienced Engineers",
+    desc: "Skilled technicians with practical experience in UPS installation, maintenance, and troubleshooting.",
+    icon: Wrench,
+  },
+  {
+    title: "Multi-Brand Support",
+    desc: "Support for major UPS brands and power backup equipment.",
+    icon: CircuitBoard,
+  },
+  {
+    title: "On-Site Service",
+    desc: "Quick response and on-site technical assistance for installation and service requirements.",
+    icon: HardHat,
+  },
+  {
+    title: "Genuine Products",
+    desc: "Reliable UPS systems and genuine components backed by professional technical support.",
+    icon: BadgeCheck,
+  },
+  {
+    title: "AMC Support",
+    desc: "Preventive maintenance and regular servicing to ensure reliable, hassle-free UPS operation.",
+    icon: CalendarCheck,
+  },
 ];
 
 export const milestones = [
@@ -29,8 +57,32 @@ export const milestones = [
 ];
 
 export const expertiseCards = [
-  { id: "01", title: "Computer & IT Support", desc: "Professional support for desktops, laptops, workstations and business IT systems.", icon: Monitor, image: aboutImages.expertise.computer },
-  { id: "02", title: "UPS & Power Backup", desc: "Installation, maintenance and technical support for reliable power backup systems.", icon: Zap, image: aboutImages.expertise.ups },
-  { id: "03", title: "CCTV & Surveillance", desc: "Professional surveillance installation, configuration and support.", icon: Video, image: aboutImages.expertise.cctv },
-  { id: "04", title: "Networking & Infrastructure", desc: "Structured networking, connectivity and IT infrastructure solutions.", icon: Network, image: aboutImages.expertise.networking }
+  {
+    id: "01",
+    title: "Online UPS Systems",
+    desc: "High-performance online UPS systems designed for uninterrupted and stable power protection.",
+    icon: Zap,
+    image: aboutImages.expertise.ups,
+  },
+  {
+    id: "02",
+    title: "UPS Installation",
+    desc: "Professional UPS installation, commissioning, and configuration for critical equipment.",
+    icon: Wrench,
+    image: aboutImages.expertise.installation,
+  },
+  {
+    id: "03",
+    title: "Battery & Backup",
+    desc: "Reliable battery backup solutions with testing, replacement, and performance support.",
+    icon: BatteryCharging,
+    image: aboutImages.expertise.battery,
+  },
+  {
+    id: "04",
+    title: "AMC & Technical Support",
+    desc: "Preventive maintenance and responsive technical support to keep your UPS running reliably.",
+    icon: ShieldCheck,
+    image: aboutImages.expertise.support,
+  },
 ];

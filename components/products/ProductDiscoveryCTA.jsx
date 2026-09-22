@@ -4,8 +4,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { productPageImages } from '@/data/images';
 import { Package, CheckCircle2, DollarSign, HeadphonesIcon } from 'lucide-react';
+import DarkBtn from '@/components/ui/DarkBtn';
 
 export default function ProductDiscoveryCTA() {
+    const hero = "/home/home-hero.webp";
     const trustPoints = [
         { title: "Expert Guidance", desc: "Get the right product for your needs.", icon: CheckCircle2 },
         { title: "Best Market Price", desc: "Competitive and transparent pricing.", icon: DollarSign },
@@ -23,7 +25,7 @@ export default function ProductDiscoveryCTA() {
                     transition={{ duration: 1.5, ease: "easeOut" }}
                     className="absolute inset-0 w-full h-full"
                 >
-                    <Image src={productPageImages.discovery} alt="Technology Support" fill className="object-cover opacity-20 mix-blend-overlay" />
+                    <Image src={hero} alt="Technology Support" fill className="object-cover opacity-20 mix-blend-overlay" />
                 </motion.div>
                 <div className="absolute inset-0 bg-emerald-900/80 mix-blend-multiply" />
             </div>
@@ -72,9 +74,9 @@ export default function ProductDiscoveryCTA() {
                     <Link 
                         href="/contact#contact-form" 
                         prefetch={false}
-                        className="w-full sm:w-fit flex items-center justify-center bg-white text-emerald-950 px-8 py-3.5 rounded-xl font-bold shadow-[0_8px_30px_rgba(255,255,255,0.1)] hover:bg-emerald-50 hover:shadow-[0_8px_30px_rgba(255,255,255,0.2)] transition-all duration-300 text-sm uppercase tracking-wider"
+                       
                     >
-                        Contact Our Experts
+                        <DarkBtn>Contact Our Experts</DarkBtn>
                     </Link>
                 </motion.div>
 

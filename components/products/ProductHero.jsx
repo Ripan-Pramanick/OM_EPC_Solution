@@ -20,7 +20,7 @@ export default function ProductHero() {
                         transition={{ duration: 0.6 }}
                         className="text-4xl md:text-5xl lg:text-[4rem] font-bold text-emerald-950 leading-[1.1] mb-6 tracking-tight"
                     >
-                        Reliable Technology<br /> Products for <span className="text-emerald-700">Your Business</span>
+                        Reliable Power<br /> Products for <span className="text-emerald-700">Your Business</span>
                     </motion.h1>
 
                     <motion.p
@@ -29,7 +29,7 @@ export default function ProductHero() {
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="text-emerald-900/70 text-lg md:text-xl leading-relaxed mb-10"
                     >
-                        Discover a wide range of high-quality computers, UPS, printers, CCTV, networking equipment and more — all in one place.
+                       Explore reliable UPS systems, batteries, power backup equipment and essential IT solutions designed to keep your business running without interruption.
                     </motion.p>
 
                     <motion.div

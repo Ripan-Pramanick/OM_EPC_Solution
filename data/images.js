@@ -22,16 +22,16 @@ export const images = {
 
 export const aboutImages = {
   hero: "/about/about-hero.webp",
-  foundationMain: "/images/aboutImages_foundationMain.jpg",
-  foundationSecondary: "/images/aboutImages_foundationSecondary.jpg",
+  foundationMain: "/home/home-about-2.webp",
+  foundationSecondary: "/home/home-about-1.webp",
   principles: "/images/aboutImages_principles.jpg",
-  whyChooseUs: "/images/aboutImages_whyChooseUs.jpg",
+  whyChooseUs: "/home/home-why-choose-us.webp",
   milestones: "/images/aboutImages_milestones.jpg",
   expertise: {
-    computer: "/images/aboutImages_expertise_computer.jpg",
-    ups: "/images/aboutImages_expertise_ups.jpg",
-    cctv: "/images/aboutImages_expertise_cctv.jpg",
-    networking: "/images/aboutImages_expertise_networking.jpg"
+    installation: "/home/home-service-1.webp",
+    ups: "/home/home-service-2.webp",
+    battery: "/home/home-service-3.webp",
+    support: "/home/home-service-4.webp"
   },
  
   cta: "/images/contactPageImages_cta.jpg" 
@@ -44,19 +44,19 @@ export const servicePageImages = {
 
   cta: "/images/contactPageImages_cta.jpg", 
   services: {
-    computer: "/images/servicePageImages_services_computer.jpg",
-    ups: "/images/servicePageImages_services_ups.jpg",
-    printer: "/images/servicePageImages_services_printer.jpg",
-    cctv: "/images/servicePageImages_services_cctv.jpg",
-    networking: "/images/servicePageImages_services_networking.jpg",
-    amc: "/images/servicePageImages_services_amc.jpg"
+    installation: "/home/home-service-1.webp",
+    ups: "/home/home-service-3.webp",
+    battery: "/home/home-service-3.webp",
+    maintenance: "/home/home-service-2.webp",
+    amc: "/home/home-intreactive-1.webp",
+    support: "/home/home-intreactive-3.webp"
   }
 };
 
 export const productPageImages = {
   hero: {
-    main: "/images/productPageImages_hero_main.jpg",
-    secondary: "/images/productPageImages_hero_secondary.jpg"
+    main: "/home/home-hero.webp",
+    secondary: "/service/service-hero.webp"
   },
   products: {
     computer: "/images/productPageImages_products_computer.jpg",

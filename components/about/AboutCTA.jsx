@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { aboutImages } from '@/data/images';
 import Link from 'next/link';
 import { Phone, Mail } from 'lucide-react';
+import  DarkBtn  from '@/components/ui/DarkBtn';
 
 const WhatsAppIcon = ({ size = 18, className }) => (
     <svg
@@ -69,16 +70,15 @@ export default function AboutCTA() {
                     <Link 
                         href="/contact#contact-form"
                         prefetch={false}
-                        className="w-full sm:w-auto flex items-center justify-center bg-emerald-50 text-emerald-950 px-8 py-3.5 rounded-full font-bold shadow-lg hover:bg-white transition-all duration-300 text-sm md:text-base tracking-wide"
                     >
-                        Get a Free Quote
+                     <DarkBtn>Get a Free Quote</DarkBtn>
                     </Link>
                     <Link 
                         href="/contact"
                         prefetch={false}
-                        className="w-full sm:w-auto flex items-center justify-center bg-transparent border border-emerald-50/30 text-white px-8 py-3.5 rounded-full font-bold hover:bg-white/10 transition-all duration-300 text-sm md:text-base tracking-wide"
+                      
                     >
-                        Contact Us
+                       <DarkBtn>Contact Us</DarkBtn>
                     </Link>
                 </motion.div>
 

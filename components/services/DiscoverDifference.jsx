@@ -59,7 +59,7 @@ export default function DiscoverDifference() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
                         <p className="text-emerald-900/70 text-base md:text-lg leading-relaxed max-w-md">
-                            Technology is only valuable when it works reliably. We combine quality products, technical expertise and responsive support to deliver dependable solutions.
+                            Reliable power protection is essential for every business. We combine genuine UPS systems, technical expertise, and responsive service to keep your critical operations running without interruption.
                         </p>
                     </motion.div>
                 </div>
@@ -86,7 +86,7 @@ export default function DiscoverDifference() {
                                 <path id="textPath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="transparent" />
                                 <text className="text-[9.5px] font-bold fill-emerald-800/60 uppercase tracking-[0.2em]">
                                     <textPath href="#textPath" startOffset="0%">
-                                        RELIABLE IT SOLUTIONS • TECHNICAL SUPPORT •
+                                        UPS & POWER BACKUP • TECHNICAL SUPPORT • RELIABLE POWER SOLUTIONS •
                                     </textPath>
                                 </text>
                             </svg>
@@ -116,7 +116,8 @@ export default function DiscoverDifference() {
                                     <BlueprintIcon size={46} />
                                 </div>
                                 <h3 className="text-[2.5rem] font-light text-emerald-900 mb-2 leading-none">10+</h3>
-                                <p className="text-[15px] font-bold text-emerald-950">Core IT Solutions</p>
+                                <p className="text-[17px] font-bold text-emerald-950">YEARS OF UPS EXPERIENCE</p>
+
                             </div>
 
                             {/* Bottom Image Half */}

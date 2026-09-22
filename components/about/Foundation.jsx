@@ -1,4 +1,5 @@
 "use client";
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { aboutImages } from '@/data/images';
@@ -7,6 +8,9 @@ import { ArrowRight, Info, ShieldCheck, Target } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Foundation() {
+  // State to manage the Read More text expansion
+  const [isTextExpanded, setIsTextExpanded] = useState(false);
+
   return (
     <section className="py-24 lg:py-32 bg-emerald-100 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 grid lg:grid-cols-[1.1fr_1fr] gap-16 lg:gap-24 items-center">
@@ -17,7 +21,6 @@ export default function Foundation() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          // FIXED: Adjusted height for mobile/tablet to prevent stretching
           className="relative h-[480px] sm:h-[550px] lg:h-[650px] w-full max-w-[500px] lg:max-w-none mx-auto"
         >
           {/* Top Left Image (Foundation Main) */}
@@ -37,12 +40,25 @@ export default function Foundation() {
             </div>
             <div>
               <h4 className="font-bold text-emerald-950 text-sm md:text-base mb-1 md:mb-1.5 tracking-tight">Our Guarantee</h4>
-              <p className="text-[11px] md:text-[13px] text-emerald-900/60 leading-relaxed mb-3 md:mb-4 font-medium line-clamp-4 sm:line-clamp-none">
-                Providing the right technology, professional service, and dependable support for your business.
+              
+              {/* Expandable Text */}
+              <p className={`text-[11px] md:text-[13px] text-emerald-900/60 leading-relaxed mb-3 md:mb-4 font-medium transition-all ${
+                isTextExpanded ? "" : "line-clamp-2"
+              }`}>
+                Providing reliable UPS systems, professional installation, and dependable technical support for your business. We ensure that your critical infrastructure remains online 24/7 without unexpected power disruptions.
               </p>
-              <Link href="/services" className="text-[11px] md:text-[13px] font-bold text-emerald-950 flex items-center gap-1.5 hover:text-emerald-700 transition-colors group w-fit">
-                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" /> Read More
-              </Link>
+              
+              {/* Interactive Read More Button */}
+              <button 
+                onClick={() => setIsTextExpanded(!isTextExpanded)}
+                className="text-[11px] md:text-[13px] font-bold text-emerald-950 flex items-center gap-1.5 hover:text-emerald-700 transition-colors group w-fit cursor-pointer"
+              >
+                <ArrowRight 
+                  size={14} 
+                  className={`transition-transform duration-300 ${isTextExpanded ? 'rotate-90' : 'group-hover:translate-x-1'}`} 
+                /> 
+                {isTextExpanded ? "Read Less" : "Read More"}
+              </button>
             </div>
           </div>
 
@@ -85,12 +101,12 @@ export default function Foundation() {
 
             {/* Main Heading */}
             <h2 className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-emerald-950 leading-[1.1] mb-6 tracking-tight">
-              Technology Solutions,<br />Built Around Your Business
+              Reliable UPS Solutions,<br />Built Around Your Business
             </h2>
 
             {/* Supporting Paragraph */}
             <p className="text-emerald-900/70 text-base md:text-lg leading-relaxed max-w-lg mb-12">
-              OM EPC Solution provides reliable computer, printer, UPS, CCTV, networking and technical support solutions for businesses.
+             <span className="font-semibold text-emerald-950">OM EPC Solution</span> provides reliable UPS and power backup solutions designed to protect critical equipment, maintain power continuity, and support uninterrupted business operations.
             </p>
           </motion.div>
 
@@ -122,8 +138,8 @@ export default function Foundation() {
                   </div>
                 </div>
                 
-                {/* Arrow reveals on hover */}
-                <ArrowRight size={18} className="text-emerald-700 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 mt-2 shrink-0" strokeWidth={2} />
+                {/* Arrow reveals on hover
+                <ArrowRight size={18} className="text-emerald-700 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 mt-2 shrink-0" strokeWidth={2} /> */}
               </motion.div>
             ))}
           </div>

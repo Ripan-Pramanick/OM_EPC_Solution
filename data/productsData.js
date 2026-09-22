@@ -14,124 +14,100 @@ export const productCategories = [
 
 export const productBrands = ['Dell', 'HP', 'Lenovo', 'Epson', 'Brother', 'APC', 'Hikvision', 'TP-Link', 'MikroTik'];
 
+
 export const productsList = [
   { 
-    id: "p1", 
-    name: "Dell OptiPlex 7000 Business Desktop", 
-    brand: "Dell", 
-    category: "computers", 
-    price: 52000, 
-    image: productPageImages.products.computer, 
+    id: "ups_1", 
+    name: "1kVA PM900 Pro Prostarm Online UPS", 
+    brand: "Prostarm", 
+    category: "ups", 
+    price: 16500, 
+    image: "/product/1kva-pm900-pro-prostram-online-ups-500x500.webp", 
     rating: 4.8, 
-    reviews: 24, 
+    reviews: 42, 
     badge: "Best Seller", 
     availability: "In Stock",
-    description: "A compact and powerful business desktop featuring advanced processors, robust built-in security, and a tool-less design for easy maintenance and seamless upgrades in professional environments."
+    description: "High-frequency double conversion online UPS with advanced DSP control technology. Ideal for small servers, network devices, and sensitive electronic equipment."
   },
   { 
-    id: "p2", 
-    name: "HP ProBook 450 G9 Notebook", 
-    brand: "HP", 
-    category: "laptops", 
-    price: 68500, 
-    image: productPageImages.products.laptop, 
-    rating: 4.5, 
-    reviews: 18, 
-    badge: "New", 
-    availability: "In Stock",
-    description: "Designed for modern workstyles, this laptop delivers enterprise-grade performance, reliable security features, and a durable chassis ideal for growing businesses and remote teams."
-  },
-  { 
-    id: "p3", 
-    name: "Epson EcoTank L3250", 
-    brand: "Epson", 
-    category: "printers", 
-    price: 14500, 
-    image: productPageImages.products.printer, 
+    id: "ups_2", 
+    name: "5kVA PM900 G4 Prostarm Online UPS", 
+    brand: "Prostarm", 
+    category: "ups", 
+    price: 48000, 
+    image: "/product/5kva-pm800-prostarm-online-ups-500x500.webp", 
     rating: 4.7, 
-    reviews: 56, 
+    reviews: 28, 
     badge: null, 
     availability: "In Stock",
-    description: "High-capacity ink tank printer offering ultra-low-cost printing, seamless wireless connectivity, and spill-free refilling for everyday office productivity and high-volume tasks."
+    description: "Robust 5kVA online UPS featuring active input power factor correction and zero transfer time to ensure absolute continuous power for critical business applications."
   },
   { 
-    id: "p4", 
-    name: "APC Smart-UPS 1000VA", 
-    brand: "APC", 
+    id: "ups_3", 
+    name: "10kVA PM890 Prostarm Online UPS", 
+    brand: "Prostarm", 
     category: "ups", 
-    price: 18500, 
-    image: productPageImages.products.ups, 
+    price: 82000, 
+    image: "/product/10kva-pm890-prostarm-online-ups-500x500 (2).webp", 
     rating: 4.9, 
-    reviews: 32, 
+    reviews: 35, 
     badge: "Featured", 
     availability: "In Stock",
-    description: "Intelligent and efficient network power protection from entry level to scalable runtime. Ideal for servers, point-of-sale systems, routers, switches, and other critical network devices."
+    description: "Heavy-duty 10kVA online UPS system designed for demanding corporate environments. Features an intelligent battery management system for extended battery life."
   },
   { 
-    id: "p5", 
-    name: "Hikvision 2MP Dome Camera", 
-    brand: "Hikvision", 
-    category: "cctv", 
-    price: 1800, 
-    image: productPageImages.products.cctv, 
-    rating: 4.4, 
-    reviews: 112, 
-    badge: null, 
-    availability: "Out of Stock",
-    description: "High-definition 2MP dome camera with advanced infrared night vision, weatherproof housing, and crisp imaging to ensure round-the-clock security and surveillance for your premises."
-  },
-  { 
-    id: "p6", 
-    name: "TP-Link 24-Port Gigabit Switch", 
-    brand: "TP-Link", 
-    category: "networking", 
-    price: 8500, 
-    image: productPageImages.products.networking, 
-    rating: 4.6, 
-    reviews: 45, 
-    badge: null, 
-    availability: "In Stock",
-    description: "Provide seamless and high-speed network connectivity for multiple devices with this 24-port gigabit unmanaged switch, featuring a plug-and-play setup and energy-efficient technology."
-  },
-  { 
-    id: "p7", 
-    name: "Lenovo ThinkCentre M70s", 
-    brand: "Lenovo", 
-    category: "computers", 
-    price: 48000, 
-    image: productPageImages.products.computer, 
-    rating: 4.5, 
-    reviews: 15, 
-    badge: null, 
-    availability: "In Stock",
-    description: "Space-saving small form factor desktop engineered for business productivity. Packed with responsive memory, fast storage capabilities, and comprehensive ThinkShield security solutions."
-  },
-  { 
-    id: "p8", 
-    name: "Brother HL-L2321D Laser Printer", 
-    brand: "Brother", 
-    category: "printers", 
-    price: 11200, 
-    image: productPageImages.products.printer, 
-    rating: 4.3, 
-    reviews: 89, 
-    badge: "Sale", 
-    availability: "In Stock",
-    description: "A reliable monochrome laser printer featuring auto duplex (two-sided) printing, fast print speeds, and a large capacity paper tray for highly efficient and continuous office operations."
-  },
-  { 
-    id: "p9", 
-    name: "MikroTik hEX Router", 
-    brand: "MikroTik", 
-    category: "networking", 
-    price: 5600, 
-    image: productPageImages.products.networking, 
+    id: "ups_4", 
+    name: "10kVA PM900 G5 Prostarm Online UPS", 
+    brand: "Prostarm", 
+    category: "ups", 
+    price: 95000, 
+    image: "/product/10kva-pm900-g5-prostarm-online-ups-500x500.webp", 
     rating: 4.8, 
-    reviews: 27, 
-    badge: null, 
+    reviews: 19, 
+    badge: "New", 
     availability: "In Stock",
-    description: "A five-port Gigabit Ethernet router for locations where wireless connectivity is not required. Affordable, compact, and easy to use with a powerful dual-core CPU for robust routing."
-  }
+    description: "Next-generation G5 series 10kVA UPS offering superior energy efficiency, an intuitive LCD interface, and advanced communication ports for enterprise network protection."
+  },
+  { 
+    id: "ups_5", 
+    name: "120kVA PM900 G4 Prostarm Online UPS", 
+    brand: "Prostarm", 
+    category: "ups", 
+    price: 750000, 
+    image: "/product/120kva-pm990-g4-prostarm-online-ups-500x500.webp", 
+    rating: 4.9, 
+    reviews: 12, 
+    badge: "Industrial", 
+    availability: "On Order",
+    description: "High-capacity 120kVA three-phase online UPS tailored for large data centers and industrial automation setups. Provides unparalleled stability and fault tolerance."
+  },
+  { 
+    id: "ups_6", 
+    name: "500kVA PM890 IR Series Prostarm Online UPS", 
+    brand: "Prostarm", 
+    category: "ups", 
+    price: 2500000, 
+    image: "/product/500kva-pm890-ir-series-prostarm-online-ups-500x500.webp", 
+    rating: 5.0, 
+    reviews: 5, 
+    badge: "Enterprise", 
+    availability: "On Order",
+    description: "Massive 500kVA industrial-grade power protection. The IR Series utilizes state-of-the-art power electronics for maximum reliability in mission-critical infrastructure."
+  },
+  { 
+    id: "bat_1", 
+    name: "200Ah Exide Powersafe Plus SMF Battery", 
+    brand: "Exide", 
+    category: "battery", 
+    price: 15500, 
+    image: "/product/200ah-exide-powersafe-plus-smf-battery-500x500.webp", 
+    rating: 4.7, 
+    reviews: 86, 
+    badge: "Popular", 
+    availability: "In Stock",
+    description: "Sealed Maintenance Free (SMF) VRLA battery designed specifically for UPS applications. Offers excellent cyclic performance and a long service life."
+  },
+  
 ];
 
 export const blogArticles = [

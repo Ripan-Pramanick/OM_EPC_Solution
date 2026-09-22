@@ -20,16 +20,45 @@ export const industries = [
 
 export const faqs = [
   {
-    question: "What is included in your Annual Maintenance Contract (AMC)?",
-    answer: "Our AMC covers routine health checks, emergency troubleshooting, hardware repairs, network optimization, and priority 24/7 support for all covered IT and infrastructure assets."
+    question: "What types of UPS and power backup solutions do you provide?",
+    answer:
+      "We provide online UPS, offline UPS, inverter systems, batteries, and complete power backup solutions for offices, businesses, servers, networks, and other critical equipment."
   },
+
   {
-    question: "Do you supply the hardware or only provide installation services?",
-    answer: "We provide end-to-end solutions. We supply premium hardware (UPS, Servers, CCTV, Workstations) and handle the complete deployment and ongoing maintenance."
+    question: "Do you provide UPS installation and maintenance services?",
+    answer:
+      "Yes. We provide complete UPS installation, configuration, battery setup, preventive maintenance, troubleshooting, and on-site technical support."
   },
+
   {
-    question: "Can you upgrade our existing office network without downtime?",
-    answer: "Yes, our team specializes in seamless migrations and upgrades. We schedule critical transitions during off-hours to ensure zero disruption to your daily operations."
+    question: "Do you support multiple UPS brands?",
+    answer:
+      "Yes. Our technicians support major UPS and power backup brands, including installation, servicing, maintenance, and troubleshooting."
+  },
+
+  {
+    question: "Can you provide UPS AMC services?",
+    answer:
+      "Yes. Our Annual Maintenance Contract includes scheduled health checks, preventive maintenance, troubleshooting, battery inspection, and technical support to help reduce unexpected downtime."
+  },
+
+  {
+    question: "Do you supply genuine UPS and battery products?",
+    answer:
+      "Yes. We supply genuine UPS systems, batteries, and related power backup equipment from trusted brands, along with professional technical support."
+  },
+
+  {
+    question: "Do you provide on-site technical support?",
+    answer:
+      "Yes. Our technical team provides on-site assistance for installation, maintenance, inspection, troubleshooting, and other service requirements."
+  },
+
+  {
+    question: "How can I request a quote?",
+    answer:
+      "You can contact us through the Get a Quote form or contact our team directly. Share your requirements and we will recommend a suitable solution based on your equipment and power needs."
   }
 ];
 

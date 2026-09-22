@@ -77,12 +77,12 @@ export default function AboutHero() {
             
             {/* Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-emerald-950 mb-6 tracking-tight leading-[1.1]">
-              Architects of <br /> Reliable IT
+              Your Trusted Partner in <br /> Power Continuity
             </h1>
             
             {/* Paragraph */}
             <p className="text-emerald-900/70 text-sm lg:text-[15px] mb-10 leading-relaxed pr-2">
-              Building scalable networks, robust security, and seamless infrastructure to drive your business forward.
+             Reliable UPS solutions, professional support, and dependable backup power for businesses that cannot afford downtime.
             </p>
 
             {/* Pill Button */}
