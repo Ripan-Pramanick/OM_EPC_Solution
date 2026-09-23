@@ -34,7 +34,7 @@ export const aboutImages = {
     support: "/home/home-service-4.webp"
   },
  
-  cta: "/images/contactPageImages_cta.jpg" 
+  cta: "/home/home-service-2.webp" 
 };
 
 export const servicePageImages = {
@@ -42,7 +42,7 @@ export const servicePageImages = {
   craftedBg: "/images/servicePageImages_craftedBg.jpg",
   discoverImage: "/images/servicePageImages_discoverImage.jpg",
 
-  cta: "/images/contactPageImages_cta.jpg", 
+  cta: "/home/home-service-2.webp", 
   services: {
     installation: "/home/home-service-1.webp",
     ups: "/home/home-service-3.webp",
@@ -58,22 +58,11 @@ export const productPageImages = {
     main: "/home/home-hero.webp",
     secondary: "/service/service-hero.webp"
   },
-  products: {
-    computer: "/images/productPageImages_products_computer.jpg",
-    laptop: "/images/productPageImages_products_laptop.jpg",
-    printer: "/images/productPageImages_products_printer.jpg",
-    ups: "/images/productPageImages_products_ups.jpg",
-    cctv: "/images/productPageImages_products_cctv.jpg",
-    networking: "/images/productPageImages_products_networking.jpg",
-    accessories: "/images/productPageImages_products_accessories.jpg"
-  },
-  discovery: "/images/productPageImages_discovery.jpg",
-  performance: "/images/productPageImages_performance.jpg",
   articles: [
-    "/images/productPageImages_articles_1.jpg",
-    
-    "/images/productPageImages_articles_3.jpg", 
-    "/images/productPageImages_articles_3.jpg"
+    "/home/home-service-1.webp",
+    "/home/home-service-2.webp",
+    "/home/home-service-3.webp", 
+    "/home/home-service-4.webp"
   ]
 };
 
