@@ -3,6 +3,7 @@ import SolutionFinder from '@/components/services/SolutionFinder';
 import ServicesCrafted from '@/components/services/ServicesCrafted';
 import DiscoverDifference from '@/components/services/DiscoverDifference';
 import ServicesCTA from '@/components/services/ServicesCTA';
+import ServiceCatalog from '@/components/services/ServiceCatalog';
 
 export const metadata = {
     title: "IT Services & Solutions | Computers, Networking & CCTV | OM EPC",
@@ -93,6 +94,7 @@ export default function ServicesPage() {
             <main className="flex flex-col w-full overflow-x-hidden">
                 <ServicesHero />
                 <SolutionFinder />
+                <ServiceCatalog />
                 <ServicesCrafted />
                 <DiscoverDifference />
                 <ServicesCTA />
