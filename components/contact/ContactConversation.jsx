@@ -3,12 +3,11 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import { contactPageImages } from '@/data/images';
 import { contactData } from '@/data/contactData';
 import { MapPin, Phone, Mail, CheckCircle2, AlertCircle, Send } from 'lucide-react';
 import Button from '@/components/ui/Button';
 
-// Custom Social SVGs (X/Twitter icon added properly)
+// Custom Social SVGs
 const XIcon = ({ size = 18, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>;
 const FacebookIcon = ({ size = 18, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>;
 const InstagramIcon = ({ size = 18, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>;
@@ -20,12 +19,19 @@ export default function ContactConversation() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [status, setStatus] = useState({ loading: false, error: '' });
 
-    // URL থেকে প্রোডাক্টের নাম রিড করে সাবজেক্ট ফিল্ডে বসানোর জন্য useEffect
+    // FIXED: Now checks for both 'product' and 'service' query parameters
     useEffect(() => {
-        const params = new URLSearchParams(window.location.search);
-        const product = params.get('product');
-        if (product) {
-            setFormData(prev => ({ ...prev, subject: `Enquiry about: ${product}` }));
+        // Ensure this only runs on the client
+        if (typeof window !== "undefined") {
+            const params = new URLSearchParams(window.location.search);
+            const product = params.get('product');
+            const service = params.get('service');
+            
+            if (product) {
+                setFormData(prev => ({ ...prev, subject: `Enquiry about Product: ${product}` }));
+            } else if (service) {
+                setFormData(prev => ({ ...prev, subject: `Enquiry about Service: ${service}` }));
+            }
         }
     }, []);
 
