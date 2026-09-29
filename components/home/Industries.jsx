@@ -2,11 +2,9 @@
 import { motion } from 'motion/react';
 import {
   Building2,
-  ShieldCheck,
-  Network,
-  ArrowRight,
   BatteryCharging,
-  Zap
+  Zap,
+  ArrowRight
 } from "lucide-react";
 import Image from 'next/image';
 import Link from 'next/link';
@@ -76,15 +74,9 @@ export default function Industries() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              // FIXED: Increased base height and hover height to prevent overlap
               className="group relative w-full h-[130px] hover:h-[290px] sm:h-[140px] sm:hover:h-[400px] md:h-[160px] md:hover:h-[440px] flex overflow-hidden rounded-[1.5rem] md:rounded-[2rem] border border-emerald-200 bg-emerald-100 transition-all duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer shadow-sm hover:shadow-xl"
             >
-
-              {/* Left Content Area */}
-              {/* FIXED: Adjusted width to 60% for Mobile and 50% for Desktop to give more text space */}
               <div className="relative w-[60%] sm:w-[55%] md:w-[50%] h-full shrink-0 bg-emerald-100">
-
-                {/* Title and Collapsible Description Wrapper */}
                 <div className="absolute top-1/2 -translate-y-1/2 left-5 sm:left-6 md:left-10 right-4 group-hover:top-6 sm:group-hover:top-8 md:group-hover:top-10 group-hover:translate-y-0 transition-all duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
                   <div className="flex items-center gap-1.5 md:gap-2 text-[9px] md:text-[11px] font-bold tracking-widest uppercase text-emerald-900/60 mb-1.5 md:mb-3">
                     <project.icon className="w-3.5 h-3.5 md:w-4 md:h-4" /> <span className="truncate">{project.category}</span>
@@ -92,8 +84,6 @@ export default function Industries() {
                   <h3 className="text-base sm:text-lg md:text-[22px] font-bold text-emerald-950 leading-snug md:leading-tight md:pr-4">
                     {project.title}
                   </h3>
-
-                  {/* Smoothly expanding description block */}
                   <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
                     <div className="overflow-hidden">
                       <div className="pt-2 md:pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
@@ -105,14 +95,11 @@ export default function Industries() {
                   </div>
                 </div>
 
-                {/* Bottom CTA Area */}
                 <div className="absolute bottom-5 sm:bottom-6 md:bottom-10 left-5 sm:left-6 md:left-10 right-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out delay-150 pointer-events-none group-hover:pointer-events-auto">
                   <p className="flex items-start md:items-center gap-1.5 md:gap-2 text-[10px] md:text-xs font-medium text-emerald-900/70 mb-4 md:mb-6">
                     <ArrowRight size={14} className="text-emerald-950 mt-0.5 md:mt-0 shrink-0" />
                     <span className="leading-snug">{project.location}</span>
                   </p>
-
-                  {/* FIXED: Changed to rounded-full pill shape based on the image */}
                   <Link
                     href="/contact#contact-form"
                     prefetch={false}
@@ -123,18 +110,17 @@ export default function Industries() {
                 </div>
               </div>
 
-              {/* Right Image Area */}
               <div className="relative w-[40%] sm:w-[45%] md:w-[50%] h-full overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
+                  quality={60}
+                  sizes="(max-width: 768px) 40vw, (max-width: 1200px) 25vw, 20vw"
                   className="object-cover transition-transform duration-[10s] group-hover:scale-110"
                 />
-                {/* Overlay to smoothly blend the image border with the left panel */}
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-100/80 via-transparent to-transparent pointer-events-none" />
               </div>
-
             </motion.div>
           ))}
         </div>
